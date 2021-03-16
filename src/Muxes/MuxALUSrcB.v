@@ -12,11 +12,11 @@ always @(*) begin
 			MuxALUSrcBOut <= RegDataB;
 		1'b001:
 			MuxALUSrcBOut <= MemDataReg;
-        1'b010:
+        	1'b010:
 			MuxALUSrcBOut <= SignExtend1632Out;
 		1'b011:
 			MuxALUSrcBOut <= 32'd4;
-        1'b100:
+        	1'b100:
 			MuxALUSrcBOut <= ShiftLeftOut;
 	endcase
 end
