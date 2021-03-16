@@ -1,9 +1,9 @@
 module MuxComparatorSrc (
-    input wire[1:0] Zero,
-    input wire[1:0] GT,
-    input wire[1:0] LT,
+    input wire Zero,
+    input wire GT,
+    input wire LT,
     input wire[2:0] ComparatorSrc,
-	output reg[1:0] MuxComparatorSrcOut
+	output reg MuxComparatorSrcOut
 );
 always @(*) begin
 	case(ComparatorSrc)
