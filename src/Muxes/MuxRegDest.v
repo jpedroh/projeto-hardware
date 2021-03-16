@@ -3,20 +3,20 @@ module MuxRegDest (
     input reg[4:0] InstrunctionRegister1,
     input reg[4:0] InstrunctionRegister4,
     input wire[4:0] RegDest ,
-	    output reg[31:0] MuxRegDest
+	output reg[31:0] MuxRegDestOut
 );
 always @(*) begin
 	case(RegDest)
 		1'b000:
-			MuxRegDest <= InstrunctionRegister0;
+			MuxRegDestOut <= InstrunctionRegister0;
 		1'b001:
-			MuxRegDest <= InstrunctionRegister1;
+			MuxRegDestOut <= InstrunctionRegister1;
     		1'b010:
-			MuxRegDest <= 32'd31;
+			MuxRegDestOut <= 32'd31;
 		1'b011:
-			MuxRegDest <= 32'd29;
+			MuxRegDestOut <= 32'd29;
     		1'b100:
-			MuxRegDest <= InstrunctionRegister4;
+			MuxRegDestOut <= InstrunctionRegister4;
 	endcase
 end
 
