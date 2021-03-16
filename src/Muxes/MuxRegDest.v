@@ -8,15 +8,15 @@ module MuxRegDest (
 always @(*) begin
 	case(RegDest)
 		1'b000:
-			MuxALUSrcBOut <= InstrunctionRegister0;
+			MuxRegDest <= InstrunctionRegister0;
 		1'b001:
-			MuxALUSrcBOut <= InstrunctionRegister1;
-    1'b010:
-			MuxALUSrcBOut <= 32'd31;
+			MuxRegDest <= InstrunctionRegister1;
+    		1'b010:
+			MuxRegDest <= 32'd31;
 		1'b011:
-			MuxALUSrcBOut <= 32'd29;
-    1'b100:
-			MuxALUSrcBOut <= InstrunctionRegister4;
+			MuxRegDest <= 32'd29;
+    		1'b100:
+			MuxRegDest <= InstrunctionRegister4;
 	endcase
 end
 
