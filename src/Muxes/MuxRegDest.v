@@ -1,4 +1,4 @@
-module RegDest (
+module MuxRegDest (
     input reg[4:0] InstrunctionRegister0,
     input reg[4:0] InstrunctionRegister1,
     input reg[4:0] InstrunctionRegister4,
