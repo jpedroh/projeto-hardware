@@ -1,4 +1,4 @@
-module divisor(
+module multiplicador(
 	input clock,
 	input reset,
 	input start,
