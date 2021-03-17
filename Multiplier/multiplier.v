@@ -1,4 +1,4 @@
-module multiplicador(
+module multiplier(
 	input clock,
 	input reset,
 	input start,
@@ -11,8 +11,8 @@ module multiplicador(
 
 reg ativo;
 reg [4:0] cicloAtual;
-reg [64:0] A;
-reg [64:0] S;
+reg [31:0] A;
+reg [31:0] S;
 reg [64:0] P;
 
 wire [64:0] soma = P + {A, 33'd0};
