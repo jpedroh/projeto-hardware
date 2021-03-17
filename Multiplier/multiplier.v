@@ -1,58 +1,54 @@
-module multiplier(operand1, operand2, hi, lo, clock, reset);
-input wire [31:0] operand1, operand2;
-input wire clock, reset;
-output reg [31:0] hi, lo;
+module divisor(
+	input clock,
+	input reset,
+	input start,
+	input [31:0] operando1,
+	input [31:0] operando2,
+	output [31:0] hi,
+	output [31:0] lo,
+	output fim
+);
 
-reg [64:0] A, S, P; // A = adicao, S = subtracao P = produto
-reg [63:0] Paux; // P auxiliar na hora de montar o P
-reg [31:0] operand1compl2; //operando1 negativo
-reg [4:0] i; // i para o for
+reg ativo;
+reg [4:0] cicloAtual;
+reg [64:0] A;
+reg [64:0] S;
+reg [64:0] P;
 
-//algoritmo baseado no algoritmo de multiplicacao de booth
+wire [64:0] soma = P + {A, 33'd0};
+wire [64:0] sub = P + {S, 33'd0};
 
-always@(posedge clock) begin
-	A = {operand1, 33'b0}; // A = operando1 + zeros
-	operand1compl2 = ~operand1 + 1; //pega o negativo do operando1
-	S = {operand1compl2, 33'b0}; // S = negativo_operando1 + zeros
-	Paux = {32'b0, operand2}; //zeros + operando2 
-	P = {Paux, 1'b0}; //Paux + 0 no fim
-	if (reset == 1)begin //limpando os registradores
-		A = 65'b0;
-		S = 65'b0;
-		P = 65'b0;
-		Paux = 64'b0;
-		operand1compl2 = 32'b0;
-		i = 5'b0;
-		hi = 32'b0;
-		lo = 32'b0;
-	end 
-	else begin
-		
-	for(i=0; i < 32; i = i + 1) begin //itera 32 vezes pq e um numero de 32 bits
-		case(P[1:0]) //faz um case com os 2 ultimos bits de P
-				2'b00: begin 
-					P = {P[64],P[64:1]}; //faz o shift right preservando o sinal
-					end
-				2'b01: begin
-					P = P + A; //soma P + A
-					P = {P[64], P[64:1]}; //faz o shift right preservando o sinal
-					end
-				2'b10:	begin
-					P = P + S; // soma P + S
-					P = {P[64],P[64:1]}; //faz o shift right preservando o sinal
-					end
-				2'b11: begin
-					P = {P[64],P[64:1]}; //faz o shift right preservando o sinal
-					end
-				endcase
-		end
-	assign hi = P[64:33]; //hi e os 32 primeiros bits do produto
-	assign lo = P[33:1]; // e lo e os 32 bits seguintes
+assign fim = ~ativo;
+assign hi = P[64:33];
+assign lo = P[32:1];
+
+always @(posedge clock, posedge reset) begin
+	if (reset) begin
+
 	end
-
-	
+	else if (start) begin
+		if (ativo) begin
+			if (P[1:0] == 2'b01) begin
+				P <= soma;
+			end
+			if (P[1:0] == 2'b10) begin
+				P <= sub;
+			end			
+			P <= P >>> 1;
+			if (!cicloAtual) begin
+				ativo <= 0;
+			end
+			cicloAtual <= cicloAtual - 5'd1;
+		end
+		else begin
+			A <= operando1;
+			S <= -operando1;
+			P <= {{32'b0, operando2},1'b0};
+			cicloAtual <= 5'd31;
+			ativo <= 1;
+		end
+	end
 end
+
 endmodule
-	
-			
 	
