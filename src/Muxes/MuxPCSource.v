@@ -11,11 +11,11 @@ always @(*) begin
 	case(PCSource)
 		1'b000:
 			MuxPCSourceOut <= PC;
-    1'b001:
+    		1'b001:
 			MuxPCSourceOut <= ALU;
 		1'b010:
 			MuxPCSourceOut <= EPC;
-    1'b011:
+    		1'b011:
 			MuxPCSourceOut <= MemDataReg;
 		1'b100:
 			MuxPCSourceOut <= ALUOut;
