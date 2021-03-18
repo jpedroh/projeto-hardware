@@ -1,4 +1,4 @@
-module divisor(fim,operand1,operando2,start,clock, hi, lo, reset); // P
+module multiplier(fim,operand1,operando2,start,clock, hi, lo, reset); // P
 
    input [31:0] operand1, operando2;
    input start, clock, reset;
@@ -6,7 +6,7 @@ module divisor(fim,operand1,operando2,start,clock, hi, lo, reset); // P
    output hi;
    output lo;
 
-	reg [63:0] product; //registrador que guarda as operacoes
+   reg [63:0] product; //registrador que guarda as operacoes
    reg [31:0] hi;
    reg [31:0] lo;
    reg [5:0] cicloAtual; 
