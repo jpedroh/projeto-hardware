@@ -1,7 +1,7 @@
 module MuxLO (
-    input reg[31:0] MultLO,
-    input reg[31:0] DivLO,
-    input wire[1:0] LO,
+    input wire[31:0] MultLO,
+    input wire [31:0] DivLO,
+    input wire LO,
 	output reg[31:0] MuxLOOut
 );
 always @(*) begin
