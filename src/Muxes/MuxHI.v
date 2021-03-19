@@ -1,7 +1,7 @@
 module MuxHI (
-    input reg[31:0] MultHI,
-    input reg[31:0] DivHI,
-    input wire[1:0] HI,
+    input wire[31:0] MultHI,
+    input wire[31:0] DivHI,
+    input wire HI,
 	output reg[31:0] MuxHIOut
 );
 always @(*) begin
