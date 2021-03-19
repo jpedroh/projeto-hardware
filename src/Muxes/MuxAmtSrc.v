@@ -1,7 +1,7 @@
 module MuxAmtSrc (
     input wire[4:0] Immediate,
-    input reg[4:0] RegB,
-    input wire[1:0] AmtSrc,
+    input wire[4:0] RegB,
+    input wire AmtSrc,
 	output reg[4:0] MuxAmtSrcOut
 );
 always @(*) begin
