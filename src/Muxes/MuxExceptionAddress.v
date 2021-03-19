@@ -1,5 +1,5 @@
 module MuxExceptionAddress (
-    input wire[2:0] ExceptionAddress,
+	input wire[1:0] ExceptionAddress,
 	output reg[31:0] MuxExceptionAddressOut
 );
 always @(*) begin
