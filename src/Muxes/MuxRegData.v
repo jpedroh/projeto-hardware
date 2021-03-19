@@ -1,13 +1,13 @@
 module MuxRegData (
     input wire[31:0] ALUOut,
-    input reg[31:0] MuxHILOOut,
+    input wire[31:0] MuxHILOOut,
     input wire[31:0] SignExtend1_32Out,
-    input reg[31:0] RegShiftOut,
-    input reg[31:0] LoadSizeOut,
+    input wire[31:0] RegShiftOut,
+    input wire[31:0] LoadSizeOut,
     input wire[31:0] ShiftLeft16Out,
-    input reg[31:0] XCHGRegOut,
-    input reg[31:0] RegAOut,
-    input wire[4:0] RegData,
+    input wire[31:0] XCHGRegOut,
+    input wire[31:0] RegAOut,
+    input wire[3:0] RegData,
 	output reg[31:0] MuxRegDataOut
 );
 always @(*) begin
