@@ -1,7 +1,7 @@
 module MuxShiftSrc (
-    input reg[31:0] RegA,
-    input reg[31:0] RegB,
-    input wire[1:0] ShiftSrc,
+    input wire[31:0] RegA,
+    input wire[31:0] RegB,
+    input wire ShiftSrc,
 	output reg[31:0] MuxShiftSrcOut
 );	
 always @(*) begin
