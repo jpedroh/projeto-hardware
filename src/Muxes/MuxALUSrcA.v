@@ -1,6 +1,6 @@
 module MuxALUSrcA (
     input wire[31:0] PC,
-    input reg[31:0] RegDataA,
+    input wire[31:0] RegDataA,
     input wire[1:0] ALUSrcA,
 	output reg[31:0] MuxALUSrcAOut
 );
