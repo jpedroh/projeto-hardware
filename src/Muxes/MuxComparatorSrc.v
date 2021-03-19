@@ -2,7 +2,7 @@ module MuxComparatorSrc (
     input wire Zero,
     input wire GT,
     input wire LT,
-    input wire[2:0] ComparatorSrc,
+    input wire[1:0] ComparatorSrc,
 	output reg MuxComparatorSrcOut
 );
 always @(*) begin
