@@ -24,7 +24,7 @@ end
 
 always @(posedge clock) begin
 	case(estado)
-        FETCH_1ST_CLOCK:
+        FETCH_1ST_CLOCK: begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
@@ -33,7 +33,8 @@ always @(posedge clock) begin
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
             estado = FETCH_2ND_CLOCK;
-        FETCH_2ND_CLOCK:
+            end
+        FETCH_2ND_CLOCK: begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
@@ -42,7 +43,8 @@ always @(posedge clock) begin
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
             estado = FETCH_3RD_CLOCK;
-        FETCH_3RD_CLOCK:
+            end
+        FETCH_3RD_CLOCK: begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
@@ -51,17 +53,19 @@ always @(posedge clock) begin
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
             estado = DECODE;
-        DECODE:
+            end
+        DECODE: begin
             ALUControl = 3'b001;
             ALUSrcB = 3'b100;
             ALUSrcA = 1'b0;
             RegAWrite = 1'b1;
             RegBWrite = 1'b1;
             estado = EXECUCAO;
-        OPERAR:
+            end
+        OPERAR: begin
             // Instrução do formato R
             if (instrucao[31:26] == 5'b00000) begin
-                parameter funct = instrucao[5:0]
+                parameter funct = instrucao[5:0];
                 
                 parameter ADD = 6'b100000;
                 parameter SUB = 6'b100000;
@@ -75,64 +79,74 @@ always @(posedge clock) begin
                 parameter XCHG = 6'b000101;
 
                 case (funct)
-                    ADD:
+                    ADD: begin
                         ALUControl = 3'b001;
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
                         estado = ADD_SUB_AND_2ND_CLOCK;
-                    SUB:
+						end
+                    SUB: begin
                         ALUControl = 3'b010;
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
                         estado = ADD_SUB_AND_2ND_CLOCK;
-                    AND:
+                        end
+                    AND: begin
                         ALUControl = 3'b011;
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
                         estado = ADD_SUB_AND_2ND_CLOCK;
-                    JR:
+                        end
+                    JR: begin
                         PCWrite=1'b1;
                         PCSource = 3'b001;
                         ALUSrcA = 1'b1;
                         ALUControl = 3'b000;
                         estado = FETCH_1ST_CLOCK;
-                    SLT:
+                        end
+                    SLT: begin
                         RegWrite = 1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0010;
-                        ALUSrc B = 3'b000;
-                        ALUSrc A = 1'b1;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b1;
                         ALUControl = 3'b111;
                         estado = FETCH_1ST_CLOCK;
-                    BREAK:
+                        end
+                    BREAK: begin
                         PCWrite=1'b1;
                         PCSource = 3'b001;
                         ALUControl = 3'b010;
                         ALUSrcB = 3'b011;
                         ALUSrcA = 1'b1;
                         estado = FETCH_1ST_CLOCK;
-                    RTE:
+                        end
+                    RTE: begin
                         PCWrite=1'b1;
                         PCSource = 3'b010;
                         estado = FETCH_1ST_CLOCK;
-                    XCHG:
+                        end
+                    XCHG: begin
                         RegWrite =1'b1;
                         XCHGRegWrite=1'b1;
                         RegDest = 3'b000;
                         RegData = 4'b1000;
                         estado = FETCH_1ST_CLOCK;
-                    MFH:
+                        end
+                    MFH: begin
                         RegWrite =1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b0;
                         estado = FETCH_1ST_CLOCK;
-                    MFLO:
+                        end
+                    MFLO: begin
                         RegWrite =1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b1;
                         estado = FETCH_1ST_CLOCK;
+                        end
                 endcase
             end else if (instrucao[31:26] == JUMP_OPCODE) begin
                 PCWrite=1'b1;
@@ -144,7 +158,8 @@ always @(posedge clock) begin
                 ALUSrcA = 1'b0;
                 estado = JAL_2ND_CLOCK;
             end
-        ADD_SUB_AND_2ND_CLOCK:
+            end
+        ADD_SUB_AND_2ND_CLOCK: begin
             if(ALUOverflow) begin
                 estado = EXCECAO;
             end else begin
@@ -153,18 +168,21 @@ always @(posedge clock) begin
                 RegData = 4'b0000;
                 estado = FETCH_1ST_CLOCK;
             end
-        XCHG_2ND_CLOCK:
+			end
+        XCHG_2ND_CLOCK: begin
             RegWrite=1'b1;
             RegDest = 3'b100;
             RegData = 4'b0111;
             estado = FETCH_1ST_CLOCK;
-        JAL_2ND_CLOCK:
+            end
+        JAL_2ND_CLOCK: begin
             PCWrite=1'b1;
             RegWrite=1'b1;
             RegDest = 3'b010;
             RegData = 4'b0000;
             PCSource = 3'b000;
             estado = FETCH;
+            end
 	endcase
 end
 endmodule
