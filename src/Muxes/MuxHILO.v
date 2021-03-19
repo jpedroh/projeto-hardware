@@ -1,15 +1,15 @@
 module MuxHILO (
-    input reg[31:0] HI,
-    input reg[31:0] LO,
-    input wire[1:0] HILO,
+    input wire[31:0] HI,
+    input wire[31:0] LO,
+    input wire HILO,
 	output reg[31:0] MuxHILOOut
 );
 always @(*) begin
 	case(HILO)
 		1'b0:
-			MuxLOOut <= HI;
+			MuxHILOOut <= HI;
 		1'b1:
-			MuxLOOut <= LO;
+			MuxHILOOut <= LO;
 	endcase
 end
 endmodule
