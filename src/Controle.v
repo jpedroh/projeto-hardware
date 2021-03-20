@@ -1,4 +1,4 @@
-module Controle (
+module divisor (
     input clock,
     input reset,
     output reg [5:0]estado
@@ -17,9 +17,12 @@ parameter JAL_2ND_CLOCK = 6'b001000;
 parameter JUMP_OPCODE = 6'b000010;
 parameter JAL_OPCODE = 6'b000011;
 
+reg [5:0] MULT_DIV_COUNTER; 
+
 
 initial begin
     estado = FETCH_1ST_CLOCK;
+    MULT_DIV_COUNTER = 6'd31;
 end
 
 always @(posedge clock) begin
@@ -77,6 +80,8 @@ always @(posedge clock) begin
                 parameter BREAK = 6'b001101;
                 parameter RTE = 6'b010011;
                 parameter XCHG = 6'b000101;
+                parameter MULT = 6'b0011000;
+                parameter DIV = 6'b0011010;
 
                 case (funct)
                     ADD: begin
@@ -147,6 +152,36 @@ always @(posedge clock) begin
                         MuxHiLo = 1'b1;
                         estado = FETCH_1ST_CLOCK;
                         end
+					MULT: begin
+						if (MULT_DIV_COUNTER == 0) begin
+							MULT_DIV_COUNTER = 6'd31;
+							estado = FETCH_1ST_CLOCK;
+							Reg_HI_Write;
+							Reg_Lo_Write;
+							MuxHi = 0;
+							MuxLo = 0;
+						end
+						else begin
+							MULT_OP = 1;
+							estado = MULT;
+							MULT_DIV_COUNTER = MULT_DIV_COUNTER - 1;
+						end
+					end
+					DIV: begin
+						if (MULT_DIV_COUNTER == 0) begin
+							MULT_DIV_COUNTER = 6'd31;
+							estado = FETCH_1ST_CLOCK;
+							Reg_HI_Write;
+							Reg_Lo_Write;
+							MuxHi = 1;
+							MuxLo = 1;
+						end
+						else begin
+							DIV_OP = 1;
+							estado = DIV;
+							MULT_DIV_COUNTER = MULT_DIV_COUNTER - 1;
+						end
+					end	
                 endcase
             end else if (instrucao[31:26] == JUMP_OPCODE) begin
                 PCWrite=1'b1;
