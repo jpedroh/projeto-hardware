@@ -1,4 +1,4 @@
-module divisor (
+module Controle (
     input clock,
     input reset,
     output reg [5:0]estado
