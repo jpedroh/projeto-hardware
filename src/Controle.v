@@ -6,15 +6,15 @@ module Controle (
     output reg PCWrite,
     output reg IRWrite,
     output reg[1:0] MemADD,
-    output reg PCSource,
-    output reg ALUControl,
-    output reg ALUSrcB,
+    output reg[2:0] PCSource,
+    output reg[2:0] ALUControl,
+    output reg[2:0] ALUSrcB,
     output reg ALUSrcA,
     output reg RegAWrite,
     output reg RegBWrite,
     output reg RegWrite,
-    output reg RegDest,
-    output reg RegData,
+    output reg[2:0] RegDest,
+    output reg[3:0] RegData,
     output reg XCHGRegWrite,
     output reg MFH,
     output reg MuxHiLo,
@@ -22,8 +22,10 @@ module Controle (
     output reg MuxLo,
     output reg MULT_OP,
     output reg DIV_OP,
-    input wire ALUOverflow,
-    output reg [5:0]estado
+	output reg Reg_HI_Write,
+	output reg Reg_Lo_Write,
+    output reg [5:0]estado,
+    input wire ALUOverflow
 );
 
 // ESTADOS
@@ -67,7 +69,7 @@ always @(posedge clock) begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
-            PCSource = 2'b01;
+            PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
@@ -77,7 +79,7 @@ always @(posedge clock) begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
-            PCSource = 2'b01;
+            PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
@@ -87,7 +89,7 @@ always @(posedge clock) begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
-            PCSource = 2'b01;
+            PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
@@ -177,8 +179,8 @@ always @(posedge clock) begin
 						if (MULT_DIV_COUNTER == 0) begin
 							MULT_DIV_COUNTER = 6'd31;
 							estado = FETCH_1ST_CLOCK;
-							Reg_HI_Write;
-							Reg_Lo_Write;
+							Reg_HI_Write=1'b1;
+							Reg_Lo_Write=1'b1;
 							MuxHi = 0;
 							MuxLo = 0;
 						end
@@ -192,8 +194,8 @@ always @(posedge clock) begin
 						if (MULT_DIV_COUNTER == 0) begin
 							MULT_DIV_COUNTER = 6'd31;
 							estado = FETCH_1ST_CLOCK;
-							Reg_HI_Write;
-							Reg_Lo_Write;
+							Reg_HI_Write=1'b1;
+							Reg_Lo_Write=1'b1;
 							MuxHi = 1;
 							MuxLo = 1;
 						end

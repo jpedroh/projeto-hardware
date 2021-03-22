@@ -1,7 +1,7 @@
 module MuxALUSrcA (
     input wire[31:0] PC,
     input wire[31:0] RegDataA,
-    input wire[1:0] ALUSrcA,
+    input wire ALUSrcA,
 	output reg[31:0] MuxALUSrcAOut
 );
 always @(*) begin
