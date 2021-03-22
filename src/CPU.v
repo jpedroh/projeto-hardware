@@ -98,6 +98,11 @@ wire[4:0] RDAdd;
 wire[4:0] RSAdd;
 wire[2:0] RegDest;
 
+wire LoadIR;
+wire [31:0] MemData;
+wire [5:0] Opcode;
+wire [15:0] Offset;
+
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
@@ -111,6 +116,7 @@ Registrador XCHG(clock, reset, RegXCHGWrite, RegXCHGInput, RegXCHGOut);
 
 // Provided components
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, MuxRegDataOut, RegAInput, RegBInput);
+Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemData, Opcode, RS, RT, Offset);
 
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
