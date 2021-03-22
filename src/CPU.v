@@ -6,7 +6,7 @@ input reset;
 wire[2:0] PCSource;
 wire[31:0] MuxPCSourceOut;
 
-wire[31:0] PlainALUOut;
+wire[31:0] AluResult;
 
 wire[1:0] ALUSrcA;
 wire [31:0] MuxAluSrcAOut;
@@ -99,9 +99,13 @@ wire[4:0] RSAdd;
 wire[2:0] RegDest;
 
 wire LoadIR;
-wire [31:0] MemData;
 wire [5:0] Opcode;
 wire [15:0] Offset;
+
+wire MemWriteRead;
+wire[31:0] MemDataOut;
+wire [2:0] ShiftCtrl;
+wire [2:0] AluOp;
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
@@ -116,7 +120,10 @@ Registrador XCHG(clock, reset, RegXCHGWrite, RegXCHGInput, RegXCHGOut);
 
 // Provided components
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, MuxRegDataOut, RegAInput, RegBInput);
-Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemData, Opcode, RS, RT, Offset);
+Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemDataOut, Opcode, RS, RT, Offset);
+Memoria Memoria(MuxMemAddOut, clock, MemWriteRead, SSControlOut, MemDataOut);
+RegDesloc registrador_deslocamento(clock, reset, ShiftCtrl, MuxAmtSrcOut, MuxShiftSrcOut, RegShiftOut);
+ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Zero, EQ, GT, LT);
 
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
@@ -127,8 +134,8 @@ MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut
 MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, ExceptionAddress, RegALUOutOut, MemAdd, MuxMemAddOut);
-MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, PlainALUOut, PCSource, MuxPCSourceOut);
-MuxRegData MuxRegData(PlainALUOut, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, XCHGRegOut, RegAOut, RegData, MuxRegDataOut);
+MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, AluResult, PCSource, MuxPCSourceOut);
+MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, XCHGRegOut, RegAOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RTAdd, RDAdd, RSAdd, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 
