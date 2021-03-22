@@ -3,6 +3,11 @@ module CPU (clock, reset);
 input clock;
 input reset;
 
+wire[2:0] PCSource;
+wire[31:0] MuxPCSourceOut;
+
+wire[31:0] PlainALUOut;
+
 wire[1:0] ALUSrcA;
 wire [31:0] MuxAluSrcAOut;
 
@@ -53,6 +58,46 @@ wire[31:0] RT;
 wire[4:0] MuxRegDestOut;
 wire[31:0] MuxRegDataOut;
 
+wire[4:0] Immediate;
+wire[4:0] Shamt;
+wire AmtSrc;
+wire [4:0] MuxAmtSrcOut;
+
+wire Zero;
+wire GT;
+wire LT;
+wire[1:0] ComparatorSrc;
+wire MuxComparatorSrcOut;
+wire[1:0] ExceptionAddress;
+wire[31:0] MuxExceptionAddressOut;
+
+wire[31:0] MultHI;
+wire[31:0] DivHI;
+wire HISelector;
+wire[31:0] MuxHIOut;
+
+wire[31:0] MultLO;
+wire[31:0] DivLO;
+wire LOSelector;
+wire[31:0] MuxLOOut;
+
+wire [1:0] MemAdd;
+wire[31:0] MuxMemAddOut;
+
+wire[31:0] SignExtend1_32Out;
+wire[31:0] RegShiftOut;
+wire[31:0] LoadSizeOut;
+wire[31:0] ShiftLeft16Out;
+wire[3:0] RegData;
+
+wire ShiftSrc;
+wire[31:0] MuxShiftSrcOut;
+
+wire[4:0] RTAdd;
+wire[4:0] RDAdd;
+wire[4:0] RSAdd;
+wire[2:0] RegDest;
+
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
@@ -70,5 +115,15 @@ Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, Mux
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
 MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, ALUSrcB, MuxAluSrcBOut);
+MuxAmtSrc MuxAmtSrc(Immediate, Shamt, AmtSrc, MuxAmtSrcOut);
+MuxComparatorSrc MuxComparatorSrc(Zero, GT, LT, ComparatorSrc, MuxComparatorSrcOut);
+MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut);
+MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
+MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
+MuxMemAdd MuxMemAdd(RegPCOut, ExceptionAddress, RegALUOutOut, MemAdd, MuxMemAddOut);
+MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, PlainALUOut, PCSource, MuxPCSourceOut);
+MuxRegData MuxRegData(PlainALUOut, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, XCHGRegOut, RegAOut, RegData, MuxRegDataOut);
+MuxRegDest MuxRegDest(RTAdd, RDAdd, RSAdd, RegDest, MuxRegDestOut);
+MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 
 endmodule
