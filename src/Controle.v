@@ -1,6 +1,27 @@
 module Controle (
     input clock,
     input reset,
+    input wire[31:0] instrucao,
+    output reg PCWrite,
+    output reg IRWrite,
+    output reg[1:0] MemADD,
+    output reg PCSource,
+    output reg ALUControl,
+    output reg ALUSrcB,
+    output reg ALUSrcA,
+    output reg RegAWrite,
+    output reg RegBWrite,
+    output reg RegWrite,
+    output reg RegDest,
+    output reg RegData,
+    output reg XCHGRegWrite,
+    output reg MFH,
+    output reg MuxHiLo,
+    output reg MuxHi,
+    output reg MuxLo,
+    output reg MULT_OP,
+    output reg DIV_OP,
+    input wire ALUOverflow,
     output reg [5:0]estado
 );
 
@@ -13,12 +34,26 @@ parameter EXECUCAO = 6'b000100;
 parameter ADD_SUB_AND_2ND_CLOCK = 6'b000101;
 parameter XCHG_2ND_CLOCK = 6'b000111;
 parameter JAL_2ND_CLOCK = 6'b001000;
+parameter EXCECAO = 6'b111111;
 // OPCODES
 parameter JUMP_OPCODE = 6'b000010;
 parameter JAL_OPCODE = 6'b000011;
 
-reg [5:0] MULT_DIV_COUNTER; 
+// FUNCT                
+parameter ADD = 6'b100000;
+parameter SUB = 6'b100000;
+parameter AND = 6'b001000;
+parameter JR = 6'b001000;
+parameter MFHI = 6'b010000;
+parameter MFLO = 6'b010010;
+parameter SLT = 6'b101010;
+parameter BREAK = 6'b001101;
+parameter RTE = 6'b010011;
+parameter XCHG = 6'b000101;
+parameter MULT = 6'b011000;
+parameter DIV = 6'b011010;
 
+reg [5:0] MULT_DIV_COUNTER; 
 
 initial begin
     estado = FETCH_1ST_CLOCK;
@@ -65,25 +100,10 @@ always @(posedge clock) begin
             RegBWrite = 1'b1;
             estado = EXECUCAO;
             end
-        OPERAR: begin
+        EXECUCAO: begin
             // Instrução do formato R
             if (instrucao[31:26] == 5'b00000) begin
-                parameter funct = instrucao[5:0];
-                
-                parameter ADD = 6'b100000;
-                parameter SUB = 6'b100000;
-                parameter AND = 6'b001000;
-                parameter JR = 6'b001000;
-                parameter MFHI = 6'b010000;
-                parameter MFLO = 6'b010010;
-                parameter SLT = 6'b101010;
-                parameter BREAK = 6'b001101;
-                parameter RTE = 6'b010011;
-                parameter XCHG = 6'b000101;
-                parameter MULT = 6'b0011000;
-                parameter DIV = 6'b0011010;
-
-                case (funct)
+                case (instrucao[5:0])
                     ADD: begin
                         ALUControl = 3'b001;
                         ALUSrcB = 3'b000;
@@ -216,7 +236,7 @@ always @(posedge clock) begin
             RegDest = 3'b010;
             RegData = 4'b0000;
             PCSource = 3'b000;
-            estado = FETCH;
+            estado = FETCH_1ST_CLOCK;
             end
 	endcase
 end
