@@ -107,6 +107,12 @@ wire[31:0] MemDataOut;
 wire [2:0] ShiftCtrl;
 wire [2:0] AluOp;
 
+wire div_start;
+wire div_fim;
+wire DividedByZero;
+wire mult_fim;
+wire mult_start;
+
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
@@ -138,5 +144,9 @@ MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, AluResult,
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, XCHGRegOut, RegAOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RTAdd, RDAdd, RSAdd, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
+
+// Multiplicador e Divisor
+divisor divisor(clock, reset, div_start, RegAOut, RegBOut, DivLO, DivHI, div_fim, DividedByZero);
+multiplier multiplier(mult_fim, RegAOut, RegBOut, mult_start, clock, MultHI, MultLO, reset);
 
 endmodule
