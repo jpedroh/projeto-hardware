@@ -1,6 +1,7 @@
 module Controle (
     input clock,
     input reset,
+    input wire [5:0] Opcode,
     input wire[31:0] instrucao,
     output reg PCWrite,
     output reg IRWrite,

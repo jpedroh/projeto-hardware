@@ -1,7 +1,9 @@
-module CPU (clock, reset);
+module CPU (clock, reset, estado);
 
 input clock;
 input reset;
+
+output reg [5:0]estado;
 
 wire[2:0] PCSource;
 wire[31:0] MuxPCSourceOut;
@@ -113,6 +115,9 @@ wire DividedByZero;
 wire mult_fim;
 wire mult_start;
 
+wire HILOSelector;
+wire [31:0] MuxHILOOut;
+
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
@@ -139,6 +144,7 @@ MuxComparatorSrc MuxComparatorSrc(Zero, GT, LT, ComparatorSrc, MuxComparatorSrcO
 MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut);
 MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
+MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, ExceptionAddress, RegALUOutOut, MemAdd, MuxMemAddOut);
 MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, AluResult, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, XCHGRegOut, RegAOut, RegData, MuxRegDataOut);
@@ -148,5 +154,37 @@ MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 // Multiplicador e Divisor
 divisor divisor(clock, reset, div_start, RegAOut, RegBOut, DivLO, DivHI, div_fim, DividedByZero);
 multiplier multiplier(mult_fim, RegAOut, RegBOut, mult_start, clock, MultHI, MultLO, reset);
+
+wire[31:0] instrucao;
+
+// Controle
+Controle Controle (
+    clock,
+    reset,
+    Opcode,
+    instrucao,
+    RegPCWrite,
+    LoadIR,
+    MemAdd,
+    PCSource,
+    AluOp,
+    ALUSrcB,
+    ALUSrcA,
+    RegAWrite,
+    RegBWrite,
+    RegWrite,
+    RegDest,
+    RegData,
+    RegXCHGWrite,
+    MFH,
+    HILOSelector,
+    HISelector,
+    LOSelector,
+    mult_start,
+    div_start,
+    Overflow,
+    estado
+);
+
 
 endmodule
