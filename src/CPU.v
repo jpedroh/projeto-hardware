@@ -139,7 +139,7 @@ Registrador XCHG(clock, reset, RegXCHGWrite, RegXCHGInput, RegXCHGOut);
 // Provided components
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, MuxRegDataOut, RegAInput, RegBInput);
 Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemDataOut, Opcode, RS, RT, Offset);
-Memoria Memoria(MuxMemAddOut, clock, MemWriteRead, SSOutput, MemDataOut);
+Memoria Memoria(MuxMemAddOut, clock, MemWriteRead, MemDataOut, SSOutput);
 RegDesloc registrador_deslocamento(clock, reset, ShiftCtrl, MuxAmtSrcOut, MuxShiftSrcOut, RegShiftOut);
 ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Zero, EQ, GT, LT);
 
@@ -169,7 +169,6 @@ loadsize loadsize(
     LSControl,
     LSOutput
 );
-
 
 storesize storesize(
 	MemDataOut,
