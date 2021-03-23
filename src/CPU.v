@@ -1,4 +1,4 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut);
 
 input clock;
 input reset;
@@ -28,7 +28,7 @@ wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
-wire[31:0] RegPCOut;
+output wire[31:0] RegPCOut;
 
 wire RegEPCWrite;
 wire[31:0] RegEPCInput;
@@ -186,7 +186,6 @@ Controle Controle (
     clock,
     reset,
     Opcode,
-    instrucao,
     RegPCWrite,
     LoadIR,
     MemAdd,

@@ -2,7 +2,6 @@ module Controle (
     input clock,
     input reset,
     input wire [5:0] Opcode,
-    input wire[31:0] instrucao,
     output reg PCWrite,
     output reg IRWrite,
     output reg[1:0] MemADD,
@@ -80,7 +79,7 @@ always @(posedge clock) begin
             estado = FETCH_2ND_CLOCK;
             end
         FETCH_2ND_CLOCK: begin
-            PCWrite = 1'b1;
+            PCWrite = 1'b0;
             IRWrite = 1'b0;
             MemADD = 2'b00;
             MemWriteRead = 1'b0;
@@ -91,7 +90,7 @@ always @(posedge clock) begin
             estado = FETCH_3RD_CLOCK;
             end
         FETCH_3RD_CLOCK: begin
-            PCWrite = 1'b1;
+            PCWrite = 1'b0;
             IRWrite = 1'b1;
             MemADD = 2'b00;
             MemWriteRead = 1'b0;
