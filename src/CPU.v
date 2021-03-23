@@ -1,4 +1,4 @@
-module CPU (clock, reset, estado);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct);
 
 input clock;
 input reset;
@@ -8,13 +8,13 @@ output wire [5:0]estado;
 wire[2:0] PCSource;
 wire[31:0] MuxPCSourceOut;
 
-wire[31:0] AluResult;
+output wire[31:0] AluResult;
 
 wire ALUSrcA;
-wire [31:0] MuxAluSrcAOut;
+output wire [31:0] MuxAluSrcAOut;
 
 wire[2:0] ALUSrcB;
-wire [31:0] MuxAluSrcBOut;
+output wire [31:0] MuxAluSrcBOut;
 wire [31:0] SignExtend1632Out;
 wire [31:0] ShiftLeftOut;
 
@@ -101,11 +101,11 @@ wire[4:0] RSAdd;
 wire[2:0] RegDest;
 
 wire LoadIR;
-wire [5:0] Opcode;
+output wire [5:0] Opcode;
 wire [15:0] Offset;
 
 wire MemWriteRead;
-wire[31:0] MemDataOut;
+output wire[31:0] MemData;
 wire [2:0] ShiftCtrl;
 wire [2:0] AluOp;
 
@@ -125,21 +125,25 @@ wire [31:0] SSInput;
 wire [1:0] SSControl;
 wire [31:0] SSOutput;
 
+output wire [5:0] funct;
+
+assign funct = Offset[5:0];
+
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
-Registrador PC(clock, reset, RegPCWrite, RegPCInput, RegPCOut);
+Registrador PC(clock, reset, RegPCWrite, MuxPCSourceOut, RegPCOut);
 Registrador EPC(clock, reset, RegEPCWrite, RegEPCInput, RegEPCOut);
-Registrador ALUOut(clock, reset, RegALUOutWrite, RegALUOutInput, RegALUOutOut);
-Registrador MDR(clock, reset, RegMDRWrite, RegMDRInput, RegMDROut);
+Registrador ALUOut(clock, reset, RegALUOutWrite, AluResult, RegALUOutOut);
+Registrador MDR(clock, reset, RegMDRWrite, MemData, RegMDROut);
 Registrador HI(clock, reset, RegHIWrite, RegHIInput, RegHIOut);
 Registrador LO(clock, reset, RegLOWrite, RegLOInput, RegLOOut);
 Registrador XCHG(clock, reset, RegXCHGWrite, RegXCHGInput, RegXCHGOut);
 
 // Provided components
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, MuxRegDataOut, RegAInput, RegBInput);
-Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemDataOut, Opcode, RS, RT, Offset);
-Memoria Memoria(MuxMemAddOut, clock, MemWriteRead, MemDataOut, SSOutput);
+Instr_Reg registrador_instrucoes(clock, reset, LoadIR, MemData, Opcode, RS, RT, Offset);
+Memoria Memoria(MuxMemAddOut, clock, MemWriteRead, SSOutput, MemData);
 RegDesloc registrador_deslocamento(clock, reset, ShiftCtrl, MuxAmtSrcOut, MuxShiftSrcOut, RegShiftOut);
 ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Zero, EQ, GT, LT);
 
@@ -165,19 +169,17 @@ multiplier multiplier(mult_fim, RegAOut, RegBOut, mult_start, clock, MultHI, Mul
 
 // LoadSize e StoreSize
 loadsize loadsize(
-	MemDataOut,
+	MemData,
     LSControl,
     LSOutput
 );
 
 storesize storesize(
-	MemDataOut,
+	MemData,
 	SSInput,
     SSControl,
     SSOutput
 );
-
-wire[31:0] instrucao;
 
 // Controle
 Controle Controle (
@@ -207,7 +209,9 @@ Controle Controle (
     RegHIWrite,
     RegLOWrite,
     estado,
-    Overflow
+    MemWriteRead,
+    Overflow,
+    funct
 );
 
 

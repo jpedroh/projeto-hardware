@@ -1,5 +1,5 @@
 module SignExtend1632 (
-input reg[15:0] Offset,
+input wire[15:0] Offset,
 output reg[31:0] SignExtend1632Out
 );
 

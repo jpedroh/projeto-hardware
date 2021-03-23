@@ -1,5 +1,5 @@
 module SignExtend132 (
-input reg MuxComparatorSrcOut,
+input wire MuxComparatorSrcOut,
 output reg[31:0] SignExtend132Out
 );
 

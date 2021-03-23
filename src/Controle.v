@@ -25,7 +25,9 @@ module Controle (
 	output reg Reg_HI_Write,
 	output reg Reg_Lo_Write,
     output reg [5:0]estado,
-    input wire ALUOverflow
+    output reg MemWriteRead,
+    input wire ALUOverflow,
+    input wire funct
 );
 
 // ESTADOS
@@ -37,6 +39,7 @@ parameter EXECUCAO = 6'b000100;
 parameter ADD_SUB_AND_2ND_CLOCK = 6'b000101;
 parameter XCHG_2ND_CLOCK = 6'b000111;
 parameter JAL_2ND_CLOCK = 6'b001000;
+parameter ADDI_2ND_CLOCK = 6'b001001;
 parameter EXCECAO = 6'b111111;
 // OPCODES
 parameter JUMP_OPCODE = 6'b000010;
@@ -67,8 +70,9 @@ always @(posedge clock) begin
 	case(estado)
         FETCH_1ST_CLOCK: begin
             PCWrite = 1'b1;
-            IRWrite = 1'b1;
+            IRWrite = 1'b0;
             MemADD = 2'b00;
+            MemWriteRead = 1'b0;
             PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
@@ -77,8 +81,9 @@ always @(posedge clock) begin
             end
         FETCH_2ND_CLOCK: begin
             PCWrite = 1'b1;
-            IRWrite = 1'b1;
+            IRWrite = 1'b0;
             MemADD = 2'b00;
+            MemWriteRead = 1'b0;
             PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
@@ -89,6 +94,7 @@ always @(posedge clock) begin
             PCWrite = 1'b1;
             IRWrite = 1'b1;
             MemADD = 2'b00;
+            MemWriteRead = 1'b0;
             PCSource = 3'b001;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
@@ -105,8 +111,8 @@ always @(posedge clock) begin
             end
         EXECUCAO: begin
             // Instrução do formato R
-            if (instrucao[31:26] == 5'b00000) begin
-                case (instrucao[5:0])
+            if (Opcode == 6'b000000) begin
+                case (funct)
                     ADD: begin
                         ALUControl = 3'b001;
                         ALUSrcB = 3'b000;
@@ -206,16 +212,21 @@ always @(posedge clock) begin
 						end
 					end	
                 endcase
-            end else if (instrucao[31:26] == JUMP_OPCODE) begin
+            end else if (Opcode == JUMP_OPCODE) begin
                 PCWrite=1'b1;
                 PCSource=3'b000;
                 estado = FETCH_1ST_CLOCK;               
-            end else if (instrucao[31:26] == JAL_OPCODE) begin
+            end else if (Opcode == JAL_OPCODE) begin
                 ALUControl = 3'b001;
                 ALUSrcB = 3'b011;
                 ALUSrcA = 1'b0;
                 estado = JAL_2ND_CLOCK;
-            end
+            end else if (Opcode == 6'b001000) begin
+                ALUControl = 3'b001;
+                ALUSrcB = 3'b010;
+                ALUSrcA = 1'b1;
+                estado = ADDI_2ND_CLOCK;
+            end 
             end
         ADD_SUB_AND_2ND_CLOCK: begin
             if(ALUOverflow) begin
@@ -241,6 +252,12 @@ always @(posedge clock) begin
             PCSource = 3'b000;
             estado = FETCH_1ST_CLOCK;
             end
+        ADDI_2ND_CLOCK: begin
+            RegWrite = 1'b1;
+            RegDest = 3'b001;
+            RegData = 4'b0000;
+            estado = FETCH_1ST_CLOCK;
+        end
 	endcase
 end
 endmodule
