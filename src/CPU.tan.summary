@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 15.600 ns
+Actual Time    : 16.262 ns
 From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]
 To             : AluResult[31]
 From Clock     : clock
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 46.31 MHz ( period = 21.592 ns )
+Actual Time    : 43.07 MHz ( period = 23.218 ns )
 From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]
-To             : Controle:Controle|PCWrite
+To             : Controle:Controle|RegData[0]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -26,11 +26,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : Instr_Reg:registrador_instrucoes|Instr15_0[14]
-To             : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[14]
+From           : Registrador:B|Saida[13]
+To             : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[13]
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 163
+Failed Paths   : 168
 
 Type           : Total number of failed paths
 Slack          : 
@@ -40,7 +40,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 163
+Failed Paths   : 168
 
 --------------------------------------------------------------------------------------
 

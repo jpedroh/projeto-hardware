@@ -11453,6 +11453,12 @@ saida[31] <= saida[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|Controle:Controle
+clock => estado[0]~reg0.CLK
+clock => estado[1]~reg0.CLK
+clock => estado[2]~reg0.CLK
+clock => estado[3]~reg0.CLK
+clock => estado[4]~reg0.CLK
+clock => estado[5]~reg0.CLK
 clock => RegALUOutWrite~reg0.CLK
 clock => MemWriteRead~reg0.CLK
 clock => Reg_Lo_Write~reg0.CLK
@@ -11473,19 +11479,13 @@ clock => ALUSrcB[2]~reg0.CLK
 clock => ALUControl[0]~reg0.CLK
 clock => ALUControl[1]~reg0.CLK
 clock => ALUControl[2]~reg0.CLK
-clock => MemADD[0]~reg0.CLK
-clock => MemADD[1]~reg0.CLK
-clock => IRWrite~reg0.CLK
 clock => PCSource[0]~reg0.CLK
 clock => PCSource[1]~reg0.CLK
 clock => PCSource[2]~reg0.CLK
+clock => MemADD[0]~reg0.CLK
+clock => MemADD[1]~reg0.CLK
+clock => IRWrite~reg0.CLK
 clock => PCWrite~reg0.CLK
-clock => estado[0]~reg0.CLK
-clock => estado[1]~reg0.CLK
-clock => estado[2]~reg0.CLK
-clock => estado[3]~reg0.CLK
-clock => estado[4]~reg0.CLK
-clock => estado[5]~reg0.CLK
 clock => RegData[0]~reg0.CLK
 clock => RegData[1]~reg0.CLK
 clock => RegData[2]~reg0.CLK
@@ -11595,12 +11595,12 @@ ALUOverflow => Reg_HI_Write~4.OUTPUTSELECT
 ALUOverflow => Reg_Lo_Write~4.OUTPUTSELECT
 ALUOverflow => MemWriteRead~4.OUTPUTSELECT
 ALUOverflow => RegALUOutWrite~4.OUTPUTSELECT
-ALUOverflow => Selector8.IN7
-ALUOverflow => Selector9.IN7
-ALUOverflow => Selector10.IN7
-ALUOverflow => Selector11.IN9
-ALUOverflow => Selector12.IN9
-ALUOverflow => Selector13.IN9
+ALUOverflow => Selector35.IN7
+ALUOverflow => Selector36.IN7
+ALUOverflow => Selector37.IN7
+ALUOverflow => Selector38.IN9
+ALUOverflow => Selector39.IN9
+ALUOverflow => Selector40.IN9
 funct => always0~0.IN1
 
 
