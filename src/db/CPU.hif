@@ -1470,6 +1470,42 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+861fccefab1528922f81d79246a61a9f
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
 altsyncram_g2a1
 # storage
 db|CPU.(8).cnf
@@ -1564,7 +1600,7 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-165780a95bd91e82d1b4a6d3ef0689d
+14dc7cce623a2eb80bf94c09f454760
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
@@ -1587,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-ae3efb88d7fe21fbe6c71076dfec8fe0
+92a12f47a35fbef4bd6606a1573f9fd
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1654,6 +1690,10 @@ JAL_OPCODE
 000011
 PARAMETER_UNSIGNED_BIN
 DEF
+ADDI_OPCODE
+001000
+PARAMETER_UNSIGNED_BIN
+DEF
 ADD
 100000
 PARAMETER_UNSIGNED_BIN
@@ -1705,42 +1745,6 @@ DEF
 }
 # hierarchies {
 Controle:Controle
-}
-# macro_sequence
-
-# end
-# entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-861fccefab1528922f81d79246a61a9f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
 }
 # macro_sequence
 
