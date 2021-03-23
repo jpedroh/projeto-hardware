@@ -25,6 +25,7 @@ module Controle (
 	output reg Reg_Lo_Write,
     output reg [5:0]estado,
     output reg MemWriteRead,
+    output reg RegALUOutWrite,
     input wire ALUOverflow,
     input wire funct
 );
@@ -106,6 +107,7 @@ always @(posedge clock) begin
             ALUSrcA = 1'b0;
             RegAWrite = 1'b1;
             RegBWrite = 1'b1;
+            RegALUOutWrite = 1'b1;
             estado = EXECUCAO;
             end
         EXECUCAO: begin

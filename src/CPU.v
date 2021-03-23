@@ -128,6 +128,7 @@ wire [31:0] SSOutput;
 output wire [5:0] funct;
 
 assign funct = Offset[5:0];
+assign SignExtend1632Out = {{17{Offset[15]}}, Offset[14:0]};
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
@@ -209,6 +210,7 @@ Controle Controle (
     RegLOWrite,
     estado,
     MemWriteRead,
+    RegALUOutWrite,
     Overflow,
     funct
 );
