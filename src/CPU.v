@@ -1,4 +1,5 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegBOut, RegAInput,
+RegBInput);
 
 input clock;
 input reset;
@@ -19,12 +20,12 @@ wire [31:0] SignExtend1632Out;
 wire [31:0] ShiftLeftOut;
 
 wire RegAWrite;
-wire[31:0] RegAInput;
-wire[31:0] RegAOut;
+output wire[31:0] RegAInput;
+output wire[31:0] RegAOut;
 
 wire RegBWrite;
-wire[31:0] RegBInput;
-wire[31:0] RegBOut;
+output wire[31:0] RegBInput;
+output wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
@@ -95,9 +96,6 @@ wire[3:0] RegData;
 wire ShiftSrc;
 wire[31:0] MuxShiftSrcOut;
 
-wire[4:0] RTAdd;
-wire[4:0] RDAdd;
-wire[4:0] RSAdd;
 wire[2:0] RegDest;
 
 wire LoadIR;
@@ -160,7 +158,7 @@ MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
 MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, RegXCHGOut, RegAOut, RegData, MuxRegDataOut);
-MuxRegDest MuxRegDest(RTAdd, RDAdd, RSAdd, RegDest, MuxRegDestOut);
+MuxRegDest MuxRegDest(RT, RD, RS, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 
 // Multiplicador e Divisor
