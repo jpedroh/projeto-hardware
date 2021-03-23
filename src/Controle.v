@@ -68,11 +68,11 @@ end
 always @(posedge clock) begin
 	case(estado)
         FETCH_1ST_CLOCK: begin
+            PCSource = 3'b001;
             PCWrite = 1'b1;
-            IRWrite = 1'b0;
             MemADD = 2'b00;
             MemWriteRead = 1'b0;
-            PCSource = 3'b001;
+            IRWrite = 1'b0;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
@@ -83,7 +83,7 @@ always @(posedge clock) begin
             IRWrite = 1'b0;
             MemADD = 2'b00;
             MemWriteRead = 1'b0;
-            PCSource = 3'b001;
+            PCSource = 3'b000;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;
@@ -94,7 +94,7 @@ always @(posedge clock) begin
             IRWrite = 1'b1;
             MemADD = 2'b00;
             MemWriteRead = 1'b0;
-            PCSource = 3'b001;
+            PCSource = 3'b000;
             ALUControl = 3'b001;
             ALUSrcB = 3'b011;
             ALUSrcA = 1'b0;

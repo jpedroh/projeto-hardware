@@ -157,7 +157,7 @@ MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
-MuxPCSource MuxPCSource(RegPCOut, RegALUOutOut, RegEPCOut, RegMDROut, AluResult, PCSource, MuxPCSourceOut);
+MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, RegXCHGOut, RegAOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RTAdd, RDAdd, RSAdd, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
