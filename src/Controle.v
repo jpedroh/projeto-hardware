@@ -320,12 +320,31 @@ always @(posedge clock) begin
                         estado = WAIT;
                         end
                     BREAK: begin
-                        PCWrite=1'b1;
+                        PCWrite = 1'b1;
                         PCSource = 3'b001;
-                        ALUControl = 3'b010;
+                        ALUSrcA = 1'b0;
                         ALUSrcB = 3'b011;
-                        ALUSrcA = 1'b1;
-                        estado = WAIT;
+                        ALUControl = 3'b010;
+                        // Default
+                        IRWrite = 1'b0;
+                        MemADD = 2'b00;
+                        RegAWrite = 1'b0;
+                        RegBWrite = 1'b0;
+                        RegWrite = 1'b0;
+                        RegDest = 3'b000;
+                        RegData = 4'b0000;
+                        XCHGRegWrite = 1'b0;
+                        MFH = 1'b0;
+                        MuxHiLo = 1'b0;
+                        MuxHi = 1'b0;
+                        MuxLo = 1'b0;
+                        MULT_OP = 1'b0;
+                        DIV_OP = 1'b0;
+                        Reg_HI_Write = 1'b0;
+                        Reg_Lo_Write = 1'b0;
+                        MemWriteRead = 1'b0;
+                        RegALUOutWrite = 1'b0;
+                        estado = FETCH_1ST_CLOCK;
                         end
                     RTE: begin
                         PCWrite=1'b1;
