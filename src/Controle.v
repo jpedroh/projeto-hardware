@@ -40,6 +40,7 @@ parameter ADD_SUB_AND_2ND_CLOCK = 6'b000101;
 parameter XCHG_2ND_CLOCK = 6'b000111;
 parameter JAL_2ND_CLOCK = 6'b001000;
 parameter ADDI_2ND_CLOCK = 6'b001001;
+parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
 // OPCODES
 parameter JUMP_OPCODE = 6'b000010;
@@ -230,7 +231,7 @@ always @(posedge clock) begin
                         PCSource = 3'b001;
                         ALUSrcA = 1'b1;
                         ALUControl = 3'b000;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     SLT: begin
                         RegWrite = 1'b1;
@@ -239,7 +240,7 @@ always @(posedge clock) begin
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
                         ALUControl = 3'b111;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     BREAK: begin
                         PCWrite=1'b1;
@@ -247,38 +248,38 @@ always @(posedge clock) begin
                         ALUControl = 3'b010;
                         ALUSrcB = 3'b011;
                         ALUSrcA = 1'b1;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     RTE: begin
                         PCWrite=1'b1;
                         PCSource = 3'b010;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     XCHG: begin
                         RegWrite =1'b1;
                         XCHGRegWrite=1'b1;
                         RegDest = 3'b000;
                         RegData = 4'b1000;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     MFH: begin
                         RegWrite =1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b0;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
                     MFLO: begin
                         RegWrite =1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b1;
-                        estado = FETCH_1ST_CLOCK;
+                        estado = WAIT;
                         end
 					MULT: begin
 						if (MULT_DIV_COUNTER == 0) begin
 							MULT_DIV_COUNTER = 6'd31;
-							estado = FETCH_1ST_CLOCK;
+							estado = WAIT;
 							Reg_HI_Write=1'b1;
 							Reg_Lo_Write=1'b1;
 							MuxHi = 0;
@@ -293,7 +294,7 @@ always @(posedge clock) begin
 					DIV: begin
 						if (MULT_DIV_COUNTER == 0) begin
 							MULT_DIV_COUNTER = 6'd31;
-							estado = FETCH_1ST_CLOCK;
+							estado = WAIT;
 							Reg_HI_Write=1'b1;
 							Reg_Lo_Write=1'b1;
 							MuxHi = 1;
@@ -309,7 +310,7 @@ always @(posedge clock) begin
             end else if (Opcode == JUMP_OPCODE) begin
                 PCWrite=1'b1;
                 PCSource=3'b000;
-                estado = FETCH_1ST_CLOCK;               
+                estado = WAIT;               
             end else if (Opcode == JAL_OPCODE) begin
                 ALUControl = 3'b001;
                 ALUSrcB = 3'b011;
@@ -319,6 +320,9 @@ always @(posedge clock) begin
                 ALUControl = 3'b001;
                 ALUSrcB = 3'b010;
                 ALUSrcA = 1'b1;
+                RegWrite = 1'b1;
+                RegDest = 3'b001;
+                RegData = 4'b0000;
                 // Default
                 PCWrite = 1'b0;
                 IRWrite = 1'b0;
@@ -326,7 +330,6 @@ always @(posedge clock) begin
                 PCSource = 3'b000;
                 RegAWrite = 1'b0;
                 RegBWrite = 1'b0;
-                RegWrite = 1'b0;
                 RegDest = 3'b000;
                 RegData = 4'b0000;
                 XCHGRegWrite = 1'b0;
@@ -340,9 +343,9 @@ always @(posedge clock) begin
                 Reg_Lo_Write = 1'b0;
                 MemWriteRead = 1'b0;
                 RegALUOutWrite = 1'b0;
-                estado = ADDI_2ND_CLOCK;
+                estado = FETCH_1ST_CLOCK;
             end
-            end
+        end
         ADD_SUB_AND_2ND_CLOCK: begin
             if(ALUOverflow) begin
                 estado = EXCECAO;
@@ -372,14 +375,14 @@ always @(posedge clock) begin
                 estado=1'b0;
                 MemWriteRead=1'b0;
                 RegALUOutWrite=1'b0;
-                estado = FETCH_1ST_CLOCK;
+                estado = WAIT;
             end
 			end
         XCHG_2ND_CLOCK: begin
             RegWrite=1'b1;
             RegDest = 3'b100;
             RegData = 4'b0111;
-            estado = FETCH_1ST_CLOCK;
+            estado = WAIT;
             end
         JAL_2ND_CLOCK: begin
             PCWrite=1'b1;
@@ -387,33 +390,9 @@ always @(posedge clock) begin
             RegDest = 3'b010;
             RegData = 4'b0000;
             PCSource = 3'b000;
-            estado = FETCH_1ST_CLOCK;
+            estado = WAIT;
             end
-        ADDI_2ND_CLOCK: begin
-            RegWrite = 1'b1;
-            RegDest = 3'b001;
-            RegData = 4'b0000;
-            // Default
-            PCWrite = 1'b0;
-            IRWrite = 1'b0;
-            MemADD = 2'b00;
-            PCSource = 3'b000;
-            ALUControl = 3'b000;
-            ALUSrcB = 3'b000;
-            ALUSrcA = 1'b0;
-            RegAWrite = 1'b0;
-            RegBWrite = 1'b0;
-            XCHGRegWrite = 1'b0;
-            MFH = 1'b0;
-            MuxHiLo = 1'b0;
-            MuxHi = 1'b0;
-            MuxLo = 1'b0;
-            MULT_OP = 1'b0;
-            DIV_OP = 1'b0;
-            Reg_HI_Write = 1'b0;
-            Reg_Lo_Write = 1'b0;
-            MemWriteRead = 1'b0;
-            RegALUOutWrite = 1'b0;
+        WAIT: begin
             estado = FETCH_1ST_CLOCK;
         end
 	endcase
