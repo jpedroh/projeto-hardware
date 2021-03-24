@@ -47,7 +47,7 @@ module multiplier(fim,operand1,operando2,start,clock, hi, lo, reset); // P
 	     if (cicloAtual == 0) begin
 			fim = 1;
 		end
-	     else (cicloAtual == 1) begin
+	     else if (cicloAtual == 1) begin
 		    fim = 0;
 	     end
      end

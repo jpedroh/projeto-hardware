@@ -1,8 +1,9 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegBOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, EQ, RegALUOutOut);
 
 input clock;
 input reset;
+output wire EQ;
 
 output wire [5:0]estado;
 
@@ -25,7 +26,7 @@ output wire[31:0] RegAOut;
 
 wire RegBWrite;
 output wire[31:0] RegBInput;
-output wire[31:0] RegBOut;
+wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
@@ -37,7 +38,7 @@ wire[31:0] RegEPCOut;
 
 wire RegALUOutWrite;
 wire[31:0] RegALUOutInput;
-wire[31:0] RegALUOutOut;
+output wire[31:0] RegALUOutOut;
 
 wire RegMDRWrite;
 wire[31:0] RegMDRInput;
@@ -125,10 +126,14 @@ wire [31:0] SSOutput;
 wire [31:0] JumpAddress;
 
 output wire [5:0] funct;
+wire[31:0] OffsetExtendido;
+wire[31:0] OffsetExtendidoLeft2;
 
 assign funct = Offset[5:0];
 assign SignExtend1632Out = {{17{Offset[15]}}, Offset[14:0]};
 assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0], 2'b0};
+assign OffsetExtendido = {{17{Offset[15]}}, Offset[14:0]};
+assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
@@ -150,7 +155,7 @@ ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Ze
 
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
-MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, ALUSrcB, MuxAluSrcBOut);
+MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, OffsetExtendidoLeft2, ALUSrcB, MuxAluSrcBOut);
 MuxAmtSrc MuxAmtSrc(Immediate, Shamt, AmtSrc, MuxAmtSrcOut);
 MuxComparatorSrc MuxComparatorSrc(Zero, GT, LT, ComparatorSrc, MuxComparatorSrcOut);
 MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut);
@@ -212,6 +217,9 @@ Controle Controle (
     MemWriteRead,
     RegALUOutWrite,
     Overflow,
+    EQ,
+    mult_fim,
+    div_fim,
     funct
 );
 
