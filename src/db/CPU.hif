@@ -1504,42 +1504,6 @@ Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsy
 
 # end
 # entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-1f575310cce2ad1484f5f7e28313e8
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 divisor
 # storage
 db|CPU.(24).cnf
@@ -1612,6 +1576,42 @@ multiplier:multiplier
 
 # end
 # entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+57f332e6336a35c0c1e1fb79858a2817
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
 Controle
 # storage
 db|CPU.(28).cnf
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-15e4332851e9120e51f5f7dbf65dd15
+46df9d9b321f2acfa68821a49edb431
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1694,6 +1694,14 @@ BNE_2ND_CLOCK
 12
 PARAMETER_SIGNED_DEC
 DEF
+BLE_2ND_CLOCK
+13
+PARAMETER_SIGNED_DEC
+DEF
+BGT_2ND_CLOCK
+14
+PARAMETER_SIGNED_DEC
+DEF
 WAIT
 111111
 PARAMETER_UNSIGNED_BIN
@@ -1724,6 +1732,14 @@ PARAMETER_UNSIGNED_BIN
 DEF
 BNE_OPCODE
 000101
+PARAMETER_UNSIGNED_BIN
+DEF
+BLE_OPCODE
+000110
+PARAMETER_UNSIGNED_BIN
+DEF
+BGT_OPCODE
+000111
 PARAMETER_UNSIGNED_BIN
 DEF
 ADD

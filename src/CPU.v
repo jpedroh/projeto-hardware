@@ -1,9 +1,8 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, EQ, RegALUOutOut);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegALUOutOut);
 
 input clock;
 input reset;
-output wire EQ;
 
 output wire [5:0]estado;
 
@@ -68,6 +67,7 @@ wire AmtSrc;
 wire [4:0] MuxAmtSrcOut;
 
 wire Zero;
+wire EQ;
 wire GT;
 wire LT;
 wire[1:0] ComparatorSrc;
@@ -217,10 +217,11 @@ Controle Controle (
     MemWriteRead,
     RegALUOutWrite,
     Overflow,
-    EQ,
+    funct,
     mult_fim,
     div_fim,
-    funct
+    EQ,
+    GT
 );
 
 

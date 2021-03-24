@@ -30,7 +30,8 @@ module Controle (
     input wire[5:0] funct,
     input wire mult_fim,
     input wire div_fim,
-    input wire EQ
+    input wire EQ,
+    input wire GT
 );
 
 
@@ -48,6 +49,8 @@ parameter MULT_2ND_CLOCK = 9;
 parameter DIV_2ND_CLOCK = 10;
 parameter BEQ_2ND_CLOCK = 11;
 parameter BNE_2ND_CLOCK = 12;
+parameter BLE_2ND_CLOCK = 13;
+parameter BGT_2ND_CLOCK = 14;
 parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
 // OPCODES
@@ -57,6 +60,8 @@ parameter ADDI_OPCODE =6'b001000;
 parameter ADDIU_OPCODE = 6'b001001;
 parameter BEQ_OPCODE = 6'b000100;
 parameter BNE_OPCODE = 6'b000101;
+parameter BLE_OPCODE = 6'b000110;
+parameter BGT_OPCODE = 6'b000111;
 
 // FUNCT                
 parameter ADD = 6'b100000;
@@ -542,6 +547,58 @@ always @(posedge clock) begin
                 MemWriteRead = 1'b0;
                 RegALUOutWrite = 1'b0;
                 estado = BNE_2ND_CLOCK;
+            end else if (Opcode == BLE_OPCODE) begin
+                PCSource = 3'b100;
+                ALUControl = 3'b111;
+				ALUSrcA = 1'b1;
+				ALUSrcB = 3'b000;
+                // Default
+                PCWrite = 1'b0;
+                IRWrite = 1'b0;
+                MemADD = 2'b00;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                RegWrite = 1'b0;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                MemWriteRead = 1'b0;
+                RegALUOutWrite = 1'b0;
+                estado = BLE_2ND_CLOCK;
+            end else if (Opcode == BGT_OPCODE) begin
+                PCSource = 3'b100;
+                ALUControl = 3'b111;
+				ALUSrcA = 1'b1;
+				ALUSrcB = 3'b000;
+                // Default
+                PCWrite = 1'b0;
+                IRWrite = 1'b0;
+                MemADD = 2'b00;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                RegWrite = 1'b0;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                MemWriteRead = 1'b0;
+                RegALUOutWrite = 1'b0;
+                estado = BGT_2ND_CLOCK;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
@@ -697,6 +754,66 @@ always @(posedge clock) begin
 			ALUSrcB = 3'b000;
             ALUControl = 3'b111;
 		    if(EQ == 0) begin
+				PCWrite = 1'b1;
+			end
+            // Default
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = WAIT;
+        end
+        BLE_2ND_CLOCK: begin
+            // Alteradas
+			PCSource = 3'b100;
+			ALUSrcA = 2'b0;
+			ALUSrcB = 3'b000;
+            ALUControl = 3'b111;
+		    if(GT == 0) begin
+				PCWrite = 1'b1;
+			end
+            // Default
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = WAIT;
+        end
+        BGT_2ND_CLOCK: begin
+            // Alteradas
+			PCSource = 3'b100;
+			ALUSrcA = 2'b0;
+			ALUSrcB = 3'b000;
+            ALUControl = 3'b111;
+		    if(GT == 1) begin
 				PCWrite = 1'b1;
 			end
             // Default
