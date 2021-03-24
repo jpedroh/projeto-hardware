@@ -49,7 +49,7 @@ parameter ADDI_OPCODE =6'b001000;
 
 // FUNCT                
 parameter ADD = 6'b100000;
-parameter SUB = 6'b100000;
+parameter SUB = 6'b100010;
 parameter AND = 6'b001000;
 parameter JR = 6'b001000;
 parameter MFHI = 6'b010000;
@@ -218,6 +218,28 @@ always @(posedge clock) begin
                         ALUControl = 3'b010;
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
+                        RegALUOutWrite=1'b1;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        estado=1'b0;
+                        MemWriteRead=1'b0;
                         estado = ADD_SUB_AND_2ND_CLOCK;
                         end
                     AND: begin
