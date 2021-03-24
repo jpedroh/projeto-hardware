@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Wed Mar 24 12:05:40 2021
+Wed Mar 24 14:29:04 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -64,15 +64,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Wed Mar 24 12:05:40 2021        ;
+; Analysis & Synthesis Status   ; Successful - Wed Mar 24 14:29:04 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,176                                        ;
-;     Dedicated logic registers ; 1,183                                        ;
-; Total registers               ; 1183                                         ;
+;     Combinational ALUTs       ; 1,173                                        ;
+;     Dedicated logic registers ; 1,216                                        ;
+; Total registers               ; 1216                                         ;
 ; Total pins                    ; 346                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
@@ -216,38 +216,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1176  ;
-; Dedicated logic registers                     ; 1183  ;
+; Estimated ALUTs Used                          ; 1173  ;
+; Dedicated logic registers                     ; 1216  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 77    ;
+; Estimated ALUTs Unavailable                   ; 60    ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1176  ;
+; Total combinational functions                 ; 1173  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
 ;     -- 7 input functions                      ; 14    ;
-;     -- 6 input functions                      ; 746   ;
-;     -- 5 input functions                      ; 78    ;
-;     -- 4 input functions                      ; 96    ;
+;     -- 6 input functions                      ; 750   ;
+;     -- 5 input functions                      ; 80    ;
+;     -- 4 input functions                      ; 87    ;
 ;     -- <=3 input functions                    ; 242   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1133  ;
+;     -- normal mode                            ; 1130  ;
 ;     -- extended LUT mode                      ; 14    ;
 ;     -- arithmetic mode                        ; 29    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2127  ;
+; Estimated ALUT/register pairs used            ; 2145  ;
 ;                                               ;       ;
-; Total registers                               ; 1183  ;
-;     -- Dedicated logic registers              ; 1183  ;
+; Total registers                               ; 1216  ;
+;     -- Dedicated logic registers              ; 1216  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,064 ;
+; Estimated ALMs:  partially or completely used ; 1,073 ;
 ;                                               ;       ;
 ; I/O pins                                      ; 346   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1215  ;
-; Total fan-out                                 ; 11402 ;
+; Maximum fan-out                               ; 1248  ;
+; Total fan-out                                 ; 11531 ;
 ; Average fan-out                               ; 4.17  ;
 +-----------------------------------------------+-------+
 
@@ -257,9 +257,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 1176 (1)          ; 1183 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 346  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 1173 (1)          ; 1216 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 346  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:banco_registradores|              ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:banco_registradores                                                                             ; work         ;
-;    |Controle:Controle|                          ; 121 (121)         ; 31 (31)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
+;    |Controle:Controle|                          ; 119 (119)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
 ;    |Instr_Reg:registrador_instrucoes|           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:registrador_instrucoes                                                                          ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
@@ -279,9 +279,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
 ;    |MuxALUSrcA:MuxALUSrcA|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ; work         ;
-;    |MuxALUSrcB:MuxALUSrcB|                      ; 66 (66)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ; work         ;
+;    |MuxALUSrcB:MuxALUSrcB|                      ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ; work         ;
 ;    |MuxRegData:MuxRegData|                      ; 66 (66)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
 ;    |MuxRegDest:MuxRegDest|                      ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDest:MuxRegDest                                                                                     ; work         ;
+;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ; work         ;
 ;    |Registrador:PC|                             ; 1 (1)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
@@ -403,89 +404,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Controle:Controle|RegDest[2]                      ; Merged with Controle:Controle|RegData[2]                ;
 ; Controle:Controle|MFH                             ; Stuck at GND due to stuck port data_in                  ;
 ; Controle:Controle|MemWriteRead                    ; Stuck at GND due to stuck port data_in                  ;
-; Controle:Controle|RegALUOutWrite                  ; Merged with Controle:Controle|RegBWrite                 ;
 ; Controle:Controle|PCSource[2]                     ; Stuck at GND due to stuck port data_in                  ;
-; Registrador:ALUOut|Saida[0..31]                   ; Lost fanout                                             ;
-; Total Number of Removed Registers = 267           ;                                                         ;
+; Total Number of Removed Registers = 234           ;                                                         ;
 +---------------------------------------------------+---------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                             ;
-+----------------------------+--------------------------------+-----------------------------------------------------------+
-; Register name              ; Reason for Removal             ; Registers Removed due to This Register                    ;
-+----------------------------+--------------------------------+-----------------------------------------------------------+
-; Registrador:LO|Saida[31]   ; Stuck at GND                   ; Controle:Controle|Reg_Lo_Write, Controle:Controle|MuxHiLo ;
-;                            ; due to stuck port data_in      ;                                                           ;
-; Registrador:XCHG|Saida[31] ; Stuck at GND                   ; Controle:Controle|XCHGRegWrite                            ;
-;                            ; due to stuck port data_in      ;                                                           ;
-; Registrador:HI|Saida[31]   ; Stuck at GND                   ; Controle:Controle|Reg_HI_Write                            ;
-;                            ; due to stuck port data_in      ;                                                           ;
-; Registrador:EPC|Saida[31]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[31]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[30]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[30]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[29]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[29]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[28]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[28]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[27]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[27]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[26]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[26]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[25]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[25]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[24]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[24]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[23]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[23]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[22]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[22]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[21]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[21]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[20]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[20]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[19]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[19]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[18]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[18]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[17]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[17]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[16]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[16]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[15]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[15]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[14]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[14]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[13]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[13]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[12]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[12]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[11]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[11]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[10]  ; Stuck at GND                   ; Registrador:ALUOut|Saida[10]                              ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[9]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[9]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[8]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[8]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[7]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[7]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[6]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[6]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[5]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[5]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[4]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[4]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[3]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[3]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[2]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[2]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[1]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[1]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-; Registrador:EPC|Saida[0]   ; Stuck at GND                   ; Registrador:ALUOut|Saida[0]                               ;
-;                            ; due to stuck port clock_enable ;                                                           ;
-+----------------------------+--------------------------------+-----------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++----------------------------+---------------------------+-----------------------------------------------------------+
+; Register name              ; Reason for Removal        ; Registers Removed due to This Register                    ;
++----------------------------+---------------------------+-----------------------------------------------------------+
+; Registrador:LO|Saida[31]   ; Stuck at GND              ; Controle:Controle|Reg_Lo_Write, Controle:Controle|MuxHiLo ;
+;                            ; due to stuck port data_in ;                                                           ;
+; Registrador:XCHG|Saida[31] ; Stuck at GND              ; Controle:Controle|XCHGRegWrite                            ;
+;                            ; due to stuck port data_in ;                                                           ;
+; Registrador:HI|Saida[31]   ; Stuck at GND              ; Controle:Controle|Reg_HI_Write                            ;
+;                            ; due to stuck port data_in ;                                                           ;
++----------------------------+---------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -493,12 +428,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1183  ;
+; Total registers                              ; 1216  ;
 ; Number of registers using Synchronous Clear  ; 35    ;
-; Number of registers using Synchronous Load   ; 2     ;
-; Number of registers using Asynchronous Clear ; 1152  ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 1184  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1175  ;
+; Number of registers using Clock Enable       ; 1209  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -522,24 +457,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 68:1               ; 2 bits    ; 90 ALUTs      ; 26 ALUTs             ; 64 ALUTs               ; Yes        ; |CPU|Controle:Controle|estado[4]           ;
-; 69:1               ; 5 bits    ; 230 ALUTs     ; 25 ALUTs             ; 205 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUControl[2]       ;
-; 69:1               ; 3 bits    ; 138 ALUTs     ; 15 ALUTs             ; 123 ALUTs              ; Yes        ; |CPU|Controle:Controle|PCWrite             ;
-; 69:1               ; 5 bits    ; 230 ALUTs     ; 20 ALUTs             ; 210 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegData[1]          ;
-; 70:1               ; 5 bits    ; 230 ALUTs     ; 15 ALUTs             ; 215 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegBWrite           ;
-; 70:1               ; 2 bits    ; 92 ALUTs      ; 6 ALUTs              ; 86 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegDest[1]          ;
+; 68:1               ; 2 bits    ; 90 ALUTs      ; 24 ALUTs             ; 66 ALUTs               ; Yes        ; |CPU|Controle:Controle|estado[3]           ;
+; 69:1               ; 5 bits    ; 230 ALUTs     ; 30 ALUTs             ; 200 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUSrcB[1]          ;
+; 69:1               ; 3 bits    ; 138 ALUTs     ; 18 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|PCSource[0]         ;
+; 69:1               ; 5 bits    ; 230 ALUTs     ; 20 ALUTs             ; 210 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegWrite            ;
+; 70:1               ; 5 bits    ; 230 ALUTs     ; 20 ALUTs             ; 210 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegALUOutWrite      ;
+; 70:1               ; 2 bits    ; 92 ALUTs      ; 8 ALUTs              ; 84 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegData[2]          ;
 ; 71:1               ; 2 bits    ; 94 ALUTs      ; 32 ALUTs             ; 62 ALUTs               ; Yes        ; |CPU|Controle:Controle|estado[0]           ;
-; 3:1                ; 5 bits    ; 10 ALUTs      ; 5 ALUTs              ; 5 ALUTs                ; Yes        ; |CPU|Controle:Controle|MULT_DIV_COUNTER[0] ;
+; 3:1                ; 5 bits    ; 10 ALUTs      ; 5 ALUTs              ; 5 ALUTs                ; Yes        ; |CPU|Controle:Controle|MULT_DIV_COUNTER[1] ;
 ; 1:1                ; 8 bits    ; 0 ALUTs       ; 0 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux7              ;
 ; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux63                       ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux21                       ;
-; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux0            ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux3            ;
-; 5:1                ; 32 bits   ; 96 ALUTs      ; 64 ALUTs             ; 32 ALUTs               ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux6          ;
-; 9:1                ; 32 bits   ; 192 ALUTs     ; 128 ALUTs            ; 64 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux27           ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux13                       ;
+; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux11           ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux4            ;
+; 5:1                ; 32 bits   ; 96 ALUTs      ; 64 ALUTs             ; 32 ALUTs               ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux7          ;
+; 10:1               ; 32 bits   ; 192 ALUTs     ; 128 ALUTs            ; 64 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux26           ;
 ; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux4    ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux59   ;
-; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux29           ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux60   ;
+; 4:1                ; 17 bits   ; 34 ALUTs      ; 34 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux30           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
@@ -786,7 +721,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Mar 24 12:05:34 2021
+    Info: Processing started: Wed Mar 24 14:28:58 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Info: Found 1 design units, including 1 entities, in source file signextend/signextend132.v
     Info: Found entity 1: SignExtend132
@@ -1041,40 +976,40 @@ Info (10041): Inferred latch for "MuxPCSourceOut[29]" at MuxPCSource.v(11)
 Info (10041): Inferred latch for "MuxPCSourceOut[30]" at MuxPCSource.v(11)
 Info (10041): Inferred latch for "MuxPCSourceOut[31]" at MuxPCSource.v(11)
 Info: Elaborating entity "MuxRegData" for hierarchy "MuxRegData:MuxRegData"
-Warning (10270): Verilog HDL Case Statement warning at MuxRegData.v(14): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at MuxRegData.v(14): inferring latch(es) for variable "MuxRegDataOut", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "MuxRegDataOut[0]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[1]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[2]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[3]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[4]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[5]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[6]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[7]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[8]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[9]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[10]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[11]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[12]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[13]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[14]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[15]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[16]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[17]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[18]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[19]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[20]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[21]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[22]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[23]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[24]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[25]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[26]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[27]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[28]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[29]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[30]" at MuxRegData.v(14)
-Info (10041): Inferred latch for "MuxRegDataOut[31]" at MuxRegData.v(14)
+Warning (10270): Verilog HDL Case Statement warning at MuxRegData.v(15): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at MuxRegData.v(15): inferring latch(es) for variable "MuxRegDataOut", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "MuxRegDataOut[0]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[1]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[2]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[3]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[4]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[5]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[6]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[7]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[8]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[9]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[10]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[11]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[12]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[13]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[14]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[15]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[16]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[17]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[18]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[19]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[20]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[21]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[22]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[23]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[24]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[25]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[26]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[27]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[28]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[29]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[30]" at MuxRegData.v(15)
+Info (10041): Inferred latch for "MuxRegDataOut[31]" at MuxRegData.v(15)
 Info: Elaborating entity "MuxRegDest" for hierarchy "MuxRegDest:MuxRegDest"
 Warning (10270): Verilog HDL Case Statement warning at MuxRegDest.v(9): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at MuxRegDest.v(9): inferring latch(es) for variable "MuxRegDestOut", which holds its previous value in one or more paths through the always construct
@@ -1266,9 +1201,9 @@ Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[30] has unsafe behavior
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[3] has unsafe behavior
@@ -1276,11 +1211,11 @@ Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[3] has unsafe behavior
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[4] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[9] has unsafe behavior
@@ -1339,7 +1274,7 @@ Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
 Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[4] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
-Info: 67 registers lost all their fanouts during netlist optimizations. The first 67 are displayed below.
+Info: 35 registers lost all their fanouts during netlist optimizations. The first 35 are displayed below.
     Info: Register "Controle:Controle|Reg_Lo_Write" lost all its fanouts during netlist optimizations.
     Info: Register "Controle:Controle|Reg_HI_Write" lost all its fanouts during netlist optimizations.
     Info: Register "Controle:Controle|MuxHiLo" lost all its fanouts during netlist optimizations.
@@ -1375,49 +1310,17 @@ Info: 67 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "RegDesloc:registrador_deslocamento|n_shift[3]" lost all its fanouts during netlist optimizations.
     Info: Register "RegDesloc:registrador_deslocamento|n_shift[2]" lost all its fanouts during netlist optimizations.
     Info: Register "RegDesloc:registrador_deslocamento|n_shift[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "Registrador:ALUOut|Saida[31]" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file D:/Projetos/cin/projeto-hardware/src/CPU.map.smsg
-Info: Implemented 2709 device resources after synthesis - the final resource count might be different
+Info: Implemented 2738 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 344 output pins
-    Info: Implemented 2331 logic cells
+    Info: Implemented 2360 logic cells
     Info: Implemented 32 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 207 warnings
-    Info: Peak virtual memory: 262 megabytes
-    Info: Processing ended: Wed Mar 24 12:05:40 2021
+    Info: Peak virtual memory: 266 megabytes
+    Info: Processing ended: Wed Mar 24 14:29:04 2021
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
 
 
 +------------------------------------------+

@@ -7,13 +7,14 @@ module MuxRegData (
     input wire[31:0] ShiftLeft16Out,
     input wire[31:0] XCHGRegOut,
     input wire[31:0] RegAOut,
+	input wire[31:0] RegALUOutOut,
     input wire[3:0] RegData,
 	output reg[31:0] MuxRegDataOut
 );
 always @(*) begin
 	case(RegData)
 		4'b0000:
-			MuxRegDataOut <= ALUOut;
+			MuxRegDataOut <= RegALUOutOut;
 		4'b0001:
 			MuxRegDataOut <= MuxHILOOut;
 		4'b0010:
@@ -30,6 +31,8 @@ always @(*) begin
 			MuxRegDataOut <= XCHGRegOut;
 		4'b1000:
 			MuxRegDataOut <= RegAOut;
+		4'b1001:
+			MuxRegDataOut <= RegALUOutOut;
 	endcase
 end
 endmodule
