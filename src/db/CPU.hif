@@ -1362,42 +1362,6 @@ MuxPCSource:MuxPCSource
 
 # end
 # entity
-MuxALUSrcB
-# storage
-db|CPU.(12).cnf
-db|CPU.(12).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxes|muxalusrcb.v
-83f726618619c01516405fdc348b96
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxALUSrcB:MuxALUSrcB
-}
-# macro_sequence
-
-# end
-# entity
 divisor
 # storage
 db|CPU.(24).cnf
@@ -1434,42 +1398,6 @@ divisor:divisor
 
 # end
 # entity
-multiplier
-# storage
-db|CPU.(25).cnf
-db|CPU.(25).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-multiplier|multiplier.v
-22cf33a48937144c3cec59f745e5ae2
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-multiplier:multiplier
-}
-# macro_sequence
-
-# end
-# entity
 CPU
 # storage
 db|CPU.(0).cnf
@@ -1481,7 +1409,7 @@ ON
 # case_sensitive
 # source_file
 cpu.v
-57f332e6336a35c0c1e1fb79858a2817
+99553fa684c912d65cb5a9b31a4c1ca
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1501,6 +1429,78 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 |
+}
+# macro_sequence
+
+# end
+# entity
+MuxALUSrcB
+# storage
+db|CPU.(12).cnf
+db|CPU.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxes|muxalusrcb.v
+5ac491b27f8eedf670b80657e8933e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxALUSrcB:MuxALUSrcB
+}
+# macro_sequence
+
+# end
+# entity
+multiplier
+# storage
+db|CPU.(25).cnf
+db|CPU.(25).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplier|multiplier.v
+fb405f44698ab569605f6cf775e1f0d8
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+multiplier:multiplier
 }
 # macro_sequence
 
@@ -1600,7 +1600,7 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-36743f29702df2304df050367d50f447
+e1653394d556ce92ba563ad4df588dc
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-f628d5e72b1d54eb58733281cc3b2620
+258f67c039a731474b4501bf1a1306a
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1702,6 +1702,14 @@ BGT_2ND_CLOCK
 14
 PARAMETER_SIGNED_DEC
 DEF
+SLTI_2ND_CLOCK
+15
+PARAMETER_SIGNED_DEC
+DEF
+SLT_2ND_CLOCK
+16
+PARAMETER_SIGNED_DEC
+DEF
 WAIT
 111111
 PARAMETER_UNSIGNED_BIN
@@ -1740,6 +1748,10 @@ PARAMETER_UNSIGNED_BIN
 DEF
 BGT_OPCODE
 000111
+PARAMETER_UNSIGNED_BIN
+DEF
+SLTI_OPCODE
+001010
 PARAMETER_UNSIGNED_BIN
 DEF
 ADD

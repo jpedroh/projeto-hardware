@@ -89,6 +89,8 @@ wire [1:0] MemAdd;
 wire[31:0] MuxMemAddOut;
 
 wire[31:0] SignExtend1_32Out;
+assign SignExtend1_32Out = {31'b0, LT};
+
 wire[31:0] RegShiftOut;
 wire[31:0] LoadSizeOut;
 wire[31:0] ShiftLeft16Out;
@@ -155,7 +157,7 @@ ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Ze
 
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
-MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, OffsetExtendidoLeft2, ALUSrcB, MuxAluSrcBOut);
+MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, OffsetExtendidoLeft2, OffsetExtendido, ALUSrcB, MuxAluSrcBOut);
 MuxAmtSrc MuxAmtSrc(Immediate, Shamt, AmtSrc, MuxAmtSrcOut);
 MuxComparatorSrc MuxComparatorSrc(Zero, GT, LT, ComparatorSrc, MuxComparatorSrcOut);
 MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut);

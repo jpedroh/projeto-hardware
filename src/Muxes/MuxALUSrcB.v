@@ -4,6 +4,7 @@ module MuxALUSrcB (
     input wire[31:0] SignExtend1632Out,
     input wire[31:0] ShiftLeftOut,
 	input wire[31:0] OffsetExtendidoLeft2,
+	input wire[31:0] OffsetExtendido,
     input wire[2:0] ALUSrcB,
 	output reg[31:0] MuxALUSrcBOut
 );
@@ -21,6 +22,8 @@ always @(*) begin
 			MuxALUSrcBOut <= ShiftLeftOut;
         3'b101:
 			MuxALUSrcBOut <= OffsetExtendidoLeft2;
+        3'b111:
+			MuxALUSrcBOut <= OffsetExtendido;
 	endcase
 end
 endmodule 
