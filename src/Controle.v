@@ -27,7 +27,7 @@ module Controle (
     output reg MemWriteRead,
     output reg RegALUOutWrite,
     input wire ALUOverflow,
-    input wire funct
+    input wire[5:0] funct
 );
 
 // ESTADOS
