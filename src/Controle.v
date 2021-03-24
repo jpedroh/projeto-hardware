@@ -27,7 +27,9 @@ module Controle (
     output reg MemWriteRead,
     output reg RegALUOutWrite,
     input wire ALUOverflow,
-    input wire[5:0] funct
+    input wire[5:0] funct,
+    input wire mult_fim,
+    input wire div_fim
 );
 
 // ESTADOS
@@ -40,6 +42,8 @@ parameter ADD_SUB_AND_2ND_CLOCK = 6'b000101;
 parameter XCHG_2ND_CLOCK = 6'b000111;
 parameter JAL_2ND_CLOCK = 6'b001000;
 parameter ADDI_ADDIU_2ND_CLOCK = 6'b001001;
+parameter MULT_2ND_CLOCK = 6'b001010;
+parameter DIV_2ND_CLOCK = 6'b001011;
 parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
 // OPCODES
@@ -62,11 +66,8 @@ parameter XCHG = 6'b000101;
 parameter MULT = 6'b011000;
 parameter DIV = 6'b011010;
 
-reg [5:0] MULT_DIV_COUNTER; 
-
 initial begin
     estado = FETCH_1ST_CLOCK;
-    MULT_DIV_COUNTER = 6'd31;
 end
 
 always @(posedge clock) begin
@@ -342,34 +343,60 @@ always @(posedge clock) begin
                         estado = WAIT;
                         end
 					MULT: begin
-						if (MULT_DIV_COUNTER == 0) begin
-							MULT_DIV_COUNTER = 6'd31;
-							estado = WAIT;
-							Reg_HI_Write=1'b1;
-							Reg_Lo_Write=1'b1;
-							MuxHi = 0;
-							MuxLo = 0;
-						end
-						else begin
-							MULT_OP = 1;
-							estado = MULT;
-							MULT_DIV_COUNTER = MULT_DIV_COUNTER - 1;
-						end
+						//inalterados
+						RegWrite = 1'b0;
+						RegDest = 3'b000;
+						RegData = 4'b0000;
+						PCWrite = 1'b0;
+						IRWrite = 1'b0;
+						MemADD = 2'b00;
+						PCSource = 3'b000;
+						ALUControl = 3'b000;
+						ALUSrcB = 3'b000;
+						ALUSrcA = 1'b0;
+						RegAWrite = 1'b0;
+						RegBWrite = 1'b0;
+						XCHGRegWrite = 1'b0;
+						MFH = 1'b0;
+						MuxHiLo = 1'b0;
+						MuxHi = 1'b0;
+						MuxLo = 1'b0;
+						DIV_OP = 1'b0;
+						Reg_HI_Write = 1'b0;
+						Reg_Lo_Write = 1'b0;
+						MemWriteRead = 1'b0;
+						RegALUOutWrite = 1'b0;
+						//alterados
+						MULT_OP = 1;
+						estado = MULT_2ND_CLOCK;
 					end
 					DIV: begin
-						if (MULT_DIV_COUNTER == 0) begin
-							MULT_DIV_COUNTER = 6'd31;
-							estado = WAIT;
-							Reg_HI_Write=1'b1;
-							Reg_Lo_Write=1'b1;
-							MuxHi = 1;
-							MuxLo = 1;
-						end
-						else begin
-							DIV_OP = 1;
-							estado = DIV;
-							MULT_DIV_COUNTER = MULT_DIV_COUNTER - 1;
-						end
+						//inalterados
+						RegWrite = 1'b0;
+						RegDest = 3'b000;
+						RegData = 4'b0000;
+						PCWrite = 1'b0;
+						IRWrite = 1'b0;
+						MemADD = 2'b00;
+						PCSource = 3'b000;
+						ALUControl = 3'b000;
+						ALUSrcB = 3'b000;
+						ALUSrcA = 1'b0;
+						RegAWrite = 1'b0;
+						RegBWrite = 1'b0;
+						XCHGRegWrite = 1'b0;
+						MFH = 1'b0;
+						MuxHiLo = 1'b0;
+						MuxHi = 1'b0;
+						MuxLo = 1'b0;
+						MULT_OP = 1'b0;
+						Reg_HI_Write = 1'b0;
+						Reg_Lo_Write = 1'b0;
+						MemWriteRead = 1'b0;
+						RegALUOutWrite = 1'b0;
+						//alterados
+						DIV_OP = 1;
+						estado = DIV_2ND_CLOCK;
 					end	
                 endcase
             end else if (Opcode == JUMP_OPCODE) begin
@@ -550,6 +577,30 @@ always @(posedge clock) begin
             RegALUOutWrite = 1'b0;
             estado = WAIT;
         end
+        MULT_2ND_CLOCK:
+			if (mult_fim == 0) begin
+				estado = MULT_2ND_CLOCK;
+			end
+			else begin
+				MULT_OP = 0;
+				Reg_HI_Write= 1'b1;
+				Reg_Lo_Write= 1'b1;
+				MuxHi = 0;
+				MuxLo = 0;
+				estado = WAIT;
+			end
+		DIV_2ND_CLOCK:
+			if (div_fim == 0) begin
+				estado = DIV_2ND_CLOCK;
+			end
+			else begin
+				DIV_OP = 0;
+				Reg_HI_Write = 1'b1;
+				Reg_Lo_Write = 1'b1;
+				MuxHi = 1;
+				MuxLo = 1;
+				estado = WAIT;
+			end
         WAIT: begin
             estado = FETCH_1ST_CLOCK;
         end
