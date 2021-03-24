@@ -40,7 +40,10 @@
          if (cicloAtual == 0) begin //se chegou no ultimo ciclo
            ativo <= 0; //deixa de ser ativo
            fim <= 1;
-         end  
+         end
+        else begin
+          fim <= 0;
+        end
          cicloAtual <= cicloAtual - 5'd1; //decrementa o ciclo
        end  
        else begin  
