@@ -9,8 +9,9 @@ module multiplier(fim,operand1,operando2,start,clock, hi, lo, reset); // P
    reg [63:0] product; //registrador que guarda as operacoes
    reg [31:0] hi;
    reg [31:0] lo;
+   reg fim;
    reg [5:0] cicloAtual; 
-	wire fim = !cicloAtual; //cabo que sinaliza o fim
+	wire aux = !cicloAtual; //cabo que sinaliza o fim
    reg lostbit;
    
    initial cicloAtual = 0; //comeca com 0 ciclos e vai ate 32
@@ -25,7 +26,7 @@ module multiplier(fim,operand1,operando2,start,clock, hi, lo, reset); // P
 		lostbit = 0;
 	end
 
-	   if( fim && start ) begin //"inicializador" que comeca os valores
+	   if( aux && start ) begin //"inicializador" que comeca os valores
 
         cicloAtual = 32;
         product = { 32'd0, operando2 };
@@ -43,6 +44,9 @@ module multiplier(fim,operand1,operando2,start,clock, hi, lo, reset); // P
         cicloAtual = cicloAtual - 1; //decrementa o ciclo
 	     hi = product[63:32]; //pega os primeiros 32 bits do produto
 	     lo = product[31:0]; // pega os ultimos 32 bits do produto
+	     if (cicloAtual == 0) begin
+			fim = 1;
+		end
      end
    end
 
