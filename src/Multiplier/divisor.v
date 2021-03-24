@@ -7,7 +7,7 @@
    input [31:0] divisor,  
    output [31:0] lo,  
    output [31:0] hi,  
-   output fim,   
+   output reg fim,   
    output DividedByZero  
    );  
    reg ativo; //registrador para determinar se o divisor esta ativo, dependendo do ciclo atual   
@@ -19,8 +19,6 @@
    assign DividedByZero = !divisor;//se o divisor for 0, !divisor vai ser 1  
    assign lo = quociente; //coloca lo como quociente 
    assign hi = resto; //coloca o hi como resto
-   assign fim = ~ativo; //coloca o fim como o contrario de ativo
-
    always @(posedge clock,posedge reset) begin  
      if (reset) begin  //reseta todos os registradores caso reset == 1
        ativo <= 0;  
@@ -41,6 +39,7 @@
          end  
          if (cicloAtual == 0) begin //se chegou no ultimo ciclo
            ativo <= 0; //deixa de ser ativo
+           fim <= 1;
          end  
          cicloAtual <= cicloAtual - 5'd1; //decrementa o ciclo
        end  
