@@ -39,18 +39,19 @@ parameter EXECUCAO = 6'b000100;
 parameter ADD_SUB_AND_2ND_CLOCK = 6'b000101;
 parameter XCHG_2ND_CLOCK = 6'b000111;
 parameter JAL_2ND_CLOCK = 6'b001000;
-parameter ADDI_2ND_CLOCK = 6'b001001;
+parameter ADDI_ADDIU_2ND_CLOCK = 6'b001001;
 parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
 // OPCODES
 parameter JUMP_OPCODE = 6'b000010;
 parameter JAL_OPCODE = 6'b000011;
 parameter ADDI_OPCODE =6'b001000;
+parameter ADDIU_OPCODE = 6'b001001;
 
 // FUNCT                
 parameter ADD = 6'b100000;
 parameter SUB = 6'b100010;
-parameter AND = 6'b001000;
+parameter AND = 6'b100100;
 parameter JR = 6'b001000;
 parameter MFHI = 6'b010000;
 parameter MFLO = 6'b010010;
@@ -246,13 +247,55 @@ always @(posedge clock) begin
                         ALUControl = 3'b011;
                         ALUSrcB = 3'b000;
                         ALUSrcA = 1'b1;
+                        RegALUOutWrite=1'b1;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        estado=1'b0;
+                        MemWriteRead=1'b0;
                         estado = ADD_SUB_AND_2ND_CLOCK;
                         end
                     JR: begin
-                        PCWrite=1'b1;
-                        PCSource = 3'b001;
-                        ALUSrcA = 1'b1;
+                        PCWrite = 1'b1;
+                        PCSource = 3'b111;
+                        // Default
                         ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        IRWrite = 1'b0;
+                        MemADD = 2'b00;
+                        RegAWrite = 1'b0;
+                        RegBWrite = 1'b0;
+                        RegWrite = 1'b0;
+                        RegDest = 3'b000;
+                        RegData = 4'b0000;
+                        XCHGRegWrite = 1'b0;
+                        MFH = 1'b0;
+                        MuxHiLo = 1'b0;
+                        MuxHi = 1'b0;
+                        MuxLo = 1'b0;
+                        MULT_OP = 1'b0;
+                        DIV_OP = 1'b0;
+                        Reg_HI_Write = 1'b0;
+                        Reg_Lo_Write = 1'b0;
+                        MemWriteRead = 1'b0;
+                        RegALUOutWrite = 1'b0;
                         estado = WAIT;
                         end
                     SLT: begin
@@ -331,14 +374,62 @@ always @(posedge clock) begin
                 endcase
             end else if (Opcode == JUMP_OPCODE) begin
                 PCWrite=1'b1;
-                PCSource=3'b000;
+                PCSource=3'b101;
+                // Default
+                IRWrite = 1'b0;
+                MemADD = 2'b00;
+                ALUControl = 3'b000;
+                ALUSrcB = 3'b000;
+                ALUSrcA = 1'b0;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                RegWrite = 1'b0;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                MemWriteRead = 1'b0;
+                RegALUOutWrite = 1'b0;
+
                 estado = WAIT;               
             end else if (Opcode == JAL_OPCODE) begin
-                ALUControl = 3'b001;
-                ALUSrcB = 3'b011;
+                ALUControl = 3'b000;
                 ALUSrcA = 1'b0;
+                RegALUOutWrite = 1'b1;
+                PCWrite=1'b1;
+                PCSource=3'b101;
+                // Default
+                IRWrite = 1'b0;
+                MemADD = 2'b00;
+                ALUControl = 3'b000;
+                ALUSrcB = 3'b000;
+                ALUSrcA = 1'b0;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                RegWrite = 1'b0;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                MemWriteRead = 1'b0;
+                RegALUOutWrite = 1'b0;
+
                 estado = JAL_2ND_CLOCK;
-            end else if (Opcode == ADDI_OPCODE) begin
+            end else if (Opcode == ADDI_OPCODE || Opcode == ADDIU_OPCODE) begin
                 ALUControl = 3'b001;
                 ALUSrcB = 3'b010;
                 ALUSrcA = 1'b1;
@@ -365,7 +456,7 @@ always @(posedge clock) begin
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
                 MemWriteRead = 1'b0;
-                estado = ADDI_2ND_CLOCK;
+                estado = ADDI_ADDIU_2ND_CLOCK;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
@@ -406,14 +497,33 @@ always @(posedge clock) begin
             estado = WAIT;
             end
         JAL_2ND_CLOCK: begin
-            PCWrite=1'b1;
-            RegWrite=1'b1;
             RegDest = 3'b010;
             RegData = 4'b0000;
+            RegWrite = 1'b1;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
             PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
             estado = WAIT;
             end
-        ADDI_2ND_CLOCK: begin
+        ADDI_ADDIU_2ND_CLOCK: begin
             RegWrite = 1'b1;
             RegDest = 3'b000;
             RegData = 4'b0000;

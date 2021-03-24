@@ -122,11 +122,13 @@ wire [31:0] LSOutput;
 wire [31:0] SSInput;
 wire [1:0] SSControl;
 wire [31:0] SSOutput;
+wire [31:0] JumpAddress;
 
 output wire [5:0] funct;
 
 assign funct = Offset[5:0];
 assign SignExtend1632Out = {{17{Offset[15]}}, Offset[14:0]};
+assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0], 2'b0};
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
@@ -156,7 +158,7 @@ MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
-MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, PCSource, MuxPCSourceOut);
+MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RT, Offset[15:11], RS, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);

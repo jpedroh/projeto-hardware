@@ -1116,42 +1116,6 @@ MuxMemAdd:MuxMemAdd
 
 # end
 # entity
-MuxPCSource
-# storage
-db|CPU.(20).cnf
-db|CPU.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxes|muxpcsource.v
-281d1c98eb356f881f1eafee1d78280
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxPCSource:MuxPCSource
-}
-# macro_sequence
-
-# end
-# entity
 MuxRegDest
 # storage
 db|CPU.(22).cnf
@@ -1434,42 +1398,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-869818209b763365611e31abbdf3821
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
 MuxRegData
 # storage
 db|CPU.(21).cnf
@@ -1501,6 +1429,42 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 MuxRegData:MuxRegData
+}
+# macro_sequence
+
+# end
+# entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+dc72482b15f053ebbc27d578f14d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
 }
 # macro_sequence
 
@@ -1600,13 +1564,49 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-378ddea6efd8b2a39dcc7c1bccaaaa83
+b5da7b5478e8567b54ff1add2c66c79
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+MuxPCSource
+# storage
+db|CPU.(20).cnf
+db|CPU.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxes|muxpcsource.v
+f34cf6841b339be76ae9c1de7931561
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxPCSource:MuxPCSource
 }
 # macro_sequence
 
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-a7b83edc9183f4155b380dead6d8d1
+dff5855ea345995748294c0a89214ab
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1674,7 +1674,7 @@ JAL_2ND_CLOCK
 001000
 PARAMETER_UNSIGNED_BIN
 DEF
-ADDI_2ND_CLOCK
+ADDI_ADDIU_2ND_CLOCK
 001001
 PARAMETER_UNSIGNED_BIN
 DEF
@@ -1698,6 +1698,10 @@ ADDI_OPCODE
 001000
 PARAMETER_UNSIGNED_BIN
 DEF
+ADDIU_OPCODE
+001001
+PARAMETER_UNSIGNED_BIN
+DEF
 ADD
 100000
 PARAMETER_UNSIGNED_BIN
@@ -1707,7 +1711,7 @@ SUB
 PARAMETER_UNSIGNED_BIN
 DEF
 AND
-001000
+100100
 PARAMETER_UNSIGNED_BIN
 DEF
 JR
