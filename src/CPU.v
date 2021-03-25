@@ -1,5 +1,5 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegShiftOut, ShiftCtrl, MuxAmtSrcOut);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegMDROut);
 
 input clock;
 input reset;
@@ -41,7 +41,7 @@ wire[31:0] RegALUOutOut;
 
 wire RegMDRWrite;
 wire[31:0] RegMDRInput;
-wire[31:0] RegMDROut;
+output wire[31:0] RegMDROut;
 
 wire RegHIWrite;
 wire[31:0] RegHIInput;
@@ -64,7 +64,7 @@ output wire[31:0] MuxRegDataOut;
 wire[4:0] Immediate;
 wire[4:0] Shamt;
 wire AmtSrc;
-output wire [4:0] MuxAmtSrcOut;
+wire [4:0] MuxAmtSrcOut;
 
 wire Zero;
 wire EQ;
@@ -91,7 +91,7 @@ wire[31:0] MuxMemAddOut;
 wire[31:0] SignExtend1_32Out;
 assign SignExtend1_32Out = {31'b0, LT};
 
-output wire[31:0] RegShiftOut;
+wire[31:0] RegShiftOut;
 wire[31:0] LoadSizeOut;
 wire[31:0] ShiftLeft16Out;
 wire[3:0] RegData;
@@ -107,7 +107,7 @@ wire [15:0] Offset;
 
 wire MemWriteRead;
 output wire[31:0] MemData;
-output wire [2:0] ShiftCtrl;
+wire [2:0] ShiftCtrl;
 wire [2:0] AluOp;
 
 wire div_start;
@@ -170,7 +170,7 @@ MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
 MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
-MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, OffsetExtendido << 16, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
+MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LSOutput, OffsetExtendido << 16, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RT, Offset[15:11], RS, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 
@@ -181,7 +181,7 @@ multiplier multiplier(mult_fim, RegAOut, RegBOut, mult_start, clock, MultHI, Mul
 
 // LoadSize e StoreSize
 loadsize loadsize(
-	MemData,
+	RegMDROut,
     LSControl,
     LSOutput
 );
@@ -225,6 +225,8 @@ Controle Controle (
     AmtSrc,
     ShiftSrc,
     ShiftCtrl,
+    RegMDRWrite,
+    LSControl,
     Overflow,
     funct,
     mult_fim,

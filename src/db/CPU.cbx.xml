@@ -72,9 +72,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxPCSource:MuxPCSource|lpm_mux:Mux24" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_8" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxPCSource:MuxPCSource|lpm_mux:Mux25" CBX_FILE_NAME="mux_5oc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_221" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_9" CBX_FILE_NAME="mux_0oc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_123" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux40" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxPCSource:MuxPCSource|lpm_mux:Mux26" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_222" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -169,6 +167,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight1_rtl_139" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux2" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux57" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux0" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegData:MuxRegData|lpm_mux:Mux17" CBX_FILE_NAME="mux_lpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux10" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateLeft0_rtl_269" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -177,6 +176,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_96" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux3" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux58" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux1" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxALUSrcB:MuxALUSrcB|lpm_mux:Mux10" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegData:MuxRegData|lpm_mux:Mux18" CBX_FILE_NAME="mux_lpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux11" CBX_FILE_NAME="mux_5oc.tdf"/>
@@ -184,21 +184,25 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_97" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux4" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux59" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux2" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxALUSrcB:MuxALUSrcB|lpm_mux:Mux11" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegData:MuxRegData|lpm_mux:Mux19" CBX_FILE_NAME="mux_lpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux12" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_13" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_98" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux5" CBX_FILE_NAME="mux_5oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux3" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxALUSrcB:MuxALUSrcB|lpm_mux:Mux12" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux13" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_14" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_99" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux6" CBX_FILE_NAME="mux_5oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux4" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxALUSrcB:MuxALUSrcB|lpm_mux:Mux13" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux14" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_15" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux7" CBX_FILE_NAME="mux_5oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Controle:Controle|lpm_mux:Mux5" CBX_FILE_NAME="mux_qpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxALUSrcB:MuxALUSrcB|lpm_mux:Mux14" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:Mux15" CBX_FILE_NAME="mux_5oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftLeft0_rtl_16" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -634,5 +638,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_220" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_122" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Ula32:Alu|lpm_mux:Mux63" CBX_FILE_NAME="mux_5oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_221" CBX_FILE_NAME="mux_0oc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_123" CBX_FILE_NAME="mux_0oc.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
