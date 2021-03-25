@@ -102,12 +102,12 @@ parameter BLE_OPCODE = 6'b000110;
 parameter BGT_OPCODE = 6'b000111;
 parameter SLTI_OPCODE = 6'b001010;
 parameter LUI_OPCODE = 6'b001111;
-parameter LB_OPCODE = 6'b0100000;
-parameter LH_OPCODE = 6'b0100001;
-parameter LW_OPCODE = 6'b0100011;
-parameter SB_OPCODE = 6'b0101000;
-parameter SH_OPCODE = 6'b0101001;
-parameter SW_OPCODE = 6'b0101011;
+parameter LB_OPCODE = 6'b100000;
+parameter LH_OPCODE = 6'b100001;
+parameter LW_OPCODE = 6'b100011;
+parameter SB_OPCODE = 6'b101000;
+parameter SH_OPCODE = 6'b101001;
+parameter SW_OPCODE = 6'b101011;
 
 // FUNCT                
 parameter ADD = 6'b100000;
@@ -1085,7 +1085,7 @@ always @(posedge clock) begin
             end else if (Opcode == SW_OPCODE) begin
                 MemADD = 2'b10;
                 MemWriteRead = 1'b0;
-                ALUControl = 3'b000;
+                ALUControl = 3'b001;
                 ALUSrcB = 3'b111;
                 ALUSrcA = 1'b1;
                 RegALUOutWrite = 1'b1;
@@ -2152,8 +2152,8 @@ always @(posedge clock) begin
             estado = SW_4TH_CLOCK;
         end
         SW_4TH_CLOCK: begin
-            SSControl = 2'b10;
-            MemADD = 2'b00;
+            SSControl = 2'b00;
+            MemADD = 2'b10;
             MemWriteRead = 1'b1;
             // Default
             RegWrite = 1'b0;

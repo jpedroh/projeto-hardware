@@ -1,5 +1,5 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegEPCOut);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegEPCOut, MuxMemAddOut);
 
 input clock;
 input reset;
@@ -86,7 +86,7 @@ wire LOSelector;
 wire[31:0] MuxLOOut;
 
 wire [1:0] MemAdd;
-wire[31:0] MuxMemAddOut;
+output wire[31:0] MuxMemAddOut;
 
 wire[31:0] SignExtend1_32Out;
 assign SignExtend1_32Out = {31'b0, LT};
