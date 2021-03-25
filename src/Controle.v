@@ -1245,7 +1245,7 @@ always @(posedge clock) begin
             estado = WAIT;
             end
         ADDI_ADDIU_2ND_CLOCK: begin
-            if(ALUOverflow == 0) begin
+            if(ALUOverflow == 0 || (ALUOverflow && Opcode == ADDIU_OPCODE)) begin
                 RegWrite = 1'b1;
                 RegDest = 3'b000;
                 RegData = 4'b0000;
