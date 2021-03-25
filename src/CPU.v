@@ -1,5 +1,5 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegALUOutOut);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegShiftOut, ShiftCtrl, MuxAmtSrcOut);
 
 input clock;
 input reset;
@@ -37,7 +37,7 @@ wire[31:0] RegEPCOut;
 
 wire RegALUOutWrite;
 wire[31:0] RegALUOutInput;
-output wire[31:0] RegALUOutOut;
+wire[31:0] RegALUOutOut;
 
 wire RegMDRWrite;
 wire[31:0] RegMDRInput;
@@ -64,7 +64,7 @@ output wire[31:0] MuxRegDataOut;
 wire[4:0] Immediate;
 wire[4:0] Shamt;
 wire AmtSrc;
-wire [4:0] MuxAmtSrcOut;
+output wire [4:0] MuxAmtSrcOut;
 
 wire Zero;
 wire EQ;
@@ -91,7 +91,7 @@ wire[31:0] MuxMemAddOut;
 wire[31:0] SignExtend1_32Out;
 assign SignExtend1_32Out = {31'b0, LT};
 
-wire[31:0] RegShiftOut;
+output wire[31:0] RegShiftOut;
 wire[31:0] LoadSizeOut;
 wire[31:0] ShiftLeft16Out;
 wire[3:0] RegData;
@@ -107,7 +107,7 @@ wire [15:0] Offset;
 
 wire MemWriteRead;
 output wire[31:0] MemData;
-wire [2:0] ShiftCtrl;
+output wire [2:0] ShiftCtrl;
 wire [2:0] AluOp;
 
 wire div_start;
@@ -131,11 +131,15 @@ output wire [5:0] funct;
 wire[31:0] OffsetExtendido;
 wire[31:0] OffsetExtendidoLeft2;
 
+wire[4:0] RegBShamt;
+
 assign funct = Offset[5:0];
 assign SignExtend1632Out = {{17{Offset[15]}}, Offset[14:0]};
 assign JumpAddress = {RegPCOut[31:28], RS[4:0], RT[4:0], Offset[15:0], 2'b0};
 assign OffsetExtendido = {{17{Offset[15]}}, Offset[14:0]};
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
+assign Shamt = Offset[10:6];
+assign RegBShamt = RegBOut[4:0];
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
@@ -158,7 +162,7 @@ ula32 Alu(MuxAluSrcAOut, MuxAluSrcBOut, AluOp, AluResult, Overflow, Negativo, Ze
 // Muxes
 MuxALUSrcA MuxALUSrcA(RegPCOut, RegAOut, ALUSrcA, MuxAluSrcAOut);
 MuxALUSrcB MuxALUSrcB(RegBOut, RegMDROut, SignExtend1632Out, ShiftLeftOut, OffsetExtendidoLeft2, OffsetExtendido, ALUSrcB, MuxAluSrcBOut);
-MuxAmtSrc MuxAmtSrc(Immediate, Shamt, AmtSrc, MuxAmtSrcOut);
+MuxAmtSrc MuxAmtSrc(Shamt, RegBShamt, AmtSrc, MuxAmtSrcOut);
 MuxComparatorSrc MuxComparatorSrc(Zero, GT, LT, ComparatorSrc, MuxComparatorSrcOut);
 MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut);
 MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
@@ -218,6 +222,9 @@ Controle Controle (
     estado,
     MemWriteRead,
     RegALUOutWrite,
+    AmtSrc,
+    ShiftSrc,
+    ShiftCtrl,
     Overflow,
     funct,
     mult_fim,

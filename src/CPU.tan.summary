@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.654 ns
+Actual Time    : 4.719 ns
 From           : reset
-To             : divisor:divisor|fim
+To             : RegDesloc:registrador_deslocamento|n_shift[2]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,8 +15,8 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.957 ns
-From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]
+Actual Time    : 17.508 ns
+From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[3]
 To             : AluResult[31]
 From Clock     : clock
 To Clock       : --
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 0.212 ns
+Actual Time    : 0.167 ns
 From           : reset
-To             : multiplier:multiplier|cicloAtual[1]
+To             : multiplier:multiplier|cicloAtual[3]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,8 +35,8 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 64.31 MHz ( period = 15.550 ns )
-From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]
+Actual Time    : 63.80 MHz ( period = 15.674 ns )
+From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[3]
 To             : MuxRegData:MuxRegData|MuxRegDataOut[0]
 From Clock     : clock
 To Clock       : clock
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : Registrador:A|Saida[3]
-To             : MuxPCSource:MuxPCSource|MuxPCSourceOut[3]
+From           : Registrador:B|Saida[27]
+To             : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[27]
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 624
+Failed Paths   : 715
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 624
+Failed Paths   : 715
 
 --------------------------------------------------------------------------------------
 

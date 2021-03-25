@@ -26,6 +26,9 @@ module Controle (
     output reg [5:0]estado,
     output reg MemWriteRead,
     output reg RegALUOutWrite,
+    output reg AmtSrc,
+    output reg ShftSrc,
+    output reg [2:0]RegShftCtrl,
     input wire ALUOverflow,
     input wire[5:0] funct,
     input wire mult_fim,
@@ -53,6 +56,12 @@ parameter BLE_2ND_CLOCK = 13;
 parameter BGT_2ND_CLOCK = 14;
 parameter SLTI_2ND_CLOCK = 15;
 parameter SLT_2ND_CLOCK = 16;
+parameter SLL_2ND_CLOCK = 17;
+parameter SLLV_2ND_CLOCK = 18;
+parameter SRA_2ND_CLOCK = 19;
+parameter SRAV_2ND_CLOCK = 20;
+parameter SRL_2ND_CLOCK = 21;
+parameter SHIFT_3RD_CLOCK = 22;
 parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
 // OPCODES
@@ -79,6 +88,11 @@ parameter RTE = 6'b010011;
 parameter XCHG = 6'b000101;
 parameter MULT = 6'b011000;
 parameter DIV = 6'b011010;
+parameter SLL = 6'b000000;
+parameter SLLV = 6'b000100;
+parameter SRA = 6'b000011;
+parameter SRAV = 6'b000111;
+parameter SRL = 6'b000010;
 
 initial begin
     estado = FETCH_1ST_CLOCK;
@@ -226,7 +240,6 @@ always @(posedge clock) begin
                         DIV_OP=1'b0;
                         Reg_HI_Write=1'b0;
                         Reg_Lo_Write=1'b0;
-                        estado=1'b0;
                         MemWriteRead=1'b0;
                         estado = ADD_SUB_AND_2ND_CLOCK;
 						end
@@ -254,7 +267,6 @@ always @(posedge clock) begin
                         DIV_OP=1'b0;
                         Reg_HI_Write=1'b0;
                         Reg_Lo_Write=1'b0;
-                        estado=1'b0;
                         MemWriteRead=1'b0;
                         estado = ADD_SUB_AND_2ND_CLOCK;
                         end
@@ -282,7 +294,6 @@ always @(posedge clock) begin
                         DIV_OP=1'b0;
                         Reg_HI_Write=1'b0;
                         Reg_Lo_Write=1'b0;
-                        estado=1'b0;
                         MemWriteRead=1'b0;
                         estado = ADD_SUB_AND_2ND_CLOCK;
                         end
@@ -380,7 +391,7 @@ always @(posedge clock) begin
                         RegData = 4'b1000;
                         estado = WAIT;
                         end
-                    MFH: begin
+                    MFHI: begin
                         RegWrite =1'b1;
                         RegDest = 3'b001;
                         RegData = 4'b0001;
@@ -450,6 +461,151 @@ always @(posedge clock) begin
 						DIV_OP = 1;
 						estado = DIV_2ND_CLOCK;
 					end	
+                    SLL: begin
+                        ShftSrc = 1'b0;
+                        RegShftCtrl = 3'b001;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        MemWriteRead=1'b0;
+                        RegALUOutWrite=1'b0;
+                        estado = SLL_2ND_CLOCK;
+					end
+			        SLLV: begin
+                        ShftSrc = 1'b1;
+                        RegShftCtrl = 3'b001;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        MemWriteRead=1'b0;
+                        RegALUOutWrite=1'b0;
+                        estado = SLLV_2ND_CLOCK;
+					end
+			        SRA: begin
+                        ShftSrc = 1'b0;
+                        RegShftCtrl = 3'b001;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        MemWriteRead=1'b0;
+                        RegALUOutWrite=1'b0;
+                        estado = SRA_2ND_CLOCK;
+					end
+			        SRAV: begin
+                        ShftSrc = 1'b1;
+                        RegShftCtrl = 3'b001;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        MemWriteRead=1'b0;
+                        RegALUOutWrite=1'b0;
+                        estado = SRAV_2ND_CLOCK;
+					end
+			        SRL: begin
+                        ShftSrc = 1'b0;
+                        RegShftCtrl = 3'b001;
+                        //Inalteradas
+                        PCWrite=1'b0;
+                        IRWrite=1'b0;
+                        MemADD=2'b00;
+                        PCSource=3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite=1'b0;
+                        RegBWrite=1'b0;
+                        RegWrite=1'b0;
+                        RegDest=3'b000;
+                        RegData=4'b0000;
+                        XCHGRegWrite=1'b0;
+                        MFH=1'b0;
+                        MuxHiLo=1'b0;
+                        MuxHi=1'b0;
+                        MuxLo=1'b0;
+                        MULT_OP=1'b0;
+                        DIV_OP=1'b0;
+                        Reg_HI_Write=1'b0;
+                        Reg_Lo_Write=1'b0;
+                        MemWriteRead=1'b0;
+                        RegALUOutWrite=1'b0;
+                        estado = SRL_2ND_CLOCK;
+					end
                 endcase
             end else if (Opcode == JUMP_OPCODE) begin
                 PCWrite=1'b1;
@@ -964,6 +1120,168 @@ always @(posedge clock) begin
             RegDest = 3'b000;
             RegData = 4'b0010;
             // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = WAIT;
+        end
+        SLL_2ND_CLOCK: begin
+            AmtSrc = 1'b0;
+            RegShftCtrl = 3'b010;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            estado = SHIFT_3RD_CLOCK;
+	    end
+	    SLLV_2ND_CLOCK: begin
+            AmtSrc = 1'b1;
+            RegShftCtrl = 3'b010;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = SHIFT_3RD_CLOCK;
+        end
+	    SRA_2ND_CLOCK: begin
+            AmtSrc = 1'b0;
+            RegShftCtrl = 3'b100;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = SHIFT_3RD_CLOCK;
+        end
+	    SRAV_2ND_CLOCK: begin
+            AmtSrc = 1'b1;
+            RegShftCtrl = 3'b100;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = SHIFT_3RD_CLOCK;
+        end
+	    SRL_2ND_CLOCK: begin
+            AmtSrc = 1'b0;
+            RegShftCtrl = 3'b011;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            MemWriteRead = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = SHIFT_3RD_CLOCK;
+        end
+	    SHIFT_3RD_CLOCK: begin
+            RegWrite = 1'b1;
+            RegDest = 3'b001;
+            RegData = 4'b0011;
+            // Default
+            AmtSrc = 1'b0;
+            RegShftCtrl = 3'b000;
             PCWrite = 1'b0;
             IRWrite = 1'b0;
             MemADD = 2'b00;

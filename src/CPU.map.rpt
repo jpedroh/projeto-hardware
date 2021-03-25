@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Wed Mar 24 20:18:42 2021
+Wed Mar 24 22:52:39 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -18,28 +18,29 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  10. Registers Removed During Synthesis
  11. Removed Registers Triggering Further Register Optimizations
  12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 15. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 16. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 17. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
- 18. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
- 19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
- 20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
- 21. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
- 22. Parameter Settings for User Entity Instance: Controle:Controle
- 23. Port Connectivity Checks: "Controle:Controle"
- 24. Port Connectivity Checks: "loadsize:loadsize"
- 25. Port Connectivity Checks: "divisor:divisor"
- 26. Port Connectivity Checks: "MuxRegData:MuxRegData"
- 27. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
- 28. Port Connectivity Checks: "MuxLO:MuxLO"
- 29. Port Connectivity Checks: "MuxHI:MuxHI"
- 30. Port Connectivity Checks: "MuxComparatorSrc:MuxComparatorSrc"
- 31. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
- 32. Port Connectivity Checks: "Ula32:Alu"
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 16. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 17. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 18. Source assignments for Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+ 19. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM
+ 20. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_One
+ 21. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Two
+ 22. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
+ 23. Parameter Settings for User Entity Instance: Controle:Controle
+ 24. Port Connectivity Checks: "Controle:Controle"
+ 25. Port Connectivity Checks: "loadsize:loadsize"
+ 26. Port Connectivity Checks: "divisor:divisor"
+ 27. Port Connectivity Checks: "MuxRegData:MuxRegData"
+ 28. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 29. Port Connectivity Checks: "MuxLO:MuxLO"
+ 30. Port Connectivity Checks: "MuxHI:MuxHI"
+ 31. Port Connectivity Checks: "MuxComparatorSrc:MuxComparatorSrc"
+ 32. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 33. Port Connectivity Checks: "Ula32:Alu"
+ 34. Analysis & Synthesis Messages
+ 35. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -65,16 +66,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Wed Mar 24 20:18:42 2021        ;
+; Analysis & Synthesis Status   ; Successful - Wed Mar 24 22:52:38 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 1,355                                        ;
-;     Dedicated logic registers ; 1,227                                        ;
-; Total registers               ; 1227                                         ;
-; Total pins                    ; 346                                          ;
+;     Combinational ALUTs       ; 1,764                                        ;
+;     Dedicated logic registers ; 1,269                                        ;
+; Total registers               ; 1269                                         ;
+; Total pins                    ; 354                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
 ; DSP block 9-bit elements      ; 0                                            ;
@@ -217,39 +218,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 1355  ;
-; Dedicated logic registers                     ; 1227  ;
+; Estimated ALUTs Used                          ; 1764  ;
+; Dedicated logic registers                     ; 1269  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 117   ;
+; Estimated ALUTs Unavailable                   ; 275   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 1355  ;
+; Total combinational functions                 ; 1764  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 18    ;
-;     -- 6 input functions                      ; 781   ;
-;     -- 5 input functions                      ; 149   ;
-;     -- 4 input functions                      ; 115   ;
-;     -- <=3 input functions                    ; 292   ;
+;     -- 7 input functions                      ; 24    ;
+;     -- 6 input functions                      ; 933   ;
+;     -- 5 input functions                      ; 273   ;
+;     -- 4 input functions                      ; 124   ;
+;     -- <=3 input functions                    ; 410   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 1309  ;
-;     -- extended LUT mode                      ; 18    ;
+;     -- normal mode                            ; 1712  ;
+;     -- extended LUT mode                      ; 24    ;
 ;     -- arithmetic mode                        ; 28    ;
 ;     -- shared arithmetic mode                 ; 0     ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 2326  ;
+; Estimated ALUT/register pairs used            ; 2835  ;
 ;                                               ;       ;
-; Total registers                               ; 1227  ;
-;     -- Dedicated logic registers              ; 1227  ;
+; Total registers                               ; 1269  ;
+;     -- Dedicated logic registers              ; 1269  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,163 ;
+; Estimated ALMs:  partially or completely used ; 1,418 ;
 ;                                               ;       ;
-; I/O pins                                      ; 346   ;
+; I/O pins                                      ; 354   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1259  ;
-; Total fan-out                                 ; 12374 ;
-; Average fan-out                               ; 4.18  ;
+; Maximum fan-out                               ; 1301  ;
+; Total fan-out                                 ; 14528 ;
+; Average fan-out                               ; 4.25  ;
 +-----------------------------------------------+-------+
 
 
@@ -258,37 +259,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 1355 (1)          ; 1227 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 346  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 1764 (1)          ; 1269 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 354  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:banco_registradores|              ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:banco_registradores                                                                             ; work         ;
-;    |Controle:Controle|                          ; 136 (136)         ; 29 (29)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
+;    |Controle:Controle|                          ; 168 (168)         ; 34 (34)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
 ;    |Instr_Reg:registrador_instrucoes|           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:registrador_instrucoes                                                                          ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ; work         ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated            ; work         ;
 ;    |MuxALUSrcA:MuxALUSrcA|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ; work         ;
 ;    |MuxALUSrcB:MuxALUSrcB|                      ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ; work         ;
+;    |MuxAmtSrc:MuxAmtSrc|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxAmtSrc:MuxAmtSrc                                                                                       ; work         ;
 ;    |MuxPCSource:MuxPCSource|                    ; 109 (109)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ; work         ;
-;    |MuxRegData:MuxRegData|                      ; 69 (69)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
+;    |MuxRegData:MuxRegData|                      ; 71 (71)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
 ;    |MuxRegDest:MuxRegDest|                      ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDest:MuxRegDest                                                                                     ; work         ;
+;    |MuxShiftSrc:MuxShiftSrc|                    ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftSrc:MuxShiftSrc                                                                                   ; work         ;
+;    |RegDesloc:registrador_deslocamento|         ; 366 (366)         ; 37 (37)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:registrador_deslocamento                                                                        ; work         ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ; work         ;
 ;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
-;    |Ula32:Alu|                                  ; 151 (151)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
+;    |Ula32:Alu|                                  ; 152 (152)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
 ;    |divisor:divisor|                            ; 7 (7)             ; 7 (7)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|divisor:divisor                                                                                           ; work         ;
 ;    |multiplier:multiplier|                      ; 15 (15)           ; 7 (7)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|multiplier:multiplier                                                                                     ; work         ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
@@ -417,30 +421,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                          ;
-+---------------------------------------------------+---------------------------------------------------------+
-; Register name                                     ; Reason for Removal                                      ;
-+---------------------------------------------------+---------------------------------------------------------+
-; Registrador:XCHG|Saida[0..31]                     ; Stuck at GND due to stuck port data_in                  ;
-; Registrador:LO|Saida[0..31]                       ; Stuck at GND due to stuck port data_in                  ;
-; Registrador:HI|Saida[0..31]                       ; Stuck at GND due to stuck port data_in                  ;
-; Registrador:MDR|Saida[0..31]                      ; Stuck at GND due to stuck port clock_enable             ;
-; Registrador:EPC|Saida[0..31]                      ; Stuck at GND due to stuck port clock_enable             ;
-; Controle:Controle|Reg_Lo_Write                    ; Lost fanout                                             ;
-; Controle:Controle|Reg_HI_Write                    ; Lost fanout                                             ;
-; Controle:Controle|MuxHiLo                         ; Lost fanout                                             ;
-; Controle:Controle|XCHGRegWrite                    ; Lost fanout                                             ;
-; RegDesloc:registrador_deslocamento|n_shift[0..30] ; Lost fanout                                             ;
-; RegDesloc:registrador_deslocamento|temp[0..30]    ; Merged with RegDesloc:registrador_deslocamento|temp[31] ;
-; RegDesloc:registrador_deslocamento|temp[31]       ; Stuck at GND due to stuck port data_in                  ;
-; Controle:Controle|MemADD[0..1]                    ; Merged with Controle:Controle|MFH                       ;
-; Controle:Controle|RegAWrite                       ; Merged with Controle:Controle|RegBWrite                 ;
-; Controle:Controle|RegDest[2]                      ; Merged with Controle:Controle|RegData[2]                ;
-; Controle:Controle|MFH                             ; Stuck at GND due to stuck port data_in                  ;
-; Controle:Controle|MemWriteRead                    ; Stuck at GND due to stuck port data_in                  ;
-; Total Number of Removed Registers = 233           ;                                                         ;
-+---------------------------------------------------+---------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++---------------------------------------------------+------------------------------------------------------------+
+; Register name                                     ; Reason for Removal                                         ;
++---------------------------------------------------+------------------------------------------------------------+
+; Registrador:XCHG|Saida[0..31]                     ; Stuck at GND due to stuck port data_in                     ;
+; Registrador:LO|Saida[0..31]                       ; Stuck at GND due to stuck port data_in                     ;
+; Registrador:HI|Saida[0..31]                       ; Stuck at GND due to stuck port data_in                     ;
+; Registrador:MDR|Saida[0..31]                      ; Stuck at GND due to stuck port clock_enable                ;
+; Registrador:EPC|Saida[0..31]                      ; Stuck at GND due to stuck port clock_enable                ;
+; Controle:Controle|Reg_Lo_Write                    ; Lost fanout                                                ;
+; Controle:Controle|Reg_HI_Write                    ; Lost fanout                                                ;
+; Controle:Controle|MuxHiLo                         ; Lost fanout                                                ;
+; Controle:Controle|XCHGRegWrite                    ; Lost fanout                                                ;
+; Controle:Controle|RegAWrite                       ; Merged with Controle:Controle|RegBWrite                    ;
+; Controle:Controle|MemADD[1]                       ; Merged with Controle:Controle|MemADD[0]                    ;
+; Controle:Controle|RegDest[2]                      ; Merged with Controle:Controle|RegData[2]                   ;
+; RegDesloc:registrador_deslocamento|n_shift[5..29] ; Merged with RegDesloc:registrador_deslocamento|n_shift[30] ;
+; RegDesloc:registrador_deslocamento|n_shift[30]    ; Stuck at GND due to stuck port data_in                     ;
+; Controle:Controle|MemWriteRead                    ; Stuck at GND due to stuck port data_in                     ;
+; Controle:Controle|MemADD[0]                       ; Stuck at GND due to stuck port data_in                     ;
+; Total Number of Removed Registers = 195           ;                                                            ;
++---------------------------------------------------+------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -462,39 +465,56 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1227  ;
-; Number of registers using Synchronous Clear  ; 15    ;
-; Number of registers using Synchronous Load   ; 12    ;
-; Number of registers using Asynchronous Clear ; 1190  ;
+; Total registers                              ; 1269  ;
+; Number of registers using Synchronous Clear  ; 44    ;
+; Number of registers using Synchronous Load   ; 22    ;
+; Number of registers using Asynchronous Clear ; 1222  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1212  ;
+; Number of registers using Clock Enable       ; 1245  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|cicloAtual[0] ;
-; 74:1               ; 4 bits    ; 196 ALUTs     ; 48 ALUTs             ; 148 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegData[0]        ;
-; 74:1               ; 10 bits   ; 490 ALUTs     ; 130 ALUTs            ; 360 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUControl[0]     ;
-; 75:1               ; 5 bits    ; 250 ALUTs     ; 60 ALUTs             ; 190 ALUTs              ; Yes        ; |CPU|Controle:Controle|MFH               ;
-; 75:1               ; 3 bits    ; 150 ALUTs     ; 36 ALUTs             ; 114 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegData[2]        ;
-; 1:1                ; 8 bits    ; 0 ALUTs       ; 0 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux6            ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux34                     ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux22                     ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux0          ;
-; 7:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux1        ;
-; 7:1                ; 4 bits    ; 16 ALUTs      ; 12 ALUTs             ; 4 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux29       ;
-; 7:1                ; 26 bits   ; 104 ALUTs     ; 104 ALUTs            ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux8        ;
-; 4:1                ; 15 bits   ; 30 ALUTs      ; 30 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux19         ;
-; 10:1               ; 31 bits   ; 186 ALUTs     ; 124 ALUTs            ; 62 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux29         ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux0  ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux57 ;
-; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux14         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
++---------------------------------------------------------+
+; Inverted Register Statistics                            ;
++-----------------------------------------------+---------+
+; Inverted Register                             ; Fan out ;
++-----------------------------------------------+---------+
+; RegDesloc:registrador_deslocamento|n_shift[0] ; 78      ;
+; Total number of inverted registers = 1        ;         ;
++-----------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|cicloAtual[1]            ;
+; 66:1               ; 3 bits    ; 132 ALUTs     ; 12 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegShftCtrl[0]               ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[8]     ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[28]    ;
+; 75:1               ; 5 bits    ; 250 ALUTs     ; 70 ALUTs             ; 180 ALUTs              ; Yes        ; |CPU|Controle:Controle|IRWrite                      ;
+; 75:1               ; 3 bits    ; 150 ALUTs     ; 42 ALUTs             ; 108 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegDest[1]                   ;
+; 137:1              ; 4 bits    ; 364 ALUTs     ; 76 ALUTs             ; 288 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegData[3]                   ;
+; 137:1              ; 3 bits    ; 273 ALUTs     ; 63 ALUTs             ; 210 ALUTs              ; Yes        ; |CPU|Controle:Controle|PCSource[1]                  ;
+; 137:1              ; 7 bits    ; 637 ALUTs     ; 154 ALUTs            ; 483 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUSrcB[1]                   ;
+; 1:1                ; 8 bits    ; 0 ALUTs       ; 0 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux7                       ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight0 ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight1 ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight0 ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux47                                ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux21                                ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux4                     ;
+; 7:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux1                   ;
+; 7:1                ; 4 bits    ; 16 ALUTs      ; 12 ALUTs             ; 4 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux30                  ;
+; 7:1                ; 26 bits   ; 104 ALUTs     ; 104 ALUTs            ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux14                  ;
+; 4:1                ; 15 bits   ; 30 ALUTs      ; 30 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux28                    ;
+; 10:1               ; 31 bits   ; 186 ALUTs     ; 155 ALUTs            ; 31 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux15                    ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux13            ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux42            ;
+; 5:1                ; 13 bits   ; 39 ALUTs      ; 39 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux3                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -647,6 +667,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; BGT_2ND_CLOCK         ; 14     ; Signed Integer                ;
 ; SLTI_2ND_CLOCK        ; 15     ; Signed Integer                ;
 ; SLT_2ND_CLOCK         ; 16     ; Signed Integer                ;
+; SLL_2ND_CLOCK         ; 17     ; Signed Integer                ;
+; SLLV_2ND_CLOCK        ; 18     ; Signed Integer                ;
+; SRA_2ND_CLOCK         ; 19     ; Signed Integer                ;
+; SRAV_2ND_CLOCK        ; 20     ; Signed Integer                ;
+; SRL_2ND_CLOCK         ; 21     ; Signed Integer                ;
+; SHIFT_3RD_CLOCK       ; 22     ; Signed Integer                ;
 ; WAIT                  ; 111111 ; Unsigned Binary               ;
 ; EXCECAO               ; 111111 ; Unsigned Binary               ;
 ; JUMP_OPCODE           ; 000010 ; Unsigned Binary               ;
@@ -670,6 +696,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; XCHG                  ; 000101 ; Unsigned Binary               ;
 ; MULT                  ; 011000 ; Unsigned Binary               ;
 ; DIV                   ; 011010 ; Unsigned Binary               ;
+; SLL                   ; 000000 ; Unsigned Binary               ;
+; SLLV                  ; 000100 ; Unsigned Binary               ;
+; SRA                   ; 000011 ; Unsigned Binary               ;
+; SRAV                  ; 000111 ; Unsigned Binary               ;
+; SRL                   ; 000010 ; Unsigned Binary               ;
 +-----------------------+--------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -770,7 +801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Mar 24 20:18:35 2021
+    Info: Processing started: Wed Mar 24 22:52:29 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Info: Found 1 design units, including 1 entities, in source file signextend/signextend132.v
     Info: Found entity 1: SignExtend132
@@ -837,9 +868,9 @@ Info: Found 1 design units, including 1 entities, in source file loadsize.v
     Info: Found entity 1: loadsize
 Info: Found 1 design units, including 1 entities, in source file storesize.v
     Info: Found entity 1: storesize
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(156): created implicit net for "Overflow"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(156): created implicit net for "Negativo"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(210): created implicit net for "MFH"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(160): created implicit net for "Overflow"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(160): created implicit net for "Negativo"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(214): created implicit net for "MFH"
 Warning (10227): Verilog HDL Port Declaration warning at multiplier.v(10): data type declaration for "hi" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at multiplier.v(6): see declaration for object "hi"
 Warning (10227): Verilog HDL Port Declaration warning at multiplier.v(11): data type declaration for "lo" declares packed dimensions but the port declaration declaration does not
@@ -871,7 +902,6 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
-Critical Warning: Memory depth (256) in the design file differs from memory depth (12) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:registrador_deslocamento"
 Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(128): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:Alu"
@@ -1141,33 +1171,43 @@ Info (10041): Inferred latch for "saida[29]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[30]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[31]" at storesize.v(15)
 Info: Elaborating entity "Controle" for hierarchy "Controle:Controle"
-Warning (10230): Verilog HDL assignment warning at Controle.v(84): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(115): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(143): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(171): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(199): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(231): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(259): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(287): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(342): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(369): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(423): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(451): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(510): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(538): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(564): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(590): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(616): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(642): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(669): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(765): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(777): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(791): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(821): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(851): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(881): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(990): truncated value with size 32 to match size of target (6)
-Warning (10272): Verilog HDL Case Statement warning at Controle.v(962): case item expression covers a value already covered by a previous case item
+Warning (10230): Verilog HDL assignment warning at Controle.v(98): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(129): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(157): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(185): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(213): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(244): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(271): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(298): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(353): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(380): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(434): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(462): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(491): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(520): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(549): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(578): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(607): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(666): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(694): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(720): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(746): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(772): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(798): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(825): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(921): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(933): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(947): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(977): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1007): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1037): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1172): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1198): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1224): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1250): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1276): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1308): truncated value with size 32 to match size of target (6)
+Warning (10272): Verilog HDL Case Statement warning at Controle.v(1118): case item expression covers a value already covered by a previous case item
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[0]" is permanently enabled
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[1]" is permanently enabled
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[2]" is permanently enabled
@@ -1177,7 +1217,7 @@ Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[5]" is permanently en
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[6]" is permanently enabled
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[7]" is permanently enabled
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[0]
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[0]
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[2] has unsafe behavior
@@ -1241,9 +1281,9 @@ Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[30] has unsafe behavior
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[0]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[3] has unsafe behavior
@@ -1251,11 +1291,11 @@ Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[3] has unsafe behavior
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[4] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[1]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegData[3]
 Warning: Latch MuxRegData:MuxRegData|MuxRegDataOut[9] has unsafe behavior
@@ -1378,53 +1418,22 @@ Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[30] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
 Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
-Info: 35 registers lost all their fanouts during netlist optimizations. The first 35 are displayed below.
+Info: 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
     Info: Register "Controle:Controle|Reg_Lo_Write" lost all its fanouts during netlist optimizations.
     Info: Register "Controle:Controle|Reg_HI_Write" lost all its fanouts during netlist optimizations.
     Info: Register "Controle:Controle|MuxHiLo" lost all its fanouts during netlist optimizations.
     Info: Register "Controle:Controle|XCHGRegWrite" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[30]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[29]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[28]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[27]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[26]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[25]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[24]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[23]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[22]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[21]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[20]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[19]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[18]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[17]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[16]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "RegDesloc:registrador_deslocamento|n_shift[1]" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file D:/Projetos/cin/projeto-hardware/src/CPU.map.smsg
-Info: Implemented 2918 device resources after synthesis - the final resource count might be different
+Info: Implemented 3339 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 344 output pins
-    Info: Implemented 2540 logic cells
+    Info: Implemented 352 output pins
+    Info: Implemented 2953 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 262 warnings
-    Info: Peak virtual memory: 264 megabytes
-    Info: Processing ended: Wed Mar 24 20:18:42 2021
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 271 warnings
+    Info: Peak virtual memory: 268 megabytes
+    Info: Processing ended: Wed Mar 24 22:52:39 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +------------------------------------------+
