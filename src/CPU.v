@@ -1,5 +1,5 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegBOut);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAInput,
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegHIOut, RegLOOut);
 
 input clock;
 input reset;
@@ -21,11 +21,11 @@ wire [31:0] ShiftLeftOut;
 
 wire RegAWrite;
 output wire[31:0] RegAInput;
-output wire[31:0] RegAOut;
+wire[31:0] RegAOut;
 
 wire RegBWrite;
 output wire[31:0] RegBInput;
-output wire[31:0] RegBOut;
+wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
@@ -45,11 +45,11 @@ wire[31:0] RegMDROut;
 
 wire RegHIWrite;
 wire[31:0] RegHIInput;
-wire[31:0] RegHIOut;
+output wire[31:0] RegHIOut;
 
 wire RegLOWrite;
 wire[31:0] RegLOInput;
-wire[31:0] RegLOOut;
+output wire[31:0] RegLOOut;
 
 wire RegXCHGWrite;
 wire[31:0] RegXCHGInput;
@@ -148,8 +148,8 @@ Registrador PC(clock, reset, RegPCWrite, MuxPCSourceOut, RegPCOut);
 Registrador EPC(clock, reset, RegEPCWrite, RegEPCInput, RegEPCOut);
 Registrador ALUOut(clock, reset, RegALUOutWrite, AluResult, RegALUOutOut);
 Registrador MDR(clock, reset, RegMDRWrite, MemData, RegMDROut);
-Registrador HI(clock, reset, RegHIWrite, RegHIInput, RegHIOut);
-Registrador LO(clock, reset, RegLOWrite, RegLOInput, RegLOOut);
+Registrador HI(clock, reset, RegHIWrite, MuxHIOut, RegHIOut);
+Registrador LO(clock, reset, RegLOWrite, MuxLOOut, RegLOOut);
 Registrador XCHG(clock, reset, RegXCHGWrite, RegBOut, RegXCHGOut);
 
 // Provided components

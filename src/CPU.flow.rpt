@@ -1,5 +1,5 @@
 Flow report for CPU
-Thu Mar 25 11:15:38 2021
+Thu Mar 25 11:32:37 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,16 +38,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Thu Mar 25 11:15:38 2021        ;
+; Flow Status                   ; Successful - Thu Mar 25 11:32:37 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Met timing requirements       ; No                                           ;
-; Logic utilization             ; 24 %                                         ;
-;     Combinational ALUTs       ; 1,893 / 12,480 ( 15 % )                      ;
-;     Dedicated logic registers ; 1,341 / 12,480 ( 11 % )                      ;
-; Total registers               ; 1341                                         ;
+; Logic utilization             ; 28 %                                         ;
+;     Combinational ALUTs       ; 2,223 / 12,480 ( 18 % )                      ;
+;     Dedicated logic registers ; 1,631 / 12,480 ( 13 % )                      ;
+; Total registers               ; 1631                                         ;
 ; Total pins                    ; 346 / 367 ( 94 % )                           ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192 / 419,328 ( 2 % )                      ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/25/2021 11:15:15 ;
+; Start date & time ; 03/25/2021 11:32:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CPU                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 5334165488790.161668171409740 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 5334165488790.161668273117824 ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                      ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                        ; --            ; --          ; Top            ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                           ; --            ; --          ; eda_blast_fpga ;
@@ -87,11 +87,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:10     ; 1.0                     ; 264 MB              ; 00:00:12                           ;
-; Fitter                  ; 00:00:09     ; 1.0                     ; 272 MB              ; 00:00:09                           ;
+; Analysis & Synthesis    ; 00:00:10     ; 1.0                     ; 269 MB              ; 00:00:13                           ;
+; Fitter                  ; 00:00:09     ; 1.0                     ; 273 MB              ; 00:00:10                           ;
 ; Assembler               ; 00:00:02     ; 1.0                     ; 235 MB              ; 00:00:02                           ;
-; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 178 MB              ; 00:00:01                           ;
-; Total                   ; 00:00:22     ; --                      ; --                  ; 00:00:24                           ;
+; Classic Timing Analyzer ; 00:00:01     ; 1.0                     ; 181 MB              ; 00:00:01                           ;
+; Total                   ; 00:00:22     ; --                      ; --                  ; 00:00:26                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

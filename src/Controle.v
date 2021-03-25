@@ -455,6 +455,26 @@ always @(posedge clock) begin
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b0;
+                        // Default
+                        PCWrite = 1'b0;
+                        IRWrite = 1'b0;
+                        MemADD = 2'b00;
+                        PCSource = 3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite = 1'b0;
+                        RegBWrite = 1'b0;
+                        XCHGRegWrite = 1'b0;
+                        MFH = 1'b0;
+                        MuxHi = 1'b0;
+                        MuxLo = 1'b0;
+                        MULT_OP = 1'b0;
+                        DIV_OP = 1'b0;
+                        Reg_HI_Write = 1'b0;
+                        Reg_Lo_Write = 1'b0;
+                        MemWriteRead = 1'b0;
+                        RegALUOutWrite = 1'b0;
                         estado = WAIT;
                         end
                     MFLO: begin
@@ -462,6 +482,26 @@ always @(posedge clock) begin
                         RegDest = 3'b001;
                         RegData = 4'b0001;
                         MuxHiLo = 1'b1;
+                        // Default
+                        PCWrite = 1'b0;
+                        IRWrite = 1'b0;
+                        MemADD = 2'b00;
+                        PCSource = 3'b000;
+                        ALUControl = 3'b000;
+                        ALUSrcB = 3'b000;
+                        ALUSrcA = 1'b0;
+                        RegAWrite = 1'b0;
+                        RegBWrite = 1'b0;
+                        XCHGRegWrite = 1'b0;
+                        MFH = 1'b0;
+                        MuxHi = 1'b0;
+                        MuxLo = 1'b0;
+                        MULT_OP = 1'b0;
+                        DIV_OP = 1'b0;
+                        Reg_HI_Write = 1'b0;
+                        Reg_Lo_Write = 1'b0;
+                        MemWriteRead = 1'b0;
+                        RegALUOutWrite = 1'b0;
                         estado = WAIT;
                         end
 					MULT: begin
