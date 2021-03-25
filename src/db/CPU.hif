@@ -1470,6 +1470,42 @@ multiplier:multiplier
 
 # end
 # entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+e4d8221cbfbee8146dfa9dfb5af616
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
 altsyncram_g2a1
 # storage
 db|CPU.(8).cnf
@@ -1564,49 +1600,13 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-984ef9d4c0aafed832615c852dc3f0
+a871586fa33a20fdb494cda5c5f3e5
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-}
-# macro_sequence
-
-# end
-# entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-fea0e8a8735dc7a27c7cf14f7ea5eb5f
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
 }
 # macro_sequence
 
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-ac3c943d33ddaf4d56b49b17ab3a8e
+b6c06f8365441c5fb33b438c8f2fa71
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1770,6 +1770,42 @@ LW_4TH_CLOCK
 31
 PARAMETER_SIGNED_DEC
 DEF
+SB_2ND_CLOCK
+32
+PARAMETER_SIGNED_DEC
+DEF
+SB_3RD_CLOCK
+33
+PARAMETER_SIGNED_DEC
+DEF
+SB_4TH_CLOCK
+34
+PARAMETER_SIGNED_DEC
+DEF
+SH_2ND_CLOCK
+35
+PARAMETER_SIGNED_DEC
+DEF
+SH_3RD_CLOCK
+36
+PARAMETER_SIGNED_DEC
+DEF
+SH_4TH_CLOCK
+37
+PARAMETER_SIGNED_DEC
+DEF
+SW_2ND_CLOCK
+38
+PARAMETER_SIGNED_DEC
+DEF
+SW_3RD_CLOCK
+39
+PARAMETER_SIGNED_DEC
+DEF
+SW_4TH_CLOCK
+40
+PARAMETER_SIGNED_DEC
+DEF
 WAIT
 111111
 PARAMETER_UNSIGNED_BIN
@@ -1828,6 +1864,18 @@ PARAMETER_UNSIGNED_BIN
 DEF
 LW_OPCODE
 100011
+PARAMETER_UNSIGNED_BIN
+DEF
+SB_OPCODE
+101000
+PARAMETER_UNSIGNED_BIN
+DEF
+SH_OPCODE
+101001
+PARAMETER_UNSIGNED_BIN
+DEF
+SW_OPCODE
+101011
 PARAMETER_UNSIGNED_BIN
 DEF
 ADD

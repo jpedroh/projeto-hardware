@@ -187,8 +187,8 @@ loadsize loadsize(
 );
 
 storesize storesize(
-	MemData,
-	SSInput,
+	RegMDROut,
+	RegBOut,
     SSControl,
     SSOutput
 );
@@ -227,6 +227,7 @@ Controle Controle (
     ShiftCtrl,
     RegMDRWrite,
     LSControl,
+    SSControl,
     Overflow,
     funct,
     mult_fim,
