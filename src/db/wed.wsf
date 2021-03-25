@@ -23,8 +23,8 @@ applicable agreement for further details.
 VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 133183;
+		ZBEGIN = 108924;
+		ZEND = 240159;
 		NUMERATOR = 1283;
 		DENOMINATOR = 125000;
 		TOP_INDEX = 156;
@@ -2654,7 +2654,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut";
+		SIGNAL = "RegShiftOut";
 		INDEX = 327;
 		FORMAT = T;
 		SCALE = 1;
@@ -2662,7 +2662,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[31]";
+		SIGNAL = "RegShiftOut[31]";
 		INDEX = 328;
 		FORMAT = E;
 		SCALE = 1;
@@ -2670,7 +2670,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[30]";
+		SIGNAL = "RegShiftOut[30]";
 		INDEX = 329;
 		FORMAT = E;
 		SCALE = 1;
@@ -2678,7 +2678,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[29]";
+		SIGNAL = "RegShiftOut[29]";
 		INDEX = 330;
 		FORMAT = E;
 		SCALE = 1;
@@ -2686,7 +2686,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[28]";
+		SIGNAL = "RegShiftOut[28]";
 		INDEX = 331;
 		FORMAT = E;
 		SCALE = 1;
@@ -2694,7 +2694,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[27]";
+		SIGNAL = "RegShiftOut[27]";
 		INDEX = 332;
 		FORMAT = E;
 		SCALE = 1;
@@ -2702,7 +2702,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[26]";
+		SIGNAL = "RegShiftOut[26]";
 		INDEX = 333;
 		FORMAT = E;
 		SCALE = 1;
@@ -2710,7 +2710,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[25]";
+		SIGNAL = "RegShiftOut[25]";
 		INDEX = 334;
 		FORMAT = E;
 		SCALE = 1;
@@ -2718,7 +2718,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[24]";
+		SIGNAL = "RegShiftOut[24]";
 		INDEX = 335;
 		FORMAT = E;
 		SCALE = 1;
@@ -2726,7 +2726,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[23]";
+		SIGNAL = "RegShiftOut[23]";
 		INDEX = 336;
 		FORMAT = E;
 		SCALE = 1;
@@ -2734,7 +2734,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[22]";
+		SIGNAL = "RegShiftOut[22]";
 		INDEX = 337;
 		FORMAT = E;
 		SCALE = 1;
@@ -2742,7 +2742,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[21]";
+		SIGNAL = "RegShiftOut[21]";
 		INDEX = 338;
 		FORMAT = E;
 		SCALE = 1;
@@ -2750,7 +2750,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[20]";
+		SIGNAL = "RegShiftOut[20]";
 		INDEX = 339;
 		FORMAT = E;
 		SCALE = 1;
@@ -2758,7 +2758,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[19]";
+		SIGNAL = "RegShiftOut[19]";
 		INDEX = 340;
 		FORMAT = E;
 		SCALE = 1;
@@ -2766,7 +2766,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[18]";
+		SIGNAL = "RegShiftOut[18]";
 		INDEX = 341;
 		FORMAT = E;
 		SCALE = 1;
@@ -2774,7 +2774,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[17]";
+		SIGNAL = "RegShiftOut[17]";
 		INDEX = 342;
 		FORMAT = E;
 		SCALE = 1;
@@ -2782,7 +2782,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[16]";
+		SIGNAL = "RegShiftOut[16]";
 		INDEX = 343;
 		FORMAT = E;
 		SCALE = 1;
@@ -2790,7 +2790,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[15]";
+		SIGNAL = "RegShiftOut[15]";
 		INDEX = 344;
 		FORMAT = E;
 		SCALE = 1;
@@ -2798,7 +2798,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[14]";
+		SIGNAL = "RegShiftOut[14]";
 		INDEX = 345;
 		FORMAT = E;
 		SCALE = 1;
@@ -2806,7 +2806,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[13]";
+		SIGNAL = "RegShiftOut[13]";
 		INDEX = 346;
 		FORMAT = E;
 		SCALE = 1;
@@ -2814,7 +2814,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[12]";
+		SIGNAL = "RegShiftOut[12]";
 		INDEX = 347;
 		FORMAT = E;
 		SCALE = 1;
@@ -2822,7 +2822,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[11]";
+		SIGNAL = "RegShiftOut[11]";
 		INDEX = 348;
 		FORMAT = E;
 		SCALE = 1;
@@ -2830,7 +2830,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[10]";
+		SIGNAL = "RegShiftOut[10]";
 		INDEX = 349;
 		FORMAT = E;
 		SCALE = 1;
@@ -2838,7 +2838,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[9]";
+		SIGNAL = "RegShiftOut[9]";
 		INDEX = 350;
 		FORMAT = E;
 		SCALE = 1;
@@ -2846,7 +2846,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[8]";
+		SIGNAL = "RegShiftOut[8]";
 		INDEX = 351;
 		FORMAT = E;
 		SCALE = 1;
@@ -2854,7 +2854,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[7]";
+		SIGNAL = "RegShiftOut[7]";
 		INDEX = 352;
 		FORMAT = E;
 		SCALE = 1;
@@ -2862,7 +2862,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[6]";
+		SIGNAL = "RegShiftOut[6]";
 		INDEX = 353;
 		FORMAT = E;
 		SCALE = 1;
@@ -2870,7 +2870,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[5]";
+		SIGNAL = "RegShiftOut[5]";
 		INDEX = 354;
 		FORMAT = E;
 		SCALE = 1;
@@ -2878,7 +2878,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[4]";
+		SIGNAL = "RegShiftOut[4]";
 		INDEX = 355;
 		FORMAT = E;
 		SCALE = 1;
@@ -2886,7 +2886,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[3]";
+		SIGNAL = "RegShiftOut[3]";
 		INDEX = 356;
 		FORMAT = E;
 		SCALE = 1;
@@ -2894,7 +2894,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[2]";
+		SIGNAL = "RegShiftOut[2]";
 		INDEX = 357;
 		FORMAT = E;
 		SCALE = 1;
@@ -2902,7 +2902,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[1]";
+		SIGNAL = "RegShiftOut[1]";
 		INDEX = 358;
 		FORMAT = E;
 		SCALE = 1;
@@ -2910,8 +2910,72 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegALUOutOut[0]";
+		SIGNAL = "RegShiftOut[0]";
 		INDEX = 359;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "ShiftCtrl[0]";
+		INDEX = 360;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "ShiftCtrl[1]";
+		INDEX = 361;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "ShiftCtrl[2]";
+		INDEX = 362;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MuxAmtSrcOut[0]";
+		INDEX = 363;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MuxAmtSrcOut[1]";
+		INDEX = 364;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MuxAmtSrcOut[2]";
+		INDEX = 365;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MuxAmtSrcOut[3]";
+		INDEX = 366;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MuxAmtSrcOut[4]";
+		INDEX = 367;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

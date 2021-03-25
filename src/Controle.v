@@ -99,6 +99,35 @@ initial begin
 end
 
 always @(posedge clock) begin
+	if (reset) begin
+		//Alteradas
+        RegWrite = 1'b1;
+        RegDest = 3'b011;
+        RegData = 4'b0110;
+        // Default
+        PCWrite = 1'b0;
+        IRWrite = 1'b0;
+        MemADD = 2'b00;
+        PCSource = 3'b000;
+        ALUControl = 3'b000;
+        ALUSrcB = 3'b000;
+        ALUSrcA = 1'b0;
+        RegAWrite = 1'b0;
+        RegBWrite = 1'b0;
+        XCHGRegWrite = 1'b0;
+        MFH = 1'b0;
+        MuxHiLo = 1'b0;
+        MuxHi = 1'b0;
+        MuxLo = 1'b0;
+        MULT_OP = 1'b0;
+        DIV_OP = 1'b0;
+        Reg_HI_Write = 1'b0;
+        Reg_Lo_Write = 1'b0;
+        MemWriteRead = 1'b0;
+        RegALUOutWrite = 1'b0;
+        estado = FETCH_1ST_CLOCK;
+	end			
+	else begin
 	case(estado)
         FETCH_1ST_CLOCK: begin
             PCSource = 3'b001;
