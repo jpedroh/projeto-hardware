@@ -1,5 +1,5 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, SSOutput);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegBOut);
 
 input clock;
 input reset;
@@ -25,7 +25,7 @@ output wire[31:0] RegAOut;
 
 wire RegBWrite;
 output wire[31:0] RegBInput;
-wire[31:0] RegBOut;
+output wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
@@ -124,7 +124,7 @@ wire [31:0] LSOutput;
 
 wire [31:0] SSInput;
 wire [1:0] SSControl;
-output wire [31:0] SSOutput;
+wire [31:0] SSOutput;
 wire [31:0] JumpAddress;
 
 output wire [5:0] funct;
@@ -150,7 +150,7 @@ Registrador ALUOut(clock, reset, RegALUOutWrite, AluResult, RegALUOutOut);
 Registrador MDR(clock, reset, RegMDRWrite, MemData, RegMDROut);
 Registrador HI(clock, reset, RegHIWrite, RegHIInput, RegHIOut);
 Registrador LO(clock, reset, RegLOWrite, RegLOInput, RegLOOut);
-Registrador XCHG(clock, reset, RegXCHGWrite, RegXCHGInput, RegXCHGOut);
+Registrador XCHG(clock, reset, RegXCHGWrite, RegBOut, RegXCHGOut);
 
 // Provided components
 Banco_reg banco_registradores(clock, reset, RegWrite, RS, RT, MuxRegDestOut, MuxRegDataOut, RegAInput, RegBInput);
