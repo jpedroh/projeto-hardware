@@ -74,6 +74,7 @@ parameter BNE_OPCODE = 6'b000101;
 parameter BLE_OPCODE = 6'b000110;
 parameter BGT_OPCODE = 6'b000111;
 parameter SLTI_OPCODE = 6'b001010;
+parameter LUI_OPCODE = 6'b001111;
 
 // FUNCT                
 parameter ADD = 6'b100000;
@@ -852,6 +853,32 @@ always @(posedge clock) begin
                 RegALUOutWrite = 1'b0;
 
                 estado = SLTI_2ND_CLOCK;
+            end else if (Opcode == LUI_OPCODE) begin
+                RegWrite = 1'b1;
+                RegDest = 3'b000;
+                RegData = 4'b0101;
+                // Default
+                PCWrite = 1'b0;
+                IRWrite = 1'b0;
+                MemADD = 2'b00;
+                PCSource = 3'b000;
+                ALUControl = 3'b000;
+                ALUSrcB = 3'b000;
+                ALUSrcA = 1'b0;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                MemWriteRead = 1'b0;
+                RegALUOutWrite = 1'b0;
+                estado = WAIT;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
@@ -1337,5 +1364,6 @@ always @(posedge clock) begin
             estado = FETCH_1ST_CLOCK;
         end
 	endcase
+end
 end
 endmodule

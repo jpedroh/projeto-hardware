@@ -170,7 +170,7 @@ MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
 MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
-MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, ShiftLeft16Out, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
+MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LoadSizeOut, OffsetExtendido << 16, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RT, Offset[15:11], RS, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
 

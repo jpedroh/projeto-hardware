@@ -1470,148 +1470,6 @@ multiplier:multiplier
 
 # end
 # entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-10527e858c9945d2f84339c2536b9ed
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_g2a1
-# storage
-db|CPU.(8).cnf
-db|CPU.(8).cnf
-# case_insensitive
-# source_file
-db|altsyncram_g2a1.tdf
-d8862ea4f7a5427dbb1d3425791064
-7
-# used_port {
-wren_a
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_a7
--1
-3
-data_a6
--1
-3
-data_a5
--1
-3
-data_a4
--1
-3
-data_a3
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-instrucoes.mif
-dac239c28dd228d96f26b428326e98b
-}
-# hierarchies {
-Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-}
-# macro_sequence
-
-# end
-# entity
 Controle
 # storage
 db|CPU.(28).cnf
@@ -1623,7 +1481,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-1edaa8618ac79cdb4fe3e5b47f9da8f0
+ea6829fa1ebf73d20be5752dc1ba09c
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1778,6 +1636,10 @@ SLTI_OPCODE
 001010
 PARAMETER_UNSIGNED_BIN
 DEF
+LUI_OPCODE
+001111
+PARAMETER_UNSIGNED_BIN
+DEF
 ADD
 100000
 PARAMETER_UNSIGNED_BIN
@@ -1849,6 +1711,148 @@ DEF
 }
 # hierarchies {
 Controle:Controle
+}
+# macro_sequence
+
+# end
+# entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+a8a45b11ff6de2ba58ba21ddd38be3
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_g2a1
+# storage
+db|CPU.(8).cnf
+db|CPU.(8).cnf
+# case_insensitive
+# source_file
+db|altsyncram_g2a1.tdf
+d8862ea4f7a5427dbb1d3425791064
+7
+# used_port {
+wren_a
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock1
+-1
+3
+clock0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+instrucoes.mif
+8091e9b96a72137a9094da6266c839f9
+}
+# hierarchies {
+Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
+Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 }
 # macro_sequence
 
