@@ -1326,42 +1326,6 @@ MuxRegData:MuxRegData
 
 # end
 # entity
-MuxPCSource
-# storage
-db|CPU.(20).cnf
-db|CPU.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-muxes|muxpcsource.v
-f34cf6841b339be76ae9c1de7931561
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-MuxPCSource:MuxPCSource
-}
-# macro_sequence
-
-# end
-# entity
 divisor
 # storage
 db|CPU.(24).cnf
@@ -1470,6 +1434,78 @@ multiplier:multiplier
 
 # end
 # entity
+CPU
+# storage
+db|CPU.(0).cnf
+db|CPU.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+cpu.v
+35eeb95f152a62ee69dfdd8c825d2b18
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+MuxPCSource
+# storage
+db|CPU.(20).cnf
+db|CPU.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+muxes|muxpcsource.v
+adfd64e7297a276721eec989afaa5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+MuxPCSource:MuxPCSource
+}
+# macro_sequence
+
+# end
+# entity
 altsyncram_g2a1
 # storage
 db|CPU.(8).cnf
@@ -1564,49 +1600,13 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-5ad6c734a28e3319a5d12ace67af05c
+3a97588d6d998ca74f33fefa46595
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
 Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
-}
-# macro_sequence
-
-# end
-# entity
-CPU
-# storage
-db|CPU.(0).cnf
-db|CPU.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-cpu.v
-e5f5d056b4a98881a27af75d0b467f7
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-|
 }
 # macro_sequence
 
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-86d981615eb586209b7ab7ccf46f
+2fa9be8a3a16dc876bb4d41c2f8a7
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1804,6 +1804,14 @@ PARAMETER_SIGNED_DEC
 DEF
 SW_4TH_CLOCK
 40
+PARAMETER_SIGNED_DEC
+DEF
+EXCEPTION_WAIT
+41
+PARAMETER_SIGNED_DEC
+DEF
+SEND_EXCEPTION_BYTE_TO_PC
+42
 PARAMETER_SIGNED_DEC
 DEF
 WAIT

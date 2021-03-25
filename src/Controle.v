@@ -32,6 +32,8 @@ module Controle (
     output reg RegMDRWrite,
     output reg [1:0] LSControl,
     output reg [1:0] SSControl,
+    output reg [1:0] ExceptionAddress,
+    output reg RegEPCWrite,
     input wire ALUOverflow,
     input wire[5:0] funct,
     input wire mult_fim,
@@ -83,6 +85,8 @@ parameter SH_4TH_CLOCK = 37;
 parameter SW_2ND_CLOCK = 38;
 parameter SW_3RD_CLOCK = 39;
 parameter SW_4TH_CLOCK = 40;
+parameter EXCEPTION_WAIT = 41;
+parameter SEND_EXCEPTION_BYTE_TO_PC = 42;
 
 parameter WAIT = 6'b111111;
 parameter EXCECAO = 6'b111111;
@@ -1104,39 +1108,86 @@ always @(posedge clock) begin
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
                 estado = SW_2ND_CLOCK;
+            end else begin
+                // OPCODE INEXISTENTE
+                MemADD = 2'b01;
+                MemWriteRead = 1'b0;
+                ALUControl = 3'b010;
+                ALUSrcB = 3'b011;
+                ALUSrcA = 1'b0;
+                ExceptionAddress = 2'b00;
+				RegEPCWrite = 1'b1;
+                // Default
+                PCWrite = 1'b0;
+                IRWrite = 1'b0;
+                PCSource = 3'b000;
+                RegAWrite = 1'b0;
+                RegBWrite = 1'b0;
+                RegWrite = 1'b0;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+                XCHGRegWrite = 1'b0;
+                MFH = 1'b0;
+                MuxHiLo = 1'b0;
+                MuxHi = 1'b0;
+                MuxLo = 1'b0;
+                MULT_OP = 1'b0;
+                DIV_OP = 1'b0;
+                Reg_HI_Write = 1'b0;
+                Reg_Lo_Write = 1'b0;
+                RegALUOutWrite = 1'b0;
+                ExceptionAddress = 2'b00;
+                RegEPCWrite = 1'b0;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
-            if(ALUOverflow) begin
-                estado = EXCECAO;
-            end else begin
-                RegWrite=1'b1;
+            if(ALUOverflow == 0) begin
+                RegWrite = 1'b1;
                 RegDest = 3'b001;
                 RegData = 4'b1001;
-                // Inalteradas
-                PCWrite=1'b0;
-                IRWrite=1'b0;
-                MemADD=2'b00;
-                PCSource=3'b000;
-                ALUControl=3'b000;
-                ALUSrcB=3'b000;
-                ALUSrcA=1'b0;
-                RegAWrite=1'b0;
-                RegBWrite=1'b0;
-                XCHGRegWrite=1'b0;
-                MFH=1'b0;
-                MuxHiLo=1'b0;
-                MuxHi=1'b0;
-                MuxLo=1'b0;
-                MULT_OP=1'b0;
-                DIV_OP=1'b0;
-                Reg_HI_Write=1'b0;
-                Reg_Lo_Write=1'b0;
-                MemWriteRead=1'b0;
-                RegALUOutWrite=1'b0;
-                estado = WAIT;
-            end
+				estado = WAIT;
+				//
+                ExceptionAddress = 2'b00;
+                MemADD = 2'b00;
+                ALUControl = 3'b000;
+                ALUSrcB = 3'b000;
+                ALUSrcA = 1'b0;
+				RegEPCWrite = 1'b0;
+			end else begin
+                ExceptionAddress = 2'b01;
+                MemADD = 2'b01;
+                ALUControl = 3'b010;
+                ALUSrcB = 3'b011;
+                ALUSrcA = 1'b0;
+				RegEPCWrite = 1'b1;
+				estado = EXCEPTION_WAIT;
+				//
+				RegDest = 3'b000;
+				RegWrite = 1'b0;
+				RegData = 4'b0000;
 			end
+            RegWrite = 1'b1;
+            RegDest = 3'b001;
+            RegData = 4'b1001;
+            // Inalteradas
+            PCWrite=1'b0;
+            IRWrite=1'b0;
+            PCSource=3'b000;
+            RegAWrite=1'b0;
+            RegBWrite=1'b0;
+            XCHGRegWrite=1'b0;
+            MFH=1'b0;
+            MuxHiLo=1'b0;
+            MuxHi=1'b0;
+            MuxLo=1'b0;
+            MULT_OP=1'b0;
+            DIV_OP=1'b0;
+            Reg_HI_Write=1'b0;
+            Reg_Lo_Write=1'b0;
+            MemWriteRead=1'b0;
+            RegALUOutWrite=1'b0;
+            estado = WAIT;
+		end
         XCHG_2ND_CLOCK: begin
             RegWrite = 1'b1;
             RegDest = 3'b100;
@@ -1192,17 +1243,35 @@ always @(posedge clock) begin
             estado = WAIT;
             end
         ADDI_ADDIU_2ND_CLOCK: begin
-            RegWrite = 1'b1;
-            RegDest = 3'b000;
-            RegData = 4'b0000;
+            if(ALUOverflow == 0) begin
+                RegWrite = 1'b1;
+                RegDest = 3'b000;
+                RegData = 4'b0000;
+				estado = WAIT;
+				//
+                ExceptionAddress = 2'b00;
+                MemADD = 2'b00;
+                ALUControl = 3'b000;
+                ALUSrcB = 3'b000;
+                ALUSrcA = 1'b0;
+				RegEPCWrite = 1'b0;
+			end else begin
+                ExceptionAddress = 2'b01;
+                MemADD = 2'b01;
+                ALUControl = 3'b010;
+                ALUSrcB = 3'b011;
+                ALUSrcA = 1'b0;
+				RegEPCWrite = 1'b1;
+				estado = EXCEPTION_WAIT;
+				//
+				RegDest = 3'b000;
+				RegWrite = 1'b0;
+				RegData = 4'b0000;
+			end
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
-            MemADD = 2'b00;
             PCSource = 3'b000;
-            ALUControl = 3'b000;
-            ALUSrcB = 3'b000;
-            ALUSrcA = 1'b0;
             RegAWrite = 1'b0;
             RegBWrite = 1'b0;
             XCHGRegWrite = 1'b0;
@@ -1216,7 +1285,6 @@ always @(posedge clock) begin
             Reg_Lo_Write = 1'b0;
             MemWriteRead = 1'b0;
             RegALUOutWrite = 1'b0;
-            estado = WAIT;
         end
         MULT_2ND_CLOCK:
 			if (mult_fim == 0) begin
@@ -2112,6 +2180,64 @@ always @(posedge clock) begin
             Reg_Lo_Write = 1'b0;
             RegALUOutWrite = 1'b0;
             estado = WAIT;
+        end
+        EXCEPTION_WAIT: begin
+            MemWriteRead = 1'b0;
+            // Default
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            RegALUOutWrite = 1'b0;
+            ExceptionAddress = 2'b00;
+            RegEPCWrite = 1'b0;
+            estado = SEND_EXCEPTION_BYTE_TO_PC;
+        end
+        SEND_EXCEPTION_BYTE_TO_PC: begin
+            PCWrite = 1'b1;
+            PCSource = 3'b101;
+            // Default
+            MemWriteRead = 1'b0;
+            IRWrite = 1'b0;
+            MemADD = 2'b00;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            RegALUOutWrite = 1'b0;
+            ExceptionAddress = 2'b00;
+            RegEPCWrite = 1'b0;
+            estado = FETCH_1ST_CLOCK;
         end
         WAIT: begin
             estado = FETCH_1ST_CLOCK;

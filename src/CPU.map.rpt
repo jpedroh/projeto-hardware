@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Thu Mar 25 11:32:22 2021
+Thu Mar 25 13:47:06 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -62,16 +62,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu Mar 25 11:32:22 2021        ;
+; Analysis & Synthesis Status   ; Successful - Thu Mar 25 13:47:06 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 2,222                                        ;
-;     Dedicated logic registers ; 1,631                                        ;
-; Total registers               ; 1631                                         ;
-; Total pins                    ; 346                                          ;
+;     Combinational ALUTs       ; 2,307                                        ;
+;     Dedicated logic registers ; 1,665                                        ;
+; Total registers               ; 1665                                         ;
+; Total pins                    ; 314                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
 ; DSP block 9-bit elements      ; 0                                            ;
@@ -214,39 +214,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 2222  ;
-; Dedicated logic registers                     ; 1631  ;
+; Estimated ALUTs Used                          ; 2307  ;
+; Dedicated logic registers                     ; 1665  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 279   ;
+; Estimated ALUTs Unavailable                   ; 291   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 2222  ;
+; Total combinational functions                 ; 2307  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 24    ;
-;     -- 6 input functions                      ; 980   ;
-;     -- 5 input functions                      ; 341   ;
-;     -- 4 input functions                      ; 182   ;
-;     -- <=3 input functions                    ; 695   ;
+;     -- 7 input functions                      ; 26    ;
+;     -- 6 input functions                      ; 1011  ;
+;     -- 5 input functions                      ; 357   ;
+;     -- 4 input functions                      ; 217   ;
+;     -- <=3 input functions                    ; 696   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 2040  ;
-;     -- extended LUT mode                      ; 24    ;
+;     -- normal mode                            ; 2123  ;
+;     -- extended LUT mode                      ; 26    ;
 ;     -- arithmetic mode                        ; 125   ;
 ;     -- shared arithmetic mode                 ; 33    ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 3442  ;
+; Estimated ALUT/register pairs used            ; 3564  ;
 ;                                               ;       ;
-; Total registers                               ; 1631  ;
-;     -- Dedicated logic registers              ; 1631  ;
+; Total registers                               ; 1665  ;
+;     -- Dedicated logic registers              ; 1665  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,721 ;
+; Estimated ALMs:  partially or completely used ; 1,782 ;
 ;                                               ;       ;
-; I/O pins                                      ; 346   ;
+; I/O pins                                      ; 314   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1663  ;
-; Total fan-out                                 ; 18010 ;
-; Average fan-out                               ; 4.26  ;
+; Maximum fan-out                               ; 1697  ;
+; Total fan-out                                 ; 18457 ;
+; Average fan-out                               ; 4.27  ;
 +-----------------------------------------------+-------+
 
 
@@ -255,23 +255,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 2222 (1)          ; 1631 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 346  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 2307 (1)          ; 1665 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 314  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:banco_registradores|              ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:banco_registradores                                                                             ; work         ;
-;    |Controle:Controle|                          ; 212 (212)         ; 45 (45)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
+;    |Controle:Controle|                          ; 284 (284)         ; 47 (47)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
 ;    |Instr_Reg:registrador_instrucoes|           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:registrador_instrucoes                                                                          ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
@@ -279,22 +279,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |MuxALUSrcA:MuxALUSrcA|                      ; 32 (32)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ; work         ;
 ;    |MuxALUSrcB:MuxALUSrcB|                      ; 81 (81)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ; work         ;
 ;    |MuxAmtSrc:MuxAmtSrc|                        ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxAmtSrc:MuxAmtSrc                                                                                       ; work         ;
-;    |MuxHILO:MuxHILO|                            ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxHILO:MuxHILO                                                                                           ; work         ;
-;    |MuxMemAdd:MuxMemAdd|                        ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxMemAdd:MuxMemAdd                                                                                       ; work         ;
-;    |MuxPCSource:MuxPCSource|                    ; 101 (101)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ; work         ;
-;    |MuxRegData:MuxRegData|                      ; 138 (138)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
+;    |MuxMemAdd:MuxMemAdd|                        ; 17 (17)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxMemAdd:MuxMemAdd                                                                                       ; work         ;
+;    |MuxPCSource:MuxPCSource|                    ; 74 (74)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ; work         ;
+;    |MuxRegData:MuxRegData|                      ; 140 (140)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
 ;    |MuxRegDest:MuxRegDest|                      ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDest:MuxRegDest                                                                                     ; work         ;
 ;    |MuxShiftSrc:MuxShiftSrc|                    ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftSrc:MuxShiftSrc                                                                                   ; work         ;
 ;    |RegDesloc:registrador_deslocamento|         ; 369 (369)         ; 37 (37)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:registrador_deslocamento                                                                        ; work         ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
 ;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ; work         ;
+;    |Registrador:EPC|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:EPC                                                                                           ; work         ;
 ;    |Registrador:HI|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:HI                                                                                            ; work         ;
 ;    |Registrador:LO|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:LO                                                                                            ; work         ;
 ;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:MDR                                                                                           ; work         ;
-;    |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
+;    |Registrador:PC|                             ; 6 (6)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
 ;    |Registrador:XCHG|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:XCHG                                                                                          ; work         ;
-;    |Ula32:Alu|                                  ; 136 (136)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
+;    |Ula32:Alu|                                  ; 160 (160)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
 ;    |divisor:divisor|                            ; 144 (144)         ; 103 (103)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|divisor:divisor                                                                                           ; work         ;
 ;    |loadsize:loadsize|                          ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|loadsize:loadsize                                                                                         ; work         ;
 ;    |multiplier:multiplier|                      ; 181 (181)         ; 134 (134)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|multiplier:multiplier                                                                                     ; work         ;
@@ -315,113 +315,113 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                           ;
-+------------------------------------------------------+-------------------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal           ; Free of Timing Hazards ;
-+------------------------------------------------------+-------------------------------+------------------------+
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[0]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[2]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[3]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[4]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[5]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[6]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[7]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[8]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[9]               ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[10]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[11]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[12]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[13]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[14]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[15]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[16]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[17]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[18]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[19]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[20]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[21]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[22]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[23]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[24]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[25]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[26]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[27]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[28]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[29]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[30]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[31]              ; MuxALUSrcB:MuxALUSrcB|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[0]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[1]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[2]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[3]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[4]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[5]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[6]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[7]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[8]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[9]               ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[10]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[11]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[12]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[13]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[14]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[15]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[16]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[17]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[18]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[19]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[20]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[21]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[22]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[23]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[24]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[25]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[26]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[27]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[28]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[29]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[30]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegData:MuxRegData|MuxRegDataOut[31]              ; MuxRegData:MuxRegData|Mux32   ; yes                    ;
-; MuxRegDest:MuxRegDest|MuxRegDestOut[0]               ; MuxRegDest:MuxRegDest|Mux5    ; yes                    ;
-; MuxRegDest:MuxRegDest|MuxRegDestOut[1]               ; MuxRegDest:MuxRegDest|Mux5    ; yes                    ;
-; MuxRegDest:MuxRegDest|MuxRegDestOut[2]               ; MuxRegDest:MuxRegDest|Mux5    ; yes                    ;
-; MuxRegDest:MuxRegDest|MuxRegDestOut[3]               ; MuxRegDest:MuxRegDest|Mux5    ; yes                    ;
-; MuxRegDest:MuxRegDest|MuxRegDestOut[4]               ; MuxRegDest:MuxRegDest|Mux5    ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[0]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[1]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[2]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[3]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[4]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[5]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[6]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[7]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[8]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[9]            ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[10]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[11]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[12]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[13]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[14]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[15]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[16]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[17]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[18]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[19]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[20]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[21]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[22]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[23]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[24]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[25]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[26]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[27]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[28]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[29]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; MuxPCSource:MuxPCSource|MuxPCSourceOut[30]           ; MuxPCSource:MuxPCSource|Mux32 ; yes                    ;
-; Number of user-specified and inferred latches = 133  ;                               ;                        ;
-+------------------------------------------------------+-------------------------------+------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++------------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal            ; Free of Timing Hazards ;
++------------------------------------------------------+--------------------------------+------------------------+
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[0]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[2]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[3]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[4]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[5]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[6]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[7]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[8]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[9]               ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[10]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[11]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[12]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[13]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[14]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[15]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[16]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[17]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[18]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[19]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[20]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[21]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[22]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[23]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[24]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[25]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[26]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[27]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[28]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[29]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[30]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[31]              ; MuxALUSrcB:MuxALUSrcB|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[0]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[1]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[2]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[3]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[4]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[5]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[6]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[7]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[8]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[9]               ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[10]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[11]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[12]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[13]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[14]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[15]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[16]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[17]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[18]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[19]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[20]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[21]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[22]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[23]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[24]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[25]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[26]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[27]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[28]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[29]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[30]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegData:MuxRegData|MuxRegDataOut[31]              ; MuxRegData:MuxRegData|Mux32    ; yes                    ;
+; MuxRegDest:MuxRegDest|MuxRegDestOut[0]               ; MuxRegDest:MuxRegDest|Mux5     ; yes                    ;
+; MuxRegDest:MuxRegDest|MuxRegDestOut[1]               ; MuxRegDest:MuxRegDest|Mux5     ; yes                    ;
+; MuxRegDest:MuxRegDest|MuxRegDestOut[2]               ; MuxRegDest:MuxRegDest|Mux5     ; yes                    ;
+; MuxRegDest:MuxRegDest|MuxRegDestOut[3]               ; MuxRegDest:MuxRegDest|Mux5     ; yes                    ;
+; MuxRegDest:MuxRegDest|MuxRegDestOut[4]               ; MuxRegDest:MuxRegDest|Mux5     ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[0]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[1]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[2]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[3]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[4]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[5]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[6]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; MuxMemAdd:MuxMemAdd|MuxMemAddOut[7]                  ; MuxMemAdd:MuxMemAdd|Mux32      ; yes                    ;
+; loadsize:loadsize|saida[0]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[1]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[2]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[3]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[4]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[5]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[6]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[7]                           ; loadsize:loadsize|saida[7]     ; yes                    ;
+; loadsize:loadsize|saida[8]                           ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[9]                           ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[10]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[11]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[12]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[13]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[14]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[15]                          ; Controle:Controle|LSControl[1] ; yes                    ;
+; loadsize:loadsize|saida[16]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[17]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[18]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[19]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[20]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[21]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; loadsize:loadsize|saida[22]                          ; loadsize:loadsize|Equal0       ; yes                    ;
+; Number of user-specified and inferred latches = 109  ;                                ;                        ;
++------------------------------------------------------+--------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -430,7 +430,6 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +---------------------------------------------------+------------------------------------------------------------+
 ; Register name                                     ; Reason for Removal                                         ;
 +---------------------------------------------------+------------------------------------------------------------+
-; Registrador:EPC|Saida[0..31]                      ; Stuck at GND due to stuck port clock_enable                ;
 ; multiplier:multiplier|hi[31]                      ; Merged with multiplier:multiplier|hi[30]                   ;
 ; multiplier:multiplier|product[63]                 ; Merged with multiplier:multiplier|product[62]              ;
 ; Controle:Controle|Reg_HI_Write                    ; Merged with Controle:Controle|Reg_Lo_Write                 ;
@@ -438,9 +437,10 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; Controle:Controle|RegAWrite                       ; Merged with Controle:Controle|RegBWrite                    ;
 ; RegDesloc:registrador_deslocamento|n_shift[5..29] ; Merged with RegDesloc:registrador_deslocamento|n_shift[30] ;
 ; RegDesloc:registrador_deslocamento|n_shift[30]    ; Stuck at GND due to stuck port data_in                     ;
-; Controle:Controle|MemADD[0]                       ; Stuck at GND due to stuck port data_in                     ;
+; Controle:Controle|ExceptionAddress[0]             ; Merged with Controle:Controle|RegEPCWrite                  ;
 ; Controle:Controle|SSControl[0]                    ; Merged with Controle:Controle|SSControl[1]                 ;
-; Total Number of Removed Registers = 65            ;                                                            ;
+; Controle:Controle|ExceptionAddress[1]             ; Stuck at GND due to stuck port data_in                     ;
+; Total Number of Removed Registers = 34            ;                                                            ;
 +---------------------------------------------------+------------------------------------------------------------+
 
 
@@ -449,12 +449,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1631  ;
-; Number of registers using Synchronous Clear  ; 191   ;
-; Number of registers using Synchronous Load   ; 216   ;
-; Number of registers using Asynchronous Clear ; 1446  ;
+; Total registers                              ; 1665  ;
+; Number of registers using Synchronous Clear  ; 209   ;
+; Number of registers using Synchronous Load   ; 210   ;
+; Number of registers using Asynchronous Clear ; 1478  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1569  ;
+; Number of registers using Clock Enable       ; 1586  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -474,43 +474,45 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|divisor:divisor|quociente[13]                  ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|product[31]              ;
-; 3:1                ; 37 bits   ; 74 ALUTs      ; 0 ALUTs              ; 74 ALUTs               ; Yes        ; |CPU|multiplier:multiplier|product[38]              ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|divisor:divisor|resto[0]                       ;
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|n_shift[3]  ;
-; 3:1                ; 63 bits   ; 126 ALUTs     ; 0 ALUTs              ; 126 ALUTs              ; Yes        ; |CPU|multiplier:multiplier|lo[26]                   ;
+; 3:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|divisor:divisor|quociente[9]                   ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|product[10]              ;
+; 3:1                ; 37 bits   ; 74 ALUTs      ; 0 ALUTs              ; 74 ALUTs               ; Yes        ; |CPU|multiplier:multiplier|product[62]              ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|divisor:divisor|resto[12]                      ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|n_shift[1]  ;
+; 3:1                ; 63 bits   ; 126 ALUTs     ; 0 ALUTs              ; 126 ALUTs              ; Yes        ; |CPU|multiplier:multiplier|hi[28]                   ;
+; 8:1                ; 4 bits    ; 20 ALUTs      ; 16 ALUTs             ; 4 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[30]                       ;
+; 8:1                ; 20 bits   ; 100 ALUTs     ; 80 ALUTs             ; 20 ALUTs               ; Yes        ; |CPU|Registrador:PC|Saida[23]                       ;
+; 8:1                ; 2 bits    ; 10 ALUTs      ; 8 ALUTs              ; 2 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[1]                        ;
+; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[6]                        ;
 ; 64:1               ; 2 bits    ; 84 ALUTs      ; 4 ALUTs              ; 80 ALUTs               ; Yes        ; |CPU|Controle:Controle|LSControl[0]                 ;
 ; 64:1               ; 2 bits    ; 84 ALUTs      ; 4 ALUTs              ; 80 ALUTs               ; Yes        ; |CPU|Controle:Controle|SSControl[0]                 ;
-; 66:1               ; 3 bits    ; 132 ALUTs     ; 12 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegShftCtrl[0]               ;
-; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[1]     ;
-; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[17]    ;
-; 83:1               ; 6 bits    ; 330 ALUTs     ; 174 ALUTs            ; 156 ALUTs              ; Yes        ; |CPU|Controle:Controle|IRWrite                      ;
-; 83:1               ; 3 bits    ; 165 ALUTs     ; 81 ALUTs             ; 84 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegDest[1]                   ;
-; 85:1               ; 2 bits    ; 112 ALUTs     ; 40 ALUTs             ; 72 ALUTs               ; Yes        ; |CPU|Controle:Controle|MuxLo                        ;
-; 145:1              ; 2 bits    ; 192 ALUTs     ; 60 ALUTs             ; 132 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegDest[0]                   ;
-; 145:1              ; 2 bits    ; 192 ALUTs     ; 54 ALUTs             ; 138 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegData[0]                   ;
-; 145:1              ; 3 bits    ; 288 ALUTs     ; 84 ALUTs             ; 204 ALUTs              ; Yes        ; |CPU|Controle:Controle|PCSource[0]                  ;
-; 145:1              ; 8 bits    ; 768 ALUTs     ; 200 ALUTs            ; 568 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUSrcB[0]                   ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux4                       ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|storesize:storesize|saida[27]                  ;
-; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight0 ;
+; 66:1               ; 3 bits    ; 132 ALUTs     ; 12 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegShftCtrl[1]               ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[3]     ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[21]    ;
+; 67:1               ; 3 bits    ; 132 ALUTs     ; 45 ALUTs             ; 87 ALUTs               ; Yes        ; |CPU|Controle:Controle|IRWrite                      ;
+; 67:1               ; 2 bits    ; 88 ALUTs      ; 32 ALUTs             ; 56 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegDest[1]                   ;
+; 69:1               ; 2 bits    ; 92 ALUTs      ; 26 ALUTs             ; 66 ALUTs               ; Yes        ; |CPU|Controle:Controle|MuxLo                        ;
+; 132:1              ; 3 bits    ; 264 ALUTs     ; 66 ALUTs             ; 198 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUControl[2]                ;
+; 51:1               ; 2 bits    ; 68 ALUTs      ; 4 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegEPCWrite                  ;
+; 3:1                ; 6 bits    ; 12 ALUTs      ; 12 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux3                       ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux0                       ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|storesize:storesize|saida[19]                  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftLeft0  ;
 ; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight1 ;
-; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight0 ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux40                                ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux17                                ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux4                     ;
-; 7:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux0                   ;
-; 7:1                ; 4 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux31                  ;
-; 7:1                ; 26 bits   ; 104 ALUTs     ; 104 ALUTs            ; 0 ALUTs                ; No         ; |CPU|MuxPCSource:MuxPCSource|Mux25                  ;
-; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux19                    ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux0             ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux39            ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftLeft0  ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux57                                ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux8                                 ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux0                     ;
+; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux25                    ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux5             ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |CPU|Banco_reg:banco_registradores|Mux43            ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|Controle:Controle|MemADD                       ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux16                    ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux0                     ;
-; 11:1               ; 15 bits   ; 105 ALUTs     ; 90 ALUTs             ; 15 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux13                    ;
-; 11:1               ; 16 bits   ; 112 ALUTs     ; 96 ALUTs             ; 16 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux26                    ;
-; 7:1                ; 13 bits   ; 52 ALUTs      ; 52 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux7                     ;
+; 11:1               ; 15 bits   ; 105 ALUTs     ; 90 ALUTs             ; 15 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux15                    ;
+; 11:1               ; 16 bits   ; 112 ALUTs     ; 96 ALUTs             ; 16 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux29                    ;
+; 7:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|Controle:Controle|MemADD                       ;
+; 7:1                ; 13 bits   ; 52 ALUTs      ; 52 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux4                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
@@ -644,86 +646,88 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Controle:Controle ;
-+-----------------------+--------+-------------------------------+
-; Parameter Name        ; Value  ; Type                          ;
-+-----------------------+--------+-------------------------------+
-; FETCH_1ST_CLOCK       ; 0      ; Signed Integer                ;
-; FETCH_2ND_CLOCK       ; 1      ; Signed Integer                ;
-; FETCH_3RD_CLOCK       ; 2      ; Signed Integer                ;
-; DECODE                ; 3      ; Signed Integer                ;
-; EXECUCAO              ; 4      ; Signed Integer                ;
-; ADD_SUB_AND_2ND_CLOCK ; 5      ; Signed Integer                ;
-; XCHG_2ND_CLOCK        ; 6      ; Signed Integer                ;
-; JAL_2ND_CLOCK         ; 7      ; Signed Integer                ;
-; ADDI_ADDIU_2ND_CLOCK  ; 8      ; Signed Integer                ;
-; MULT_2ND_CLOCK        ; 9      ; Signed Integer                ;
-; DIV_2ND_CLOCK         ; 10     ; Signed Integer                ;
-; BEQ_2ND_CLOCK         ; 11     ; Signed Integer                ;
-; BNE_2ND_CLOCK         ; 12     ; Signed Integer                ;
-; BLE_2ND_CLOCK         ; 13     ; Signed Integer                ;
-; BGT_2ND_CLOCK         ; 14     ; Signed Integer                ;
-; SLTI_2ND_CLOCK        ; 15     ; Signed Integer                ;
-; SLT_2ND_CLOCK         ; 16     ; Signed Integer                ;
-; SLL_2ND_CLOCK         ; 17     ; Signed Integer                ;
-; SLLV_2ND_CLOCK        ; 18     ; Signed Integer                ;
-; SRA_2ND_CLOCK         ; 19     ; Signed Integer                ;
-; SRAV_2ND_CLOCK        ; 20     ; Signed Integer                ;
-; SRL_2ND_CLOCK         ; 21     ; Signed Integer                ;
-; SHIFT_3RD_CLOCK       ; 22     ; Signed Integer                ;
-; LB_2ND_CLOCK          ; 23     ; Signed Integer                ;
-; LB_3RD_CLOCK          ; 24     ; Signed Integer                ;
-; LB_4TH_CLOCK          ; 25     ; Signed Integer                ;
-; LH_2ND_CLOCK          ; 26     ; Signed Integer                ;
-; LH_3RD_CLOCK          ; 27     ; Signed Integer                ;
-; LH_4TH_CLOCK          ; 28     ; Signed Integer                ;
-; LW_2ND_CLOCK          ; 29     ; Signed Integer                ;
-; LW_3RD_CLOCK          ; 30     ; Signed Integer                ;
-; LW_4TH_CLOCK          ; 31     ; Signed Integer                ;
-; SB_2ND_CLOCK          ; 32     ; Signed Integer                ;
-; SB_3RD_CLOCK          ; 33     ; Signed Integer                ;
-; SB_4TH_CLOCK          ; 34     ; Signed Integer                ;
-; SH_2ND_CLOCK          ; 35     ; Signed Integer                ;
-; SH_3RD_CLOCK          ; 36     ; Signed Integer                ;
-; SH_4TH_CLOCK          ; 37     ; Signed Integer                ;
-; SW_2ND_CLOCK          ; 38     ; Signed Integer                ;
-; SW_3RD_CLOCK          ; 39     ; Signed Integer                ;
-; SW_4TH_CLOCK          ; 40     ; Signed Integer                ;
-; WAIT                  ; 111111 ; Unsigned Binary               ;
-; EXCECAO               ; 111111 ; Unsigned Binary               ;
-; JUMP_OPCODE           ; 000010 ; Unsigned Binary               ;
-; JAL_OPCODE            ; 000011 ; Unsigned Binary               ;
-; ADDI_OPCODE           ; 001000 ; Unsigned Binary               ;
-; ADDIU_OPCODE          ; 001001 ; Unsigned Binary               ;
-; BEQ_OPCODE            ; 000100 ; Unsigned Binary               ;
-; BNE_OPCODE            ; 000101 ; Unsigned Binary               ;
-; BLE_OPCODE            ; 000110 ; Unsigned Binary               ;
-; BGT_OPCODE            ; 000111 ; Unsigned Binary               ;
-; SLTI_OPCODE           ; 001010 ; Unsigned Binary               ;
-; LUI_OPCODE            ; 001111 ; Unsigned Binary               ;
-; LB_OPCODE             ; 100000 ; Unsigned Binary               ;
-; LH_OPCODE             ; 100001 ; Unsigned Binary               ;
-; LW_OPCODE             ; 100011 ; Unsigned Binary               ;
-; SB_OPCODE             ; 101000 ; Unsigned Binary               ;
-; SH_OPCODE             ; 101001 ; Unsigned Binary               ;
-; SW_OPCODE             ; 101011 ; Unsigned Binary               ;
-; ADD                   ; 100000 ; Unsigned Binary               ;
-; SUB                   ; 100010 ; Unsigned Binary               ;
-; AND                   ; 100100 ; Unsigned Binary               ;
-; JR                    ; 001000 ; Unsigned Binary               ;
-; MFHI                  ; 010000 ; Unsigned Binary               ;
-; MFLO                  ; 010010 ; Unsigned Binary               ;
-; SLT                   ; 101010 ; Unsigned Binary               ;
-; BREAK                 ; 001101 ; Unsigned Binary               ;
-; RTE                   ; 010011 ; Unsigned Binary               ;
-; XCHG                  ; 000101 ; Unsigned Binary               ;
-; MULT                  ; 011000 ; Unsigned Binary               ;
-; DIV                   ; 011010 ; Unsigned Binary               ;
-; SLL                   ; 000000 ; Unsigned Binary               ;
-; SLLV                  ; 000100 ; Unsigned Binary               ;
-; SRA                   ; 000011 ; Unsigned Binary               ;
-; SRAV                  ; 000111 ; Unsigned Binary               ;
-; SRL                   ; 000010 ; Unsigned Binary               ;
-+-----------------------+--------+-------------------------------+
++---------------------------+--------+---------------------------+
+; Parameter Name            ; Value  ; Type                      ;
++---------------------------+--------+---------------------------+
+; FETCH_1ST_CLOCK           ; 0      ; Signed Integer            ;
+; FETCH_2ND_CLOCK           ; 1      ; Signed Integer            ;
+; FETCH_3RD_CLOCK           ; 2      ; Signed Integer            ;
+; DECODE                    ; 3      ; Signed Integer            ;
+; EXECUCAO                  ; 4      ; Signed Integer            ;
+; ADD_SUB_AND_2ND_CLOCK     ; 5      ; Signed Integer            ;
+; XCHG_2ND_CLOCK            ; 6      ; Signed Integer            ;
+; JAL_2ND_CLOCK             ; 7      ; Signed Integer            ;
+; ADDI_ADDIU_2ND_CLOCK      ; 8      ; Signed Integer            ;
+; MULT_2ND_CLOCK            ; 9      ; Signed Integer            ;
+; DIV_2ND_CLOCK             ; 10     ; Signed Integer            ;
+; BEQ_2ND_CLOCK             ; 11     ; Signed Integer            ;
+; BNE_2ND_CLOCK             ; 12     ; Signed Integer            ;
+; BLE_2ND_CLOCK             ; 13     ; Signed Integer            ;
+; BGT_2ND_CLOCK             ; 14     ; Signed Integer            ;
+; SLTI_2ND_CLOCK            ; 15     ; Signed Integer            ;
+; SLT_2ND_CLOCK             ; 16     ; Signed Integer            ;
+; SLL_2ND_CLOCK             ; 17     ; Signed Integer            ;
+; SLLV_2ND_CLOCK            ; 18     ; Signed Integer            ;
+; SRA_2ND_CLOCK             ; 19     ; Signed Integer            ;
+; SRAV_2ND_CLOCK            ; 20     ; Signed Integer            ;
+; SRL_2ND_CLOCK             ; 21     ; Signed Integer            ;
+; SHIFT_3RD_CLOCK           ; 22     ; Signed Integer            ;
+; LB_2ND_CLOCK              ; 23     ; Signed Integer            ;
+; LB_3RD_CLOCK              ; 24     ; Signed Integer            ;
+; LB_4TH_CLOCK              ; 25     ; Signed Integer            ;
+; LH_2ND_CLOCK              ; 26     ; Signed Integer            ;
+; LH_3RD_CLOCK              ; 27     ; Signed Integer            ;
+; LH_4TH_CLOCK              ; 28     ; Signed Integer            ;
+; LW_2ND_CLOCK              ; 29     ; Signed Integer            ;
+; LW_3RD_CLOCK              ; 30     ; Signed Integer            ;
+; LW_4TH_CLOCK              ; 31     ; Signed Integer            ;
+; SB_2ND_CLOCK              ; 32     ; Signed Integer            ;
+; SB_3RD_CLOCK              ; 33     ; Signed Integer            ;
+; SB_4TH_CLOCK              ; 34     ; Signed Integer            ;
+; SH_2ND_CLOCK              ; 35     ; Signed Integer            ;
+; SH_3RD_CLOCK              ; 36     ; Signed Integer            ;
+; SH_4TH_CLOCK              ; 37     ; Signed Integer            ;
+; SW_2ND_CLOCK              ; 38     ; Signed Integer            ;
+; SW_3RD_CLOCK              ; 39     ; Signed Integer            ;
+; SW_4TH_CLOCK              ; 40     ; Signed Integer            ;
+; EXCEPTION_WAIT            ; 41     ; Signed Integer            ;
+; SEND_EXCEPTION_BYTE_TO_PC ; 42     ; Signed Integer            ;
+; WAIT                      ; 111111 ; Unsigned Binary           ;
+; EXCECAO                   ; 111111 ; Unsigned Binary           ;
+; JUMP_OPCODE               ; 000010 ; Unsigned Binary           ;
+; JAL_OPCODE                ; 000011 ; Unsigned Binary           ;
+; ADDI_OPCODE               ; 001000 ; Unsigned Binary           ;
+; ADDIU_OPCODE              ; 001001 ; Unsigned Binary           ;
+; BEQ_OPCODE                ; 000100 ; Unsigned Binary           ;
+; BNE_OPCODE                ; 000101 ; Unsigned Binary           ;
+; BLE_OPCODE                ; 000110 ; Unsigned Binary           ;
+; BGT_OPCODE                ; 000111 ; Unsigned Binary           ;
+; SLTI_OPCODE               ; 001010 ; Unsigned Binary           ;
+; LUI_OPCODE                ; 001111 ; Unsigned Binary           ;
+; LB_OPCODE                 ; 100000 ; Unsigned Binary           ;
+; LH_OPCODE                 ; 100001 ; Unsigned Binary           ;
+; LW_OPCODE                 ; 100011 ; Unsigned Binary           ;
+; SB_OPCODE                 ; 101000 ; Unsigned Binary           ;
+; SH_OPCODE                 ; 101001 ; Unsigned Binary           ;
+; SW_OPCODE                 ; 101011 ; Unsigned Binary           ;
+; ADD                       ; 100000 ; Unsigned Binary           ;
+; SUB                       ; 100010 ; Unsigned Binary           ;
+; AND                       ; 100100 ; Unsigned Binary           ;
+; JR                        ; 001000 ; Unsigned Binary           ;
+; MFHI                      ; 010000 ; Unsigned Binary           ;
+; MFLO                      ; 010010 ; Unsigned Binary           ;
+; SLT                       ; 101010 ; Unsigned Binary           ;
+; BREAK                     ; 001101 ; Unsigned Binary           ;
+; RTE                       ; 010011 ; Unsigned Binary           ;
+; XCHG                      ; 000101 ; Unsigned Binary           ;
+; MULT                      ; 011000 ; Unsigned Binary           ;
+; DIV                       ; 011010 ; Unsigned Binary           ;
+; SLL                       ; 000000 ; Unsigned Binary           ;
+; SLLV                      ; 000100 ; Unsigned Binary           ;
+; SRA                       ; 000011 ; Unsigned Binary           ;
+; SRAV                      ; 000111 ; Unsigned Binary           ;
+; SRL                       ; 000010 ; Unsigned Binary           ;
++---------------------------+--------+---------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -755,13 +759,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------+-------+----------+--------------+
 
 
-+-----------------------------------------------------+
-; Port Connectivity Checks: "MuxPCSource:MuxPCSource" ;
-+-------------------+-------+----------+--------------+
-; Port              ; Type  ; Severity ; Details      ;
-+-------------------+-------+----------+--------------+
-; JumpAddress[1..0] ; Input ; Info     ; Stuck at GND ;
-+-------------------+-------+----------+--------------+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "MuxPCSource:MuxPCSource"             ;
++-------------------------------+-------+----------+--------------+
+; Port                          ; Type  ; Severity ; Details      ;
++-------------------------------+-------+----------+--------------+
+; ExceptionByteExtendido[31..8] ; Input ; Info     ; Stuck at GND ;
+; JumpAddress[1..0]             ; Input ; Info     ; Stuck at GND ;
++-------------------------------+-------+----------+--------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -797,7 +802,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Mar 25 11:32:11 2021
+    Info: Processing started: Thu Mar 25 13:46:55 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Info: Found 1 design units, including 1 entities, in source file signextend/signextend132.v
     Info: Found entity 1: SignExtend132
@@ -864,9 +869,9 @@ Info: Found 1 design units, including 1 entities, in source file loadsize.v
     Info: Found entity 1: loadsize
 Info: Found 1 design units, including 1 entities, in source file storesize.v
     Info: Found entity 1: storesize
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(160): created implicit net for "Overflow"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(160): created implicit net for "Negativo"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(214): created implicit net for "MFH"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(161): created implicit net for "Overflow"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(161): created implicit net for "Negativo"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(215): created implicit net for "MFH"
 Warning (10227): Verilog HDL Port Declaration warning at multiplier.v(10): data type declaration for "hi" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at multiplier.v(6): see declaration for object "hi"
 Warning (10227): Verilog HDL Port Declaration warning at multiplier.v(11): data type declaration for "lo" declares packed dimensions but the port declaration declaration does not
@@ -898,6 +903,7 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Critical Warning: Memory depth (256) in the design file differs from memory depth (16) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:registrador_deslocamento"
 Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(128): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:Alu"
@@ -1016,40 +1022,6 @@ Info (10041): Inferred latch for "MuxMemAddOut[29]" at MuxMemAdd.v(9)
 Info (10041): Inferred latch for "MuxMemAddOut[30]" at MuxMemAdd.v(9)
 Info (10041): Inferred latch for "MuxMemAddOut[31]" at MuxMemAdd.v(9)
 Info: Elaborating entity "MuxPCSource" for hierarchy "MuxPCSource:MuxPCSource"
-Warning (10270): Verilog HDL Case Statement warning at MuxPCSource.v(13): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at MuxPCSource.v(13): inferring latch(es) for variable "MuxPCSourceOut", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "MuxPCSourceOut[0]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[1]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[2]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[3]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[4]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[5]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[6]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[7]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[8]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[9]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[10]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[11]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[12]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[13]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[14]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[15]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[16]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[17]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[18]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[19]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[20]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[21]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[22]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[23]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[24]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[25]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[26]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[27]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[28]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[29]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[30]" at MuxPCSource.v(13)
-Info (10041): Inferred latch for "MuxPCSourceOut[31]" at MuxPCSource.v(13)
 Info: Elaborating entity "MuxRegData" for hierarchy "MuxRegData:MuxRegData"
 Warning (10270): Verilog HDL Case Statement warning at MuxRegData.v(15): incomplete case statement has no default case item
 Warning (10240): Verilog HDL Always Construct warning at MuxRegData.v(15): inferring latch(es) for variable "MuxRegDataOut", which holds its previous value in one or more paths through the always construct
@@ -1167,71 +1139,67 @@ Info (10041): Inferred latch for "saida[29]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[30]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[31]" at storesize.v(15)
 Info: Elaborating entity "Controle" for hierarchy "Controle:Controle"
-Warning (10230): Verilog HDL assignment warning at Controle.v(128): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(158): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(188): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(216): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(244): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(272): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(303): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(330): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(357): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(412): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(439): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(451): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(533): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(561): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(590): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(619): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(648): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(677): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(706): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(765): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(793): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(819): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(845): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(871): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(897): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(924): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(976): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1002): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1028): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1054): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1080): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1106): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1223): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1235): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1249): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1279): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1309): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1339): truncated value with size 2 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1474): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1500): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1526): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1552): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1578): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1634): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1662): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1718): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1746): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1802): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1830): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1886): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1914): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1971): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1999): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2056): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2084): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2117): truncated value with size 32 to match size of target (6)
-Warning (10272): Verilog HDL Case Statement warning at Controle.v(1420): case item expression covers a value already covered by a previous case item
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[0]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[1]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[2]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[3]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[4]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[5]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[6]" is permanently enabled
-Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[7]" is permanently enabled
+Warning (10230): Verilog HDL assignment warning at Controle.v(132): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(162): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(192): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(220): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(248): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(276): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(307): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(334): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(361): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(416): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(443): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(455): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(537): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(565): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(594): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(623): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(652): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(681): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(710): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(769): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(797): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(823): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(849): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(875): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(901): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(928): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(980): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1006): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1032): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1058): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1084): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1110): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1163): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1265): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1291): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1303): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1317): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1347): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1377): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1407): truncated value with size 2 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1542): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1568): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1594): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1620): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1646): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1702): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1730): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1786): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1814): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1870): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1898): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1954): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1982): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2039): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2067): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2124): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2152): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2211): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2240): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2243): truncated value with size 32 to match size of target (6)
+Warning (10272): Verilog HDL Case Statement warning at Controle.v(1488): case item expression covers a value already covered by a previous case item
 Warning: LATCH primitive "storesize:storesize|saida[0]" is permanently enabled
 Warning: LATCH primitive "storesize:storesize|saida[1]" is permanently enabled
 Warning: LATCH primitive "storesize:storesize|saida[2]" is permanently enabled
@@ -1264,6 +1232,8 @@ Warning: LATCH primitive "storesize:storesize|saida[28]" is permanently enabled
 Warning: LATCH primitive "storesize:storesize|saida[29]" is permanently enabled
 Warning: LATCH primitive "storesize:storesize|saida[30]" is permanently enabled
 Warning: LATCH primitive "storesize:storesize|saida[31]" is permanently enabled
+Warning: LATCH primitive "MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[0]" is permanently enabled
+Warning: LATCH primitive "MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[1]" is permanently enabled
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcB[0]
 Warning: Latch MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1] has unsafe behavior
@@ -1402,70 +1372,22 @@ Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
 Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[4] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[0] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[8] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[9] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[10] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[11] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[12] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[13] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[14] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[15] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[16] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[17] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[18] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[19] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[20] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[21] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[22] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[23] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[24] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[25] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[26] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[27] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[0]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[28] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[29] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[30] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
-Warning: Latch MuxPCSource:MuxPCSource|MuxPCSourceOut[31] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|PCSource[1]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
+Warning: Latch MuxMemAdd:MuxMemAdd|MuxMemAddOut[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|MemADD[0]
 Warning: Latch loadsize:loadsize|saida[8] has unsafe behavior
     Warning: Ports ENA and CLR on the latch are fed by the same signal Controle:Controle|LSControl[1]
 Warning: Latch loadsize:loadsize|saida[9] has unsafe behavior
@@ -1515,16 +1437,16 @@ Warning: Latch loadsize:loadsize|saida[30] has unsafe behavior
 Warning: Latch loadsize:loadsize|saida[31] has unsafe behavior
     Warning: Ports ENA and CLR on the latch are fed by the same signal Controle:Controle|LSControl[1]
 Info: Generated suppressed messages file D:/Projetos/cin/projeto-hardware/src/CPU.map.smsg
-Info: Implemented 3979 device resources after synthesis - the final resource count might be different
+Info: Implemented 4032 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
-    Info: Implemented 344 output pins
-    Info: Implemented 3601 logic cells
+    Info: Implemented 312 output pins
+    Info: Implemented 3686 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 371 warnings
-    Info: Peak virtual memory: 269 megabytes
-    Info: Processing ended: Thu Mar 25 11:32:22 2021
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 320 warnings
+    Info: Peak virtual memory: 271 megabytes
+    Info: Processing ended: Thu Mar 25 13:47:06 2021
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+

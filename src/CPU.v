@@ -1,5 +1,5 @@
 module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegHIOut, RegLOOut);
+RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegEPCOut);
 
 input clock;
 input reset;
@@ -33,7 +33,7 @@ output wire[31:0] RegPCOut;
 
 wire RegEPCWrite;
 wire[31:0] RegEPCInput;
-wire[31:0] RegEPCOut;
+output wire[31:0] RegEPCOut;
 
 wire RegALUOutWrite;
 wire[31:0] RegALUOutInput;
@@ -45,11 +45,11 @@ wire[31:0] RegMDROut;
 
 wire RegHIWrite;
 wire[31:0] RegHIInput;
-output wire[31:0] RegHIOut;
+wire[31:0] RegHIOut;
 
 wire RegLOWrite;
 wire[31:0] RegLOInput;
-output wire[31:0] RegLOOut;
+wire[31:0] RegLOOut;
 
 wire RegXCHGWrite;
 wire[31:0] RegXCHGInput;
@@ -130,7 +130,7 @@ wire [31:0] JumpAddress;
 output wire [5:0] funct;
 wire[31:0] OffsetExtendido;
 wire[31:0] OffsetExtendidoLeft2;
-
+wire[31:0] ExceptionByteExtendido;
 wire[4:0] RegBShamt;
 
 assign funct = Offset[5:0];
@@ -140,12 +140,13 @@ assign OffsetExtendido = {{17{Offset[15]}}, Offset[14:0]};
 assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Shamt = Offset[10:6];
 assign RegBShamt = RegBOut[4:0];
+assign ExceptionByteExtendido = {24'b0, MemData[7:0]};
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);
 Registrador B(clock, reset, RegBWrite, RegBInput, RegBOut);
 Registrador PC(clock, reset, RegPCWrite, MuxPCSourceOut, RegPCOut);
-Registrador EPC(clock, reset, RegEPCWrite, RegEPCInput, RegEPCOut);
+Registrador EPC(clock, reset, RegEPCWrite, AluResult, RegEPCOut);
 Registrador ALUOut(clock, reset, RegALUOutWrite, AluResult, RegALUOutOut);
 Registrador MDR(clock, reset, RegMDRWrite, MemData, RegMDROut);
 Registrador HI(clock, reset, RegHIWrite, MuxHIOut, RegHIOut);
@@ -169,7 +170,7 @@ MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
 MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
-MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
+MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, ExceptionByteExtendido, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LSOutput, OffsetExtendido << 16, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RT, Offset[15:11], RS, RegDest, MuxRegDestOut);
 MuxShiftSrc MuxShiftSrc(RegAOut, RegBOut, ShiftSrc, MuxShiftSrcOut);
@@ -228,6 +229,8 @@ Controle Controle (
     RegMDRWrite,
     LSControl,
     SSControl,
+    ExceptionAddress,
+    RegEPCWrite,
     Overflow,
     funct,
     mult_fim,

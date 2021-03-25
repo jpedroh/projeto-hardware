@@ -4,6 +4,7 @@ module MuxPCSource (
     input wire[31:0] EPC,
     input wire[31:0] MemDataReg,
     input wire[31:0] ALUOut,
+	input wire[31:0] ExceptionByteExtendido,
     input wire[31:0] JumpAddress,
 	input wire[31:0] RegA,
     input wire[2:0] PCSource,
@@ -22,6 +23,8 @@ always @(*) begin
 		3'b100:
 			MuxPCSourceOut <= ALUOut;
 		3'b101:
+			MuxPCSourceOut <= ExceptionByteExtendido;
+		3'b110:
 			MuxPCSourceOut <= JumpAddress;
 		3'b111:
 			MuxPCSourceOut <= RegA;
