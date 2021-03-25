@@ -1011,7 +1011,7 @@ always @(posedge clock) begin
                 DIV_OP = 1'b0;
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
-                estado = LB_2ND_CLOCK;
+                estado = SB_2ND_CLOCK;
             end else if (Opcode == SH_OPCODE) begin
                 MemADD = 2'b10;
                 MemWriteRead = 1'b0;
@@ -1037,7 +1037,7 @@ always @(posedge clock) begin
                 DIV_OP = 1'b0;
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
-                estado = LH_2ND_CLOCK;
+                estado = SH_2ND_CLOCK;
             end else if (Opcode == SW_OPCODE) begin
                 MemADD = 2'b10;
                 MemWriteRead = 1'b0;
@@ -1063,7 +1063,7 @@ always @(posedge clock) begin
                 DIV_OP = 1'b0;
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
-                estado = LW_2ND_CLOCK;
+                estado = SW_2ND_CLOCK;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
