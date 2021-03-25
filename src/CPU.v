@@ -1,5 +1,4 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegAInput,
-RegBInput, MuxRegDataOut, MuxRegDestOut, RegWrite, RegEPCOut, MuxMemAddOut);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegBOut, MuxRegDataOut, MuxRegDestOut, RegWrite, MuxMemAddOut, MemWriteRead, RegHIOut, RegLOOut);
 
 input clock;
 input reset;
@@ -20,12 +19,12 @@ wire [31:0] SignExtend1632Out;
 wire [31:0] ShiftLeftOut;
 
 wire RegAWrite;
-output wire[31:0] RegAInput;
+wire[31:0] RegAInput;
 wire[31:0] RegAOut;
 
 wire RegBWrite;
-output wire[31:0] RegBInput;
-wire[31:0] RegBOut;
+ wire[31:0] RegBInput;
+output wire[31:0] RegBOut;
 
 wire RegPCWrite;
 wire[31:0] RegPCInput;
@@ -33,7 +32,7 @@ output wire[31:0] RegPCOut;
 
 wire RegEPCWrite;
 wire[31:0] RegEPCInput;
-output wire[31:0] RegEPCOut;
+wire[31:0] RegEPCOut;
 
 wire RegALUOutWrite;
 wire[31:0] RegALUOutInput;
@@ -45,11 +44,11 @@ wire[31:0] RegMDROut;
 
 wire RegHIWrite;
 wire[31:0] RegHIInput;
-wire[31:0] RegHIOut;
+output wire[31:0] RegHIOut;
 
 wire RegLOWrite;
 wire[31:0] RegLOInput;
-wire[31:0] RegLOOut;
+output wire[31:0] RegLOOut;
 
 wire RegXCHGWrite;
 wire[31:0] RegXCHGInput;
@@ -105,7 +104,7 @@ wire LoadIR;
 output wire [5:0] Opcode;
 wire [15:0] Offset;
 
-wire MemWriteRead;
+output wire MemWriteRead;
 output wire[31:0] MemData;
 wire [2:0] ShiftCtrl;
 wire [2:0] AluOp;
@@ -141,6 +140,8 @@ assign OffsetExtendidoLeft2 = OffsetExtendido << 2;
 assign Shamt = Offset[10:6];
 assign RegBShamt = RegBOut[4:0];
 assign ExceptionByteExtendido = {24'b0, MemData[7:0]};
+
+wire Overflow;
 
 // Registradores
 Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);

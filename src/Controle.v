@@ -85,6 +85,7 @@ parameter SH_4TH_CLOCK = 37;
 parameter SW_2ND_CLOCK = 38;
 parameter SW_3RD_CLOCK = 39;
 parameter SW_4TH_CLOCK = 40;
+parameter SW_5TH_CLOCK = 45;
 parameter EXCEPTION_WAIT = 41;
 parameter SEND_EXCEPTION_BYTE_TO_PC = 42;
 
@@ -1007,7 +1008,7 @@ always @(posedge clock) begin
             end else if (Opcode == LW_OPCODE) begin
                 MemADD = 2'b10;
                 MemWriteRead = 1'b0;
-                ALUControl = 3'b000;
+                ALUControl = 3'b001;
                 ALUSrcB = 3'b111;
                 ALUSrcA = 1'b1;
                 RegALUOutWrite = 1'b1;
@@ -1107,6 +1108,7 @@ always @(posedge clock) begin
                 DIV_OP = 1'b0;
                 Reg_HI_Write = 1'b0;
                 Reg_Lo_Write = 1'b0;
+                SSControl = 2'b00;
                 estado = SW_2ND_CLOCK;
             end else begin
                 // OPCODE INEXISTENTE
@@ -1138,6 +1140,7 @@ always @(posedge clock) begin
                 RegALUOutWrite = 1'b0;
                 ExceptionAddress = 2'b00;
                 RegEPCWrite = 1'b0;
+                estado=EXCEPTION_WAIT;
             end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
@@ -1296,7 +1299,7 @@ always @(posedge clock) begin
 				Reg_Lo_Write= 1'b1;
 				MuxHi = 0;
 				MuxLo = 0;
-				estado = WAIT;
+				estado = FETCH_1ST_CLOCK;
 			end
 		DIV_2ND_CLOCK: begin
 			if (div_fim == 0) begin
@@ -1308,7 +1311,7 @@ always @(posedge clock) begin
 				Reg_Lo_Write = 1'b1;
 				MuxHi = 1;
 				MuxLo = 1;
-				estado = WAIT;
+				estado = FETCH_1ST_CLOCK;
 			end
         end
         BEQ_2ND_CLOCK: begin
@@ -2098,6 +2101,8 @@ always @(posedge clock) begin
         end
         SW_2ND_CLOCK: begin
             MemADD = 2'b10;
+            MemWriteRead = 1'b0;
+            SSControl = 2'b00;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -2119,13 +2124,14 @@ always @(posedge clock) begin
             DIV_OP = 1'b0;
             Reg_HI_Write = 1'b0;
             Reg_Lo_Write = 1'b0;
-            MemWriteRead = 1'b0;
             RegALUOutWrite = 1'b0;
             estado = SW_3RD_CLOCK;
         end
         SW_3RD_CLOCK: begin
             MemADD = 2'b10;
             RegMDRWrite = 1'b1;
+            SSControl = 2'b00;
+            MemWriteRead = 1'b0;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -2147,11 +2153,39 @@ always @(posedge clock) begin
             DIV_OP = 1'b0;
             Reg_HI_Write = 1'b0;
             Reg_Lo_Write = 1'b0;
-            MemWriteRead = 1'b0;
             RegALUOutWrite = 1'b0;
             estado = SW_4TH_CLOCK;
         end
         SW_4TH_CLOCK: begin
+            SSControl = 2'b00;
+            MemADD = 2'b10;
+            MemWriteRead = 1'b0;
+            RegMDRWrite = 1'b1;
+            // Default
+            RegWrite = 1'b0;
+            RegDest = 3'b000;
+            RegData = 4'b0000;
+            PCWrite = 1'b0;
+            IRWrite = 1'b0;
+            PCSource = 3'b000;
+            ALUControl = 3'b000;
+            ALUSrcB = 3'b000;
+            ALUSrcA = 1'b0;
+            RegAWrite = 1'b0;
+            RegBWrite = 1'b0;
+            XCHGRegWrite = 1'b0;
+            MFH = 1'b0;
+            MuxHiLo = 1'b0;
+            MuxHi = 1'b0;
+            MuxLo = 1'b0;
+            MULT_OP = 1'b0;
+            DIV_OP = 1'b0;
+            Reg_HI_Write = 1'b0;
+            Reg_Lo_Write = 1'b0;
+            RegALUOutWrite = 1'b0;
+            estado = SW_5TH_CLOCK;
+        end
+        SW_5TH_CLOCK: begin
             SSControl = 2'b00;
             MemADD = 2'b10;
             MemWriteRead = 1'b1;
@@ -2159,7 +2193,6 @@ always @(posedge clock) begin
             RegWrite = 1'b0;
             RegDest = 3'b000;
             RegData = 4'b0000;
-            MemADD = 2'b00;
             RegMDRWrite = 1'b0;
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -2241,6 +2274,7 @@ always @(posedge clock) begin
         end
         WAIT: begin
             estado = FETCH_1ST_CLOCK;
+            MemWriteRead = 1'b0;
         end
 	endcase
 end
