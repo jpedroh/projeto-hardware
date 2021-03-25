@@ -5,7 +5,7 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.458 ns
+Actual Time    : 8.370 ns
 From           : reset
 To             : multiplier:multiplier|product[55]
 From Clock     : --
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.220 ns
-From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[4]
-To             : AluResult[30]
+Actual Time    : 16.591 ns
+From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[1]
+To             : MuxMemAddOut[21]
 From Clock     : clock
 To Clock       : --
 Failed Paths   : 0
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -0.103 ns
+Actual Time    : -2.723 ns
 From           : reset
-To             : Controle:Controle|estado[3]
+To             : Controle:Controle|ALUSrcB[1]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 67.39 MHz ( period = 14.840 ns )
-From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[4]
-To             : MuxRegData:MuxRegData|MuxRegDataOut[0]
+Actual Time    : 72.42 MHz ( period = 13.808 ns )
+From           : MuxRegDest:MuxRegDest|MuxRegDestOut[1]
+To             : Banco_reg:banco_registradores|Cluster[11][0]
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : Registrador:MDR|Saida[21]
-To             : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[21]
+From           : Registrador:MDR|Saida[7]
+To             : loadsize:loadsize|saida[7]
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 726
+Failed Paths   : 567
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 726
+Failed Paths   : 567
 
 --------------------------------------------------------------------------------------
 

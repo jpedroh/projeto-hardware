@@ -2,6 +2,7 @@ module MuxMemAdd (
     input wire[31:0] PC,
     input wire[31:0] ExceptionAddress,
     input wire[31:0] ALUOut,
+    input wire[31:0] ALURegOut,
     input wire [1:0] MemAdd,
 	output reg[31:0] MuxMemAddOut
 );
@@ -13,6 +14,8 @@ always @(*) begin
 			MuxMemAddOut <= ExceptionAddress;
 		2'b10:
 			MuxMemAddOut <= ALUOut;
+		2'b11:
+			MuxMemAddOut <= ALURegOut;
 	endcase
 end
 endmodule

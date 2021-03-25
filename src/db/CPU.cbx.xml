@@ -89,6 +89,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux45" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_84" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux46" CBX_FILE_NAME="mux_kpc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_228" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_85" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|Banco_reg:banco_registradores|lpm_mux:Mux47" CBX_FILE_NAME="mux_kpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_229" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -338,7 +339,6 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateLeft0_rtl_283" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_253" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight1_rtl_154" CBX_FILE_NAME="mux_0oc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxMemAdd:MuxMemAdd|lpm_mux:Mux32" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|MuxRegData:MuxRegData|lpm_mux:Mux32" CBX_FILE_NAME="mux_lpc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateLeft0_rtl_284" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_254" CBX_FILE_NAME="mux_0oc.tdf"/>
@@ -665,6 +665,5 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_128" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_227" CBX_FILE_NAME="mux_0oc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:ShiftRight0_rtl_129" CBX_FILE_NAME="mux_0oc.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|CPU|RegDesloc:registrador_deslocamento|lpm_mux:RotateRight0_rtl_228" CBX_FILE_NAME="mux_0oc.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

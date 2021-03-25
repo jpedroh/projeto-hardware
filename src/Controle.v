@@ -85,7 +85,6 @@ parameter SH_4TH_CLOCK = 37;
 parameter SW_2ND_CLOCK = 38;
 parameter SW_3RD_CLOCK = 39;
 parameter SW_4TH_CLOCK = 40;
-parameter SW_5TH_CLOCK = 45;
 parameter EXCEPTION_WAIT = 41;
 parameter SEND_EXCEPTION_BYTE_TO_PC = 42;
 
@@ -1250,7 +1249,7 @@ always @(posedge clock) begin
                 RegWrite = 1'b1;
                 RegDest = 3'b000;
                 RegData = 4'b0000;
-				estado = WAIT;
+				estado = FETCH_1ST_CLOCK;
 				//
                 ExceptionAddress = 2'b00;
                 MemADD = 2'b00;
@@ -1678,7 +1677,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         LB_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -1705,7 +1704,7 @@ always @(posedge clock) begin
             estado = LB_3RD_CLOCK;
         end
         LB_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             // Default
             PCWrite = 1'b0;
@@ -1733,7 +1732,7 @@ always @(posedge clock) begin
             estado = LB_4TH_CLOCK;
         end
         LB_4TH_CLOCK: begin
-            LSControl = 2'b10;
+            LSControl = 2'b11;
             RegWrite = 1'b1;
             RegDest = 3'b000;
             RegData = 4'b0100;
@@ -1762,7 +1761,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         LH_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -1789,7 +1788,7 @@ always @(posedge clock) begin
             estado = LH_3RD_CLOCK;
         end
         LH_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             // Default
             PCWrite = 1'b0;
@@ -1846,7 +1845,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         LW_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -1873,7 +1872,7 @@ always @(posedge clock) begin
             estado = LW_3RD_CLOCK;
         end
         LW_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             // Default
             PCWrite = 1'b0;
@@ -1930,7 +1929,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         SB_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -1957,7 +1956,7 @@ always @(posedge clock) begin
             estado = SB_3RD_CLOCK;
         end
         SB_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             // Default
             PCWrite = 1'b0;
@@ -1986,7 +1985,7 @@ always @(posedge clock) begin
         end
         SB_4TH_CLOCK: begin
             SSControl = 2'b10;
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             MemWriteRead = 1'b1;
             // Default
             RegWrite = 1'b0;
@@ -2015,7 +2014,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         SH_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             // Default
             PCWrite = 1'b0;
             IRWrite = 1'b0;
@@ -2042,7 +2041,7 @@ always @(posedge clock) begin
             estado = SH_3RD_CLOCK;
         end
         SH_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             // Default
             PCWrite = 1'b0;
@@ -2071,7 +2070,7 @@ always @(posedge clock) begin
         end
         SH_4TH_CLOCK: begin
             SSControl = 2'b01;
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             MemWriteRead = 1'b1;
             // Default
             RegWrite = 1'b0;
@@ -2100,7 +2099,7 @@ always @(posedge clock) begin
             estado = WAIT;
         end
         SW_2ND_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             MemWriteRead = 1'b0;
             SSControl = 2'b00;
             // Default
@@ -2128,7 +2127,7 @@ always @(posedge clock) begin
             estado = SW_3RD_CLOCK;
         end
         SW_3RD_CLOCK: begin
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             RegMDRWrite = 1'b1;
             SSControl = 2'b00;
             MemWriteRead = 1'b0;
@@ -2158,42 +2157,13 @@ always @(posedge clock) begin
         end
         SW_4TH_CLOCK: begin
             SSControl = 2'b00;
-            MemADD = 2'b10;
-            MemWriteRead = 1'b0;
-            RegMDRWrite = 1'b1;
-            // Default
-            RegWrite = 1'b0;
-            RegDest = 3'b000;
-            RegData = 4'b0000;
-            PCWrite = 1'b0;
-            IRWrite = 1'b0;
-            PCSource = 3'b000;
-            ALUControl = 3'b000;
-            ALUSrcB = 3'b000;
-            ALUSrcA = 1'b0;
-            RegAWrite = 1'b0;
-            RegBWrite = 1'b0;
-            XCHGRegWrite = 1'b0;
-            MFH = 1'b0;
-            MuxHiLo = 1'b0;
-            MuxHi = 1'b0;
-            MuxLo = 1'b0;
-            MULT_OP = 1'b0;
-            DIV_OP = 1'b0;
-            Reg_HI_Write = 1'b0;
-            Reg_Lo_Write = 1'b0;
-            RegALUOutWrite = 1'b0;
-            estado = SW_5TH_CLOCK;
-        end
-        SW_5TH_CLOCK: begin
-            SSControl = 2'b00;
-            MemADD = 2'b10;
+            MemADD = 2'b11;
             MemWriteRead = 1'b1;
+            RegMDRWrite = 1'b0;
             // Default
             RegWrite = 1'b0;
             RegDest = 3'b000;
             RegData = 4'b0000;
-            RegMDRWrite = 1'b0;
             PCWrite = 1'b0;
             IRWrite = 1'b0;
             PCSource = 3'b000;
@@ -2212,7 +2182,7 @@ always @(posedge clock) begin
             Reg_HI_Write = 1'b0;
             Reg_Lo_Write = 1'b0;
             RegALUOutWrite = 1'b0;
-            estado = WAIT;
+            estado = FETCH_1ST_CLOCK;
         end
         EXCEPTION_WAIT: begin
             MemWriteRead = 1'b0;

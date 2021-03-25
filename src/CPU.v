@@ -170,7 +170,7 @@ MuxExceptionAddress MuxExceptionAddress(ExceptionAddress, MuxExceptionAddressOut
 MuxHI MuxHI(MultHI, DivHI, HISelector, MuxHIOut);
 MuxLO MuxLO(MultLO, DivLO, LOSelector, MuxLOOut);
 MuxHILO MuxHILO(RegHIOut, RegLOOut, HILOSelector, MuxHILOOut);
-MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, RegALUOutOut, MemAdd, MuxMemAddOut);
+MuxMemAdd MuxMemAdd(RegPCOut, MuxExceptionAddressOut, AluResult, RegALUOutOut, MemAdd, MuxMemAddOut);
 MuxPCSource MuxPCSource(RegPCOut, AluResult, RegEPCOut, RegMDROut, RegALUOutOut, ExceptionByteExtendido, JumpAddress, RegAOut, PCSource, MuxPCSourceOut);
 MuxRegData MuxRegData(AluResult, MuxHILOOut, SignExtend1_32Out, RegShiftOut, LSOutput, OffsetExtendido << 16, RegXCHGOut, RegAOut, RegALUOutOut, RegData, MuxRegDataOut);
 MuxRegDest MuxRegDest(RT, Offset[15:11], RS, RegDest, MuxRegDestOut);
