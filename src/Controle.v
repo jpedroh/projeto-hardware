@@ -2031,8 +2031,6 @@ module Controle (
           RegWrite = 1'b0;
           RegDest = 3'b000;
           RegData = 4'b0000;
-          MemADD = 3'b000;
-          RegMDRWrite = 1'b0;
           PCWrite = 1'b0;
           IRWrite = 1'b0;
           PCSource = 3'b000;
@@ -2051,7 +2049,7 @@ module Controle (
           Reg_HI_Write = 1'b0;
           Reg_Lo_Write = 1'b0;
           RegALUOutWrite = 1'b0;
-          estado = WAIT;
+          estado = FETCH_1ST_CLOCK;
         end
         SH_2ND_CLOCK: begin
           MemADD = 3'b011;
@@ -2083,6 +2081,7 @@ module Controle (
         SH_3RD_CLOCK: begin
           MemADD = 3'b011;
           RegMDRWrite = 1'b1;
+          SSControl = 2'b01;
           // Default
           PCWrite = 1'b0;
           IRWrite = 1'b0;
@@ -2116,7 +2115,6 @@ module Controle (
           RegWrite = 1'b0;
           RegDest = 3'b000;
           RegData = 4'b0000;
-          MemADD = 3'b000;
           RegMDRWrite = 1'b0;
           PCWrite = 1'b0;
           IRWrite = 1'b0;
@@ -2136,7 +2134,7 @@ module Controle (
           Reg_HI_Write = 1'b0;
           Reg_Lo_Write = 1'b0;
           RegALUOutWrite = 1'b0;
-          estado = WAIT;
+          estado = FETCH_1ST_CLOCK;
         end
         SW_2ND_CLOCK: begin
           MemADD = 3'b011;
