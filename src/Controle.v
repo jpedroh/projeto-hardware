@@ -1203,9 +1203,6 @@ module Controle (
             RegWrite = 1'b0;
             RegData = 4'b0000;
           end
-          RegWrite = 1'b1;
-          RegDest = 3'b001;
-          RegData = 4'b1001;
           // Inalteradas
           PCWrite=1'b0;
           IRWrite=1'b0;
@@ -1223,7 +1220,6 @@ module Controle (
           Reg_Lo_Write=1'b0;
           MemWriteRead=1'b0;
           RegALUOutWrite=1'b0;
-          estado = WAIT;
         end
         XCHG_2ND_CLOCK: begin
           RegWrite = 1'b1;
@@ -1342,10 +1338,10 @@ module Controle (
             MemADD = 3'b001;
             MemWriteRead = 1'b0;
             ALUSrcA = 2'b00;
-			ALUSrcB = 3'b001;
-			ALUControl = 3'b010;
-			RegEPCWrite = 1'b1;
-			estado = EXCEPTION_WAIT;
+            ALUSrcB = 3'b001;
+            ALUControl = 3'b010;
+            RegEPCWrite = 1'b1;
+            estado = EXCEPTION_WAIT;
           end else if (div_fim == 0) begin
             estado = DIV_2ND_CLOCK;
           end else begin
