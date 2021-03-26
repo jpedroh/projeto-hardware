@@ -1329,12 +1329,12 @@ module Controle (
         DIV_2ND_CLOCK: begin
           if (DividedByZero) begin
             DIV_OP = 0;
-            ExceptionAddress = 2'b10;
             MemADD = 3'b001;
             MemWriteRead = 1'b0;
-            ALUSrcA = 2'b00;
-            ALUSrcB = 3'b001;
             ALUControl = 3'b010;
+            ALUSrcB = 3'b011;
+            ALUSrcA = 2'b00;
+            ExceptionAddress = 2'b10;
             RegEPCWrite = 1'b1;
             estado = EXCEPTION_WAIT;
           end else if (div_fim == 0) begin

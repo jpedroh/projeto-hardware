@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Fri Mar 26 15:46:47 2021
+Fri Mar 26 15:54:30 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -61,13 +61,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Fri Mar 26 15:46:47 2021        ;
+; Analysis & Synthesis Status   ; Successful - Fri Mar 26 15:54:30 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 2,565                                        ;
+;     Combinational ALUTs       ; 2,568                                        ;
 ;     Dedicated logic registers ; 1,670                                        ;
 ; Total registers               ; 1670                                         ;
 ; Total pins                    ; 315                                          ;
@@ -213,38 +213,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 2565  ;
+; Estimated ALUTs Used                          ; 2568  ;
 ; Dedicated logic registers                     ; 1670  ;
 ;                                               ;       ;
 ; Estimated ALUTs Unavailable                   ; 383   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 2565  ;
+; Total combinational functions                 ; 2568  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 13    ;
-;     -- 6 input functions                      ; 1116  ;
-;     -- 5 input functions                      ; 438   ;
-;     -- 4 input functions                      ; 240   ;
-;     -- <=3 input functions                    ; 758   ;
+;     -- 7 input functions                      ; 12    ;
+;     -- 6 input functions                      ; 1117  ;
+;     -- 5 input functions                      ; 437   ;
+;     -- 4 input functions                      ; 241   ;
+;     -- <=3 input functions                    ; 761   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 2394  ;
-;     -- extended LUT mode                      ; 13    ;
+;     -- normal mode                            ; 2398  ;
+;     -- extended LUT mode                      ; 12    ;
 ;     -- arithmetic mode                        ; 125   ;
 ;     -- shared arithmetic mode                 ; 33    ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 3914  ;
+; Estimated ALUT/register pairs used            ; 3917  ;
 ;                                               ;       ;
 ; Total registers                               ; 1670  ;
 ;     -- Dedicated logic registers              ; 1670  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,957 ;
+; Estimated ALMs:  partially or completely used ; 1,959 ;
 ;                                               ;       ;
 ; I/O pins                                      ; 315   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
 ; Maximum fan-out                               ; 1702  ;
-; Total fan-out                                 ; 19704 ;
+; Total fan-out                                 ; 19712 ;
 ; Average fan-out                               ; 4.30  ;
 +-----------------------------------------------+-------+
 
@@ -254,9 +254,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 2565 (1)          ; 1670 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 315  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 2568 (1)          ; 1670 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 315  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:banco_registradores|              ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:banco_registradores                                                                             ; work         ;
-;    |Controle:Controle|                          ; 345 (345)         ; 52 (52)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
+;    |Controle:Controle|                          ; 346 (346)         ; 52 (52)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
 ;    |Instr_Reg:registrador_instrucoes|           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:registrador_instrucoes                                                                          ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
@@ -294,7 +294,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:MDR                                                                                           ; work         ;
 ;    |Registrador:PC|                             ; 6 (6)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
 ;    |Registrador:XCHG|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:XCHG                                                                                          ; work         ;
-;    |Ula32:Alu|                                  ; 166 (166)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
+;    |Ula32:Alu|                                  ; 168 (168)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
 ;    |divisor:divisor|                            ; 154 (154)         ; 103 (103)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|divisor:divisor                                                                                           ; work         ;
 ;    |loadsize:loadsize|                          ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|loadsize:loadsize                                                                                         ; work         ;
 ;    |multiplier:multiplier|                      ; 181 (181)         ; 134 (134)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|multiplier:multiplier                                                                                     ; work         ;
@@ -795,7 +795,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Fri Mar 26 15:46:34 2021
+    Info: Processing started: Fri Mar 26 15:54:17 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Info: Found 2 design units, including 1 entities, in source file providedcomponents/banco_reg.vhd
     Info: Found design unit 1: Banco_reg-behavioral_arch
@@ -1594,16 +1594,16 @@ Warning: Latch MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[0]
 Warning: Latch MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[1] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ExceptionAddress[0]
 Info: Generated suppressed messages file D:/Projetos/cin/projeto-hardware/src/CPU.map.smsg
-Info: Implemented 4228 device resources after synthesis - the final resource count might be different
+Info: Implemented 4231 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 313 output pins
-    Info: Implemented 3881 logic cells
+    Info: Implemented 3884 logic cells
     Info: Implemented 32 RAM segments
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 460 warnings
     Info: Peak virtual memory: 270 megabytes
-    Info: Processing ended: Fri Mar 26 15:46:47 2021
+    Info: Processing ended: Fri Mar 26 15:54:30 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+
