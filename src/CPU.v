@@ -1,4 +1,4 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegBOut, MuxRegDataOut, MuxRegDestOut, RegWrite, MuxMemAddOut, MemWriteRead, RegEPCOut);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegBOut, MuxRegDataOut, MuxRegDestOut, RegWrite, MuxMemAddOut, MemWriteRead, RegEPCOut, Overflow);
   input clock;
   input reset;
 
@@ -140,7 +140,7 @@ module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcod
   assign RegBShamt = RegBOut[4:0];
   assign ExceptionByteExtendido = {24'b0, MemData[7:0]};
 
-  wire Overflow;
+  output wire Overflow;
 
   // Registradores
   Registrador A(clock, reset, RegAWrite, RegAInput, RegAOut);

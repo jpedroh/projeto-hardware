@@ -314,6 +314,7 @@ RegEPCOut[28] <= RegEPCOut[28]~3.DB_MAX_OUTPUT_PORT_TYPE
 RegEPCOut[29] <= RegEPCOut[29]~2.DB_MAX_OUTPUT_PORT_TYPE
 RegEPCOut[30] <= RegEPCOut[30]~1.DB_MAX_OUTPUT_PORT_TYPE
 RegEPCOut[31] <= RegEPCOut[31]~0.DB_MAX_OUTPUT_PORT_TYPE
+Overflow <= Overflow~0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|Registrador:A
@@ -12283,7 +12284,6 @@ SSControl[1] <= SSControl[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ExceptionAddress[0] <= ExceptionAddress[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ExceptionAddress[1] <= ExceptionAddress[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 RegEPCWrite <= RegEPCWrite~reg0.DB_MAX_OUTPUT_PORT_TYPE
-ALUOverflow => always0~1.IN1
 ALUOverflow => Selector64.IN11
 ALUOverflow => Selector34.IN13
 ALUOverflow => Selector36.IN13
@@ -12296,7 +12296,7 @@ ALUOverflow => Selector49.IN2
 ALUOverflow => Selector52.IN3
 ALUOverflow => Mux1.IN47
 ALUOverflow => Mux4.IN46
-ALUOverflow => always0~2.IN1
+ALUOverflow => always0~1.IN1
 funct[0] => Decoder0.IN5
 funct[1] => Decoder0.IN4
 funct[2] => Decoder0.IN3
