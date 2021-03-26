@@ -1626,8 +1626,8 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/overflow.vwf")
 VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 {
 	ZOOM{
-		ZBEGIN = 51539;
-		ZEND = 175759;
+		ZBEGIN = 439494;
+		ZEND = 572677;
 		NUMERATOR = 1283;
 		DENOMINATOR = 125000;
 		TOP_INDEX = 156;
@@ -3145,7 +3145,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput";
+		SIGNAL = "MuxRegDataOut";
 		INDEX = 188;
 		FORMAT = T;
 		SCALE = 1;
@@ -3153,7 +3153,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[31]";
+		SIGNAL = "MuxRegDataOut[31]";
 		INDEX = 189;
 		FORMAT = E;
 		SCALE = 1;
@@ -3161,7 +3161,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[30]";
+		SIGNAL = "MuxRegDataOut[30]";
 		INDEX = 190;
 		FORMAT = E;
 		SCALE = 1;
@@ -3169,7 +3169,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[29]";
+		SIGNAL = "MuxRegDataOut[29]";
 		INDEX = 191;
 		FORMAT = E;
 		SCALE = 1;
@@ -3177,7 +3177,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[28]";
+		SIGNAL = "MuxRegDataOut[28]";
 		INDEX = 192;
 		FORMAT = E;
 		SCALE = 1;
@@ -3185,7 +3185,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[27]";
+		SIGNAL = "MuxRegDataOut[27]";
 		INDEX = 193;
 		FORMAT = E;
 		SCALE = 1;
@@ -3193,7 +3193,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[26]";
+		SIGNAL = "MuxRegDataOut[26]";
 		INDEX = 194;
 		FORMAT = E;
 		SCALE = 1;
@@ -3201,7 +3201,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[25]";
+		SIGNAL = "MuxRegDataOut[25]";
 		INDEX = 195;
 		FORMAT = E;
 		SCALE = 1;
@@ -3209,7 +3209,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[24]";
+		SIGNAL = "MuxRegDataOut[24]";
 		INDEX = 196;
 		FORMAT = E;
 		SCALE = 1;
@@ -3217,7 +3217,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[23]";
+		SIGNAL = "MuxRegDataOut[23]";
 		INDEX = 197;
 		FORMAT = E;
 		SCALE = 1;
@@ -3225,7 +3225,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[22]";
+		SIGNAL = "MuxRegDataOut[22]";
 		INDEX = 198;
 		FORMAT = E;
 		SCALE = 1;
@@ -3233,7 +3233,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[21]";
+		SIGNAL = "MuxRegDataOut[21]";
 		INDEX = 199;
 		FORMAT = E;
 		SCALE = 1;
@@ -3241,7 +3241,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[20]";
+		SIGNAL = "MuxRegDataOut[20]";
 		INDEX = 200;
 		FORMAT = E;
 		SCALE = 1;
@@ -3249,7 +3249,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[19]";
+		SIGNAL = "MuxRegDataOut[19]";
 		INDEX = 201;
 		FORMAT = E;
 		SCALE = 1;
@@ -3257,7 +3257,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[18]";
+		SIGNAL = "MuxRegDataOut[18]";
 		INDEX = 202;
 		FORMAT = E;
 		SCALE = 1;
@@ -3265,7 +3265,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[17]";
+		SIGNAL = "MuxRegDataOut[17]";
 		INDEX = 203;
 		FORMAT = E;
 		SCALE = 1;
@@ -3273,7 +3273,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[16]";
+		SIGNAL = "MuxRegDataOut[16]";
 		INDEX = 204;
 		FORMAT = E;
 		SCALE = 1;
@@ -3281,7 +3281,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[15]";
+		SIGNAL = "MuxRegDataOut[15]";
 		INDEX = 205;
 		FORMAT = E;
 		SCALE = 1;
@@ -3289,7 +3289,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[14]";
+		SIGNAL = "MuxRegDataOut[14]";
 		INDEX = 206;
 		FORMAT = E;
 		SCALE = 1;
@@ -3297,7 +3297,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[13]";
+		SIGNAL = "MuxRegDataOut[13]";
 		INDEX = 207;
 		FORMAT = E;
 		SCALE = 1;
@@ -3305,7 +3305,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[12]";
+		SIGNAL = "MuxRegDataOut[12]";
 		INDEX = 208;
 		FORMAT = E;
 		SCALE = 1;
@@ -3313,7 +3313,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[11]";
+		SIGNAL = "MuxRegDataOut[11]";
 		INDEX = 209;
 		FORMAT = E;
 		SCALE = 1;
@@ -3321,7 +3321,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[10]";
+		SIGNAL = "MuxRegDataOut[10]";
 		INDEX = 210;
 		FORMAT = E;
 		SCALE = 1;
@@ -3329,7 +3329,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[9]";
+		SIGNAL = "MuxRegDataOut[9]";
 		INDEX = 211;
 		FORMAT = E;
 		SCALE = 1;
@@ -3337,7 +3337,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[8]";
+		SIGNAL = "MuxRegDataOut[8]";
 		INDEX = 212;
 		FORMAT = E;
 		SCALE = 1;
@@ -3345,7 +3345,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[7]";
+		SIGNAL = "MuxRegDataOut[7]";
 		INDEX = 213;
 		FORMAT = E;
 		SCALE = 1;
@@ -3353,7 +3353,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[6]";
+		SIGNAL = "MuxRegDataOut[6]";
 		INDEX = 214;
 		FORMAT = E;
 		SCALE = 1;
@@ -3361,7 +3361,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[5]";
+		SIGNAL = "MuxRegDataOut[5]";
 		INDEX = 215;
 		FORMAT = E;
 		SCALE = 1;
@@ -3369,7 +3369,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[4]";
+		SIGNAL = "MuxRegDataOut[4]";
 		INDEX = 216;
 		FORMAT = E;
 		SCALE = 1;
@@ -3377,7 +3377,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[3]";
+		SIGNAL = "MuxRegDataOut[3]";
 		INDEX = 217;
 		FORMAT = E;
 		SCALE = 1;
@@ -3385,7 +3385,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[2]";
+		SIGNAL = "MuxRegDataOut[2]";
 		INDEX = 218;
 		FORMAT = E;
 		SCALE = 1;
@@ -3393,7 +3393,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[1]";
+		SIGNAL = "MuxRegDataOut[1]";
 		INDEX = 219;
 		FORMAT = E;
 		SCALE = 1;
@@ -3401,7 +3401,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegAInput[0]";
+		SIGNAL = "MuxRegDataOut[0]";
 		INDEX = 220;
 		FORMAT = E;
 		SCALE = 1;
@@ -3409,7 +3409,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput";
+		SIGNAL = "MuxRegDestOut";
 		INDEX = 221;
 		FORMAT = T;
 		SCALE = 1;
@@ -3417,7 +3417,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[31]";
+		SIGNAL = "MuxRegDestOut[4]";
 		INDEX = 222;
 		FORMAT = E;
 		SCALE = 1;
@@ -3425,7 +3425,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[30]";
+		SIGNAL = "MuxRegDestOut[3]";
 		INDEX = 223;
 		FORMAT = E;
 		SCALE = 1;
@@ -3433,7 +3433,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[29]";
+		SIGNAL = "MuxRegDestOut[2]";
 		INDEX = 224;
 		FORMAT = E;
 		SCALE = 1;
@@ -3441,7 +3441,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[28]";
+		SIGNAL = "MuxRegDestOut[1]";
 		INDEX = 225;
 		FORMAT = E;
 		SCALE = 1;
@@ -3449,7 +3449,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[27]";
+		SIGNAL = "MuxRegDestOut[0]";
 		INDEX = 226;
 		FORMAT = E;
 		SCALE = 1;
@@ -3457,7 +3457,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[26]";
+		SIGNAL = "RegWrite";
 		INDEX = 227;
 		FORMAT = E;
 		SCALE = 1;
@@ -3465,808 +3465,8 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 		FLAG = N;
 	}
 	LINE{
-		SIGNAL = "RegBInput[25]";
-		INDEX = 228;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[24]";
-		INDEX = 229;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[23]";
-		INDEX = 230;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[22]";
-		INDEX = 231;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[21]";
-		INDEX = 232;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[20]";
-		INDEX = 233;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[19]";
-		INDEX = 234;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[18]";
-		INDEX = 235;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[17]";
-		INDEX = 236;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[16]";
-		INDEX = 237;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[15]";
-		INDEX = 238;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[14]";
-		INDEX = 239;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[13]";
-		INDEX = 240;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[12]";
-		INDEX = 241;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[11]";
-		INDEX = 242;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[10]";
-		INDEX = 243;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[9]";
-		INDEX = 244;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[8]";
-		INDEX = 245;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[7]";
-		INDEX = 246;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[6]";
-		INDEX = 247;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[5]";
-		INDEX = 248;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[4]";
-		INDEX = 249;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[3]";
-		INDEX = 250;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[2]";
-		INDEX = 251;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[1]";
-		INDEX = 252;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegBInput[0]";
-		INDEX = 253;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "divider 499";
-		INDEX = 254;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut";
-		INDEX = 255;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[31]";
-		INDEX = 256;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[30]";
-		INDEX = 257;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[29]";
-		INDEX = 258;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[28]";
-		INDEX = 259;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[27]";
-		INDEX = 260;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[26]";
-		INDEX = 261;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[25]";
-		INDEX = 262;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[24]";
-		INDEX = 263;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[23]";
-		INDEX = 264;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[22]";
-		INDEX = 265;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[21]";
-		INDEX = 266;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[20]";
-		INDEX = 267;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[19]";
-		INDEX = 268;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[18]";
-		INDEX = 269;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[17]";
-		INDEX = 270;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[16]";
-		INDEX = 271;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[15]";
-		INDEX = 272;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[14]";
-		INDEX = 273;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[13]";
-		INDEX = 274;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[12]";
-		INDEX = 275;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[11]";
-		INDEX = 276;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[10]";
-		INDEX = 277;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[9]";
-		INDEX = 278;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[8]";
-		INDEX = 279;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[7]";
-		INDEX = 280;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[6]";
-		INDEX = 281;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[5]";
-		INDEX = 282;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[4]";
-		INDEX = 283;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[3]";
-		INDEX = 284;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[2]";
-		INDEX = 285;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[1]";
-		INDEX = 286;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDataOut[0]";
-		INDEX = 287;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut";
-		INDEX = 288;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut[4]";
-		INDEX = 289;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut[3]";
-		INDEX = 290;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut[2]";
-		INDEX = 291;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut[1]";
-		INDEX = 292;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "MuxRegDestOut[0]";
-		INDEX = 293;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegWrite";
-		INDEX = 294;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut";
-		INDEX = 295;
-		FORMAT = T;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[31]";
-		INDEX = 296;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[30]";
-		INDEX = 297;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[29]";
-		INDEX = 298;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[28]";
-		INDEX = 299;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[27]";
-		INDEX = 300;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[26]";
-		INDEX = 301;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[25]";
-		INDEX = 302;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[24]";
-		INDEX = 303;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[23]";
-		INDEX = 304;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[22]";
-		INDEX = 305;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[21]";
-		INDEX = 306;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[20]";
-		INDEX = 307;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[19]";
-		INDEX = 308;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[18]";
-		INDEX = 309;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[17]";
-		INDEX = 310;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[16]";
-		INDEX = 311;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[15]";
-		INDEX = 312;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[14]";
-		INDEX = 313;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[13]";
-		INDEX = 314;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[12]";
-		INDEX = 315;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[11]";
-		INDEX = 316;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[10]";
-		INDEX = 317;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[9]";
-		INDEX = 318;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[8]";
-		INDEX = 319;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[7]";
-		INDEX = 320;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[6]";
-		INDEX = 321;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[5]";
-		INDEX = 322;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[4]";
-		INDEX = 323;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[3]";
-		INDEX = 324;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[2]";
-		INDEX = 325;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[1]";
-		INDEX = 326;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
-		SIGNAL = "RegEPCOut[0]";
-		INDEX = 327;
-		FORMAT = E;
-		SCALE = 1;
-		VISIBLE = Y;
-		FLAG = N;
-	}
-	LINE{
 		SIGNAL = "MuxMemAddOut";
-		INDEX = 328;
+		INDEX = 228;
 		FORMAT = T;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4274,7 +3474,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[31]";
-		INDEX = 329;
+		INDEX = 229;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4282,7 +3482,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[30]";
-		INDEX = 330;
+		INDEX = 230;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4290,7 +3490,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[29]";
-		INDEX = 331;
+		INDEX = 231;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4298,7 +3498,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[28]";
-		INDEX = 332;
+		INDEX = 232;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4306,7 +3506,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[27]";
-		INDEX = 333;
+		INDEX = 233;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4314,7 +3514,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[26]";
-		INDEX = 334;
+		INDEX = 234;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4322,7 +3522,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[25]";
-		INDEX = 335;
+		INDEX = 235;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4330,7 +3530,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[24]";
-		INDEX = 336;
+		INDEX = 236;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4338,7 +3538,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[23]";
-		INDEX = 337;
+		INDEX = 237;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4346,7 +3546,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[22]";
-		INDEX = 338;
+		INDEX = 238;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4354,7 +3554,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[21]";
-		INDEX = 339;
+		INDEX = 239;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4362,7 +3562,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[20]";
-		INDEX = 340;
+		INDEX = 240;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4370,7 +3570,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[19]";
-		INDEX = 341;
+		INDEX = 241;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4378,7 +3578,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[18]";
-		INDEX = 342;
+		INDEX = 242;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4386,7 +3586,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[17]";
-		INDEX = 343;
+		INDEX = 243;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4394,7 +3594,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[16]";
-		INDEX = 344;
+		INDEX = 244;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4402,7 +3602,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[15]";
-		INDEX = 345;
+		INDEX = 245;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4410,7 +3610,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[14]";
-		INDEX = 346;
+		INDEX = 246;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4418,7 +3618,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[13]";
-		INDEX = 347;
+		INDEX = 247;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4426,7 +3626,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[12]";
-		INDEX = 348;
+		INDEX = 248;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4434,7 +3634,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[11]";
-		INDEX = 349;
+		INDEX = 249;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4442,7 +3642,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[10]";
-		INDEX = 350;
+		INDEX = 250;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4450,7 +3650,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[9]";
-		INDEX = 351;
+		INDEX = 251;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4458,7 +3658,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[8]";
-		INDEX = 352;
+		INDEX = 252;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4466,7 +3666,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[7]";
-		INDEX = 353;
+		INDEX = 253;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4474,7 +3674,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[6]";
-		INDEX = 354;
+		INDEX = 254;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4482,7 +3682,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[5]";
-		INDEX = 355;
+		INDEX = 255;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4490,7 +3690,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[4]";
-		INDEX = 356;
+		INDEX = 256;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4498,7 +3698,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[3]";
-		INDEX = 357;
+		INDEX = 257;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4506,7 +3706,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[2]";
-		INDEX = 358;
+		INDEX = 258;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4514,7 +3714,7 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[1]";
-		INDEX = 359;
+		INDEX = 259;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
@@ -4522,7 +3722,815 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	}
 	LINE{
 		SIGNAL = "MuxMemAddOut[0]";
+		INDEX = 260;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "MemWriteRead";
+		INDEX = 261;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut";
+		INDEX = 262;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[31]";
+		INDEX = 263;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[30]";
+		INDEX = 264;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[29]";
+		INDEX = 265;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[28]";
+		INDEX = 266;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[27]";
+		INDEX = 267;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[26]";
+		INDEX = 268;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[25]";
+		INDEX = 269;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[24]";
+		INDEX = 270;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[23]";
+		INDEX = 271;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[22]";
+		INDEX = 272;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[21]";
+		INDEX = 273;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[20]";
+		INDEX = 274;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[19]";
+		INDEX = 275;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[18]";
+		INDEX = 276;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[17]";
+		INDEX = 277;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[16]";
+		INDEX = 278;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[15]";
+		INDEX = 279;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[14]";
+		INDEX = 280;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[13]";
+		INDEX = 281;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[12]";
+		INDEX = 282;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[11]";
+		INDEX = 283;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[10]";
+		INDEX = 284;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[9]";
+		INDEX = 285;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[8]";
+		INDEX = 286;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[7]";
+		INDEX = 287;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[6]";
+		INDEX = 288;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[5]";
+		INDEX = 289;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[4]";
+		INDEX = 290;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[3]";
+		INDEX = 291;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[2]";
+		INDEX = 292;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[1]";
+		INDEX = 293;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegBOut[0]";
+		INDEX = 294;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "divider 2352";
+		INDEX = 295;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut";
+		INDEX = 296;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[31]";
+		INDEX = 297;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[30]";
+		INDEX = 298;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[29]";
+		INDEX = 299;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[28]";
+		INDEX = 300;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[27]";
+		INDEX = 301;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[26]";
+		INDEX = 302;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[25]";
+		INDEX = 303;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[24]";
+		INDEX = 304;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[23]";
+		INDEX = 305;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[22]";
+		INDEX = 306;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[21]";
+		INDEX = 307;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[20]";
+		INDEX = 308;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[19]";
+		INDEX = 309;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[18]";
+		INDEX = 310;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[17]";
+		INDEX = 311;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[16]";
+		INDEX = 312;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[15]";
+		INDEX = 313;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[14]";
+		INDEX = 314;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[13]";
+		INDEX = 315;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[12]";
+		INDEX = 316;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[11]";
+		INDEX = 317;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[10]";
+		INDEX = 318;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[9]";
+		INDEX = 319;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[8]";
+		INDEX = 320;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[7]";
+		INDEX = 321;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[6]";
+		INDEX = 322;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[5]";
+		INDEX = 323;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[4]";
+		INDEX = 324;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[3]";
+		INDEX = 325;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[2]";
+		INDEX = 326;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[1]";
+		INDEX = 327;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegLOOut[0]";
+		INDEX = 328;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut";
+		INDEX = 329;
+		FORMAT = T;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[31]";
+		INDEX = 330;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[30]";
+		INDEX = 331;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[29]";
+		INDEX = 332;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[28]";
+		INDEX = 333;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[27]";
+		INDEX = 334;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[26]";
+		INDEX = 335;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[25]";
+		INDEX = 336;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[24]";
+		INDEX = 337;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[23]";
+		INDEX = 338;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[22]";
+		INDEX = 339;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[21]";
+		INDEX = 340;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[20]";
+		INDEX = 341;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[19]";
+		INDEX = 342;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[18]";
+		INDEX = 343;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[17]";
+		INDEX = 344;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[16]";
+		INDEX = 345;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[15]";
+		INDEX = 346;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[14]";
+		INDEX = 347;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[13]";
+		INDEX = 348;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[12]";
+		INDEX = 349;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[11]";
+		INDEX = 350;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[10]";
+		INDEX = 351;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[9]";
+		INDEX = 352;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[8]";
+		INDEX = 353;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[7]";
+		INDEX = 354;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[6]";
+		INDEX = 355;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[5]";
+		INDEX = 356;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[4]";
+		INDEX = 357;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[3]";
+		INDEX = 358;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[2]";
+		INDEX = 359;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[1]";
 		INDEX = 360;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "RegHIOut[0]";
+		INDEX = 361;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;
