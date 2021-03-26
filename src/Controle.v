@@ -745,8 +745,7 @@ module Controle (
 
             estado = WAIT;               
           end else if (Opcode == JAL_OPCODE) begin
-            ALUControl = 3'b001;
-            ALUSrcB = 3'b011;
+            ALUControl = 3'b000;
             ALUSrcA = 2'b00;
             RegALUOutWrite = 1'b1;
             PCWrite=1'b1;
@@ -754,6 +753,7 @@ module Controle (
             // Default
             IRWrite = 1'b0;
             MemADD = 3'b000;
+            ALUSrcB = 3'b000;
             RegAWrite = 1'b0;
             RegBWrite = 1'b0;
             RegWrite = 1'b0;
