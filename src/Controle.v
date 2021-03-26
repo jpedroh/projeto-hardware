@@ -4,7 +4,7 @@ module Controle (
   input wire [5:0] Opcode,
   output reg PCWrite,
   output reg IRWrite,
-  output reg[1:0] MemADD,
+  output reg[2:0] MemADD,
   output reg[2:0] PCSource,
   output reg[2:0] ALUControl,
   output reg[2:0] ALUSrcB,
