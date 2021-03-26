@@ -600,6 +600,7 @@ module Controle (
               end
               SLLV: begin
                 ShftSrc = 1'b1;
+                AmtSrc = 1'b1;
                 RegShftCtrl = 3'b001;
                 //Inalteradas
                 PCWrite=1'b0;
@@ -658,6 +659,7 @@ module Controle (
               end
               SRAV: begin
                 ShftSrc = 1'b1;
+                AmtSrc = 1'b1;
                 RegShftCtrl = 3'b001;
                 //Inalteradas
                 PCWrite=1'b0;
