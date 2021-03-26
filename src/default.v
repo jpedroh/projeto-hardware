@@ -1,7 +1,7 @@
 // Default
 PCWrite = 1'b0;
 IRWrite = 1'b0;
-MemADD = 2'b00;
+MemADD = 3'b000;
 PCSource = 3'b000;
 ALUControl = 3'b000;
 ALUSrcB = 3'b000;
@@ -24,3 +24,4 @@ MemWriteRead = 1'b0;
 RegALUOutWrite = 1'b0;
 ExceptionAddress = 2'b00;
 RegEPCWrite = 1'b0;
+RegMDRWrite = 1'b0;
