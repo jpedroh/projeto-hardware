@@ -46,12 +46,17 @@
         end
          cicloAtual <= cicloAtual - 5'd1; //decrementa o ciclo
        end  
-       else begin  
-         cicloAtual <= 5'd31; //comeca com 31 no ciclo
-         quociente = dividendo[31] ? -dividendo : dividendo; //quociente comeca como dividendo (e depende do sinal)
-         denominador = divisor[31] ? -divisor : divisor; //denominador recebe o divisor (e depende do sinal)
-         resto <= 32'b0; //o resto comeca como zero
-         ativo <= 1; // seta o ativo como 1
+       else begin 
+		 if (fim == 0) begin
+			cicloAtual <= 5'd31; //comeca com 31 no ciclo
+			quociente = dividendo[31] ? -dividendo : dividendo; //quociente comeca como dividendo (e depende do sinal)
+			denominador = divisor[31] ? -divisor : divisor; //denominador recebe o divisor (e depende do sinal)
+			resto <= 32'b0; //o resto comeca como zero
+			ativo <= 1; // seta o ativo como 1
+         end
+         else begin
+			fim = 0;
+		 end
        end  
      end  
    end  
