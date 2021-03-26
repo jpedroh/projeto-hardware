@@ -1334,9 +1334,7 @@ module Controle (
           estado = FETCH_1ST_CLOCK;
         end
         DIV_2ND_CLOCK: begin
-          if (div_fim == 0) begin
-            estado = DIV_2ND_CLOCK;
-          end else if (DividedByZero) begin
+          if (DividedByZero) begin
             DIV_OP = 0;
             ExceptionAddress = 2'b10;
             MemADD = 3'b001;
@@ -1346,6 +1344,8 @@ module Controle (
 			ALUControl = 3'b010;
 			RegEPCWrite = 1'b1;
 			estado = EXCEPTION_WAIT;
+          end else if (div_fim == 0) begin
+            estado = DIV_2ND_CLOCK;
           end else begin
             DIV_OP = 0;
             Reg_HI_Write = 1'b1;
