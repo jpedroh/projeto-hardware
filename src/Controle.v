@@ -1169,8 +1169,6 @@ module Controle (
             Reg_HI_Write = 1'b0;
             Reg_Lo_Write = 1'b0;
             RegALUOutWrite = 1'b0;
-            ExceptionAddress = 2'b00;
-            RegEPCWrite = 1'b0;
             estado=EXCEPTION_WAIT;
           end
         end
