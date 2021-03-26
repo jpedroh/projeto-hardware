@@ -754,7 +754,6 @@ module Controle (
             // Default
             IRWrite = 1'b0;
             MemADD = 3'b000;
-            ALUSrcB = 3'b000;
             RegAWrite = 1'b0;
             RegBWrite = 1'b0;
             RegWrite = 1'b0;
