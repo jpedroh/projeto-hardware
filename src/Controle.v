@@ -40,7 +40,8 @@ module Controle (
   input wire div_fim,
   input wire EQ,
   input wire GT,
-  input wire LT
+  input wire LT,
+  input wire DividedByZero
 );
 
   // ESTADOS
@@ -1335,8 +1336,17 @@ module Controle (
         DIV_2ND_CLOCK: begin
           if (div_fim == 0) begin
             estado = DIV_2ND_CLOCK;
-          end
-          else begin
+          end else if (DividedByZero) begin
+            DIV_OP = 0;
+            ExceptionAddress = 2'b10;
+            MemADD = 3'b001;
+            MemWriteRead = 1'b0;
+            ALUSrcA = 2'b00;
+			ALUSrcB = 3'b001;
+			ALUControl = 3'b010;
+			RegEPCWrite = 1'b1;
+			estado = EXCEPTION_WAIT;
+          end else begin
             DIV_OP = 0;
             Reg_HI_Write = 1'b1;
             Reg_Lo_Write = 1'b1;

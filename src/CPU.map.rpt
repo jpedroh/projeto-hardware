@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Thu Mar 25 21:31:23 2021
+Thu Mar 25 21:40:38 2021
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -29,14 +29,13 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  21. Parameter Settings for User Entity Instance: Memoria:Memoria|LPM_RAM_DQ:MEM_plus_Three
  22. Parameter Settings for User Entity Instance: Controle:Controle
  23. Port Connectivity Checks: "Controle:Controle"
- 24. Port Connectivity Checks: "divisor:divisor"
- 25. Port Connectivity Checks: "MuxRegData:MuxRegData"
- 26. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
- 27. Port Connectivity Checks: "MuxComparatorSrc:MuxComparatorSrc"
- 28. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
- 29. Port Connectivity Checks: "Ula32:Alu"
- 30. Analysis & Synthesis Messages
- 31. Analysis & Synthesis Suppressed Messages
+ 24. Port Connectivity Checks: "MuxRegData:MuxRegData"
+ 25. Port Connectivity Checks: "MuxPCSource:MuxPCSource"
+ 26. Port Connectivity Checks: "MuxComparatorSrc:MuxComparatorSrc"
+ 27. Port Connectivity Checks: "MuxALUSrcB:MuxALUSrcB"
+ 28. Port Connectivity Checks: "Ula32:Alu"
+ 29. Analysis & Synthesis Messages
+ 30. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -62,15 +61,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Thu Mar 25 21:31:22 2021        ;
+; Analysis & Synthesis Status   ; Successful - Thu Mar 25 21:40:38 2021        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; CPU                                          ;
 ; Top-level Entity Name         ; CPU                                          ;
 ; Family                        ; Stratix II                                   ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 2,454                                        ;
-;     Dedicated logic registers ; 1,667                                        ;
-; Total registers               ; 1667                                         ;
+;     Combinational ALUTs       ; 2,476                                        ;
+;     Dedicated logic registers ; 1,669                                        ;
+; Total registers               ; 1669                                         ;
 ; Total pins                    ; 347                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
@@ -214,39 +213,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-------+
 ; Resource                                      ; Usage ;
 +-----------------------------------------------+-------+
-; Estimated ALUTs Used                          ; 2454  ;
-; Dedicated logic registers                     ; 1667  ;
+; Estimated ALUTs Used                          ; 2476  ;
+; Dedicated logic registers                     ; 1669  ;
 ;                                               ;       ;
-; Estimated ALUTs Unavailable                   ; 331   ;
+; Estimated ALUTs Unavailable                   ; 344   ;
 ;                                               ;       ;
-; Total combinational functions                 ; 2454  ;
+; Total combinational functions                 ; 2476  ;
 ; Combinational ALUT usage by number of inputs  ;       ;
-;     -- 7 input functions                      ; 12    ;
-;     -- 6 input functions                      ; 1066  ;
-;     -- 5 input functions                      ; 441   ;
-;     -- 4 input functions                      ; 236   ;
-;     -- <=3 input functions                    ; 699   ;
+;     -- 7 input functions                      ; 10    ;
+;     -- 6 input functions                      ; 1081  ;
+;     -- 5 input functions                      ; 430   ;
+;     -- 4 input functions                      ; 242   ;
+;     -- <=3 input functions                    ; 713   ;
 ;                                               ;       ;
 ; Combinational ALUTs by mode                   ;       ;
-;     -- normal mode                            ; 2284  ;
-;     -- extended LUT mode                      ; 12    ;
+;     -- normal mode                            ; 2308  ;
+;     -- extended LUT mode                      ; 10    ;
 ;     -- arithmetic mode                        ; 125   ;
 ;     -- shared arithmetic mode                 ; 33    ;
 ;                                               ;       ;
-; Estimated ALUT/register pairs used            ; 3753  ;
+; Estimated ALUT/register pairs used            ; 3788  ;
 ;                                               ;       ;
-; Total registers                               ; 1667  ;
-;     -- Dedicated logic registers              ; 1667  ;
+; Total registers                               ; 1669  ;
+;     -- Dedicated logic registers              ; 1669  ;
 ;     -- I/O registers                          ; 0     ;
 ;                                               ;       ;
-; Estimated ALMs:  partially or completely used ; 1,877 ;
+; Estimated ALMs:  partially or completely used ; 1,894 ;
 ;                                               ;       ;
 ; I/O pins                                      ; 347   ;
 ; Total block memory bits                       ; 8192  ;
 ; Maximum fan-out node                          ; clock ;
-; Maximum fan-out                               ; 1699  ;
-; Total fan-out                                 ; 19250 ;
-; Average fan-out                               ; 4.28  ;
+; Maximum fan-out                               ; 1701  ;
+; Total fan-out                                 ; 19336 ;
+; Average fan-out                               ; 4.27  ;
 +-----------------------------------------------+-------+
 
 
@@ -255,23 +254,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                      ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                            ; 2454 (1)          ; 1667 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 347  ; 0            ; |CPU                                                                                                           ; work         ;
+; |CPU                                            ; 2476 (1)          ; 1669 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 347  ; 0            ; |CPU                                                                                                           ; work         ;
 ;    |Banco_reg:banco_registradores|              ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Banco_reg:banco_registradores                                                                             ; work         ;
-;    |Controle:Controle|                          ; 303 (303)         ; 49 (49)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
+;    |Controle:Controle|                          ; 315 (315)         ; 51 (51)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Controle:Controle                                                                                         ; work         ;
 ;    |Instr_Reg:registrador_instrucoes|           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Instr_Reg:registrador_instrucoes                                                                          ; work         ;
 ;    |Memoria:Memoria|                            ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria                                                                                           ; work         ;
 ;       |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ;              ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block                                  ;              ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
-;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ;              ;
+;       |lpm_ram_dq:MEM_plus_Three|               ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three                                                                 ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram                                                     ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block                                ; work         ;
 ;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ;              ;
-;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ;              ;
-;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ;              ;
-;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ;              ;
+;       |lpm_ram_dq:MEM_plus_Two|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two                                                                   ; work         ;
+;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram                                                       ; work         ;
+;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block                                  ; work         ;
+;                |altsyncram_g2a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated   ; work         ;
 ;       |lpm_ram_dq:MEM|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM                                                                            ; work         ;
 ;          |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram                                                                ; work         ;
 ;             |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block                                           ; work         ;
@@ -279,23 +278,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |MuxALUSrcA:MuxALUSrcA|                      ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcA:MuxALUSrcA                                                                                     ; work         ;
 ;    |MuxALUSrcB:MuxALUSrcB|                      ; 81 (81)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxALUSrcB:MuxALUSrcB                                                                                     ; work         ;
 ;    |MuxAmtSrc:MuxAmtSrc|                        ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxAmtSrc:MuxAmtSrc                                                                                       ; work         ;
+;    |MuxExceptionAddress:MuxExceptionAddress|    ; 4 (4)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxExceptionAddress:MuxExceptionAddress                                                                   ; work         ;
 ;    |MuxMemAdd:MuxMemAdd|                        ; 44 (44)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxMemAdd:MuxMemAdd                                                                                       ; work         ;
-;    |MuxPCSource:MuxPCSource|                    ; 89 (89)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ; work         ;
+;    |MuxPCSource:MuxPCSource|                    ; 90 (90)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxPCSource:MuxPCSource                                                                                   ; work         ;
 ;    |MuxRegData:MuxRegData|                      ; 138 (138)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegData:MuxRegData                                                                                     ; work         ;
 ;    |MuxRegDest:MuxRegDest|                      ; 11 (11)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxRegDest:MuxRegDest                                                                                     ; work         ;
 ;    |MuxShiftSrc:MuxShiftSrc|                    ; 3 (3)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|MuxShiftSrc:MuxShiftSrc                                                                                   ; work         ;
 ;    |RegDesloc:registrador_deslocamento|         ; 369 (369)         ; 37 (37)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|RegDesloc:registrador_deslocamento                                                                        ; work         ;
 ;    |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:ALUOut                                                                                        ; work         ;
 ;    |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:A                                                                                             ;              ;
-;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ; work         ;
+;    |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:B                                                                                             ;              ;
 ;    |Registrador:EPC|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:EPC                                                                                           ; work         ;
 ;    |Registrador:HI|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:HI                                                                                            ; work         ;
 ;    |Registrador:LO|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:LO                                                                                            ; work         ;
 ;    |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:MDR                                                                                           ; work         ;
 ;    |Registrador:PC|                             ; 6 (6)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:PC                                                                                            ; work         ;
 ;    |Registrador:XCHG|                           ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Registrador:XCHG                                                                                          ; work         ;
-;    |Ula32:Alu|                                  ; 166 (166)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
-;    |divisor:divisor|                            ; 144 (144)         ; 103 (103)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|divisor:divisor                                                                                           ; work         ;
+;    |Ula32:Alu|                                  ; 162 (162)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|Ula32:Alu                                                                                                 ; work         ;
+;    |divisor:divisor|                            ; 153 (153)         ; 103 (103)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|divisor:divisor                                                                                           ; work         ;
 ;    |loadsize:loadsize|                          ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|loadsize:loadsize                                                                                         ; work         ;
 ;    |multiplier:multiplier|                      ; 181 (181)         ; 134 (134)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|multiplier:multiplier                                                                                     ; work         ;
 ;    |storesize:storesize|                        ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|storesize:storesize                                                                                       ; work         ;
@@ -420,7 +420,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MuxRegDest:MuxRegDest|MuxRegDestOut[1]               ; MuxRegDest:MuxRegDest|Mux5  ; yes                    ;
 ; MuxRegDest:MuxRegDest|MuxRegDestOut[2]               ; MuxRegDest:MuxRegDest|Mux5  ; yes                    ;
 ; MuxRegDest:MuxRegDest|MuxRegDestOut[3]               ; MuxRegDest:MuxRegDest|Mux5  ; yes                    ;
-; Number of user-specified and inferred latches = 165  ;                             ;                        ;
+; Number of user-specified and inferred latches = 167  ;                             ;                        ;
 +------------------------------------------------------+-----------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -432,14 +432,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +---------------------------------------------------+------------------------------------------------------------+
 ; multiplier:multiplier|hi[31]                      ; Merged with multiplier:multiplier|hi[30]                   ;
 ; multiplier:multiplier|product[63]                 ; Merged with multiplier:multiplier|product[62]              ;
-; Controle:Controle|ExceptionAddress[0]             ; Merged with Controle:Controle|RegEPCWrite                  ;
 ; Controle:Controle|Reg_HI_Write                    ; Merged with Controle:Controle|Reg_Lo_Write                 ;
 ; Controle:Controle|MuxHi                           ; Merged with Controle:Controle|MuxLo                        ;
 ; Controle:Controle|RegAWrite                       ; Merged with Controle:Controle|RegBWrite                    ;
 ; RegDesloc:registrador_deslocamento|n_shift[5..29] ; Merged with RegDesloc:registrador_deslocamento|n_shift[30] ;
 ; RegDesloc:registrador_deslocamento|n_shift[30]    ; Stuck at GND due to stuck port data_in                     ;
-; Controle:Controle|ExceptionAddress[1]             ; Stuck at GND due to stuck port data_in                     ;
-; Total Number of Removed Registers = 33            ;                                                            ;
+; Total Number of Removed Registers = 31            ;                                                            ;
 +---------------------------------------------------+------------------------------------------------------------+
 
 
@@ -448,12 +446,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1667  ;
-; Number of registers using Synchronous Clear  ; 212   ;
-; Number of registers using Synchronous Load   ; 211   ;
+; Total registers                              ; 1669  ;
+; Number of registers using Synchronous Clear  ; 210   ;
+; Number of registers using Synchronous Load   ; 209   ;
 ; Number of registers using Asynchronous Clear ; 1478  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1589  ;
+; Number of registers using Clock Enable       ; 1591  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -473,43 +471,46 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|divisor:divisor|quociente[11]                  ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|product[26]              ;
-; 3:1                ; 37 bits   ; 74 ALUTs      ; 0 ALUTs              ; 74 ALUTs               ; Yes        ; |CPU|multiplier:multiplier|product[55]              ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|divisor:divisor|resto[29]                      ;
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|n_shift[4]  ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|multiplier:multiplier|product[31]              ;
+; 3:1                ; 37 bits   ; 74 ALUTs      ; 0 ALUTs              ; 74 ALUTs               ; Yes        ; |CPU|multiplier:multiplier|product[51]              ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|n_shift[1]  ;
+; 3:1                ; 5 bits    ; 10 ALUTs      ; 5 ALUTs              ; 5 ALUTs                ; Yes        ; |CPU|divisor:divisor|cicloAtual[1]                  ;
+; 4:1                ; 31 bits   ; 62 ALUTs      ; 62 ALUTs             ; 0 ALUTs                ; Yes        ; |CPU|divisor:divisor|quociente[20]                  ;
 ; 3:1                ; 63 bits   ; 126 ALUTs     ; 0 ALUTs              ; 126 ALUTs              ; Yes        ; |CPU|multiplier:multiplier|hi[22]                   ;
-; 8:1                ; 4 bits    ; 20 ALUTs      ; 16 ALUTs             ; 4 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[30]                       ;
-; 8:1                ; 20 bits   ; 100 ALUTs     ; 80 ALUTs             ; 20 ALUTs               ; Yes        ; |CPU|Registrador:PC|Saida[25]                       ;
-; 8:1                ; 2 bits    ; 10 ALUTs      ; 8 ALUTs              ; 2 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[0]                        ;
-; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[2]                        ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:B|Saida[22]                        ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:A|Saida[25]                        ;
-; 64:1               ; 2 bits    ; 84 ALUTs      ; 4 ALUTs              ; 80 ALUTs               ; Yes        ; |CPU|Controle:Controle|LSControl[0]                 ;
-; 66:1               ; 3 bits    ; 132 ALUTs     ; 12 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegShftCtrl[2]               ;
-; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[11]    ;
-; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[24]    ;
-; 67:1               ; 3 bits    ; 132 ALUTs     ; 36 ALUTs             ; 96 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegBWrite                    ;
-; 67:1               ; 2 bits    ; 88 ALUTs      ; 28 ALUTs             ; 60 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegData[1]                   ;
-; 69:1               ; 2 bits    ; 92 ALUTs      ; 22 ALUTs             ; 70 ALUTs               ; Yes        ; |CPU|Controle:Controle|MuxLo                        ;
-; 136:1              ; 2 bits    ; 180 ALUTs     ; 40 ALUTs             ; 140 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUControl[2]                ;
-; 80:1               ; 2 bits    ; 106 ALUTs     ; 8 ALUTs              ; 98 ALUTs               ; Yes        ; |CPU|Controle:Controle|SSControl[0]                 ;
-; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux11                    ;
-; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux27                      ;
-; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux1                       ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|storesize:storesize|saida[19]                  ;
+; 8:1                ; 4 bits    ; 20 ALUTs      ; 16 ALUTs             ; 4 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[28]                       ;
+; 8:1                ; 20 bits   ; 100 ALUTs     ; 80 ALUTs             ; 20 ALUTs               ; Yes        ; |CPU|Registrador:PC|Saida[21]                       ;
+; 8:1                ; 2 bits    ; 10 ALUTs      ; 8 ALUTs              ; 2 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[1]                        ;
+; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; Yes        ; |CPU|Registrador:PC|Saida[7]                        ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 0 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|divisor:divisor|resto[25]                      ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:B|Saida[7]                         ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |CPU|Registrador:A|Saida[17]                        ;
+; 64:1               ; 2 bits    ; 84 ALUTs      ; 4 ALUTs              ; 80 ALUTs               ; Yes        ; |CPU|Controle:Controle|LSControl[1]                 ;
+; 66:1               ; 3 bits    ; 132 ALUTs     ; 12 ALUTs             ; 120 ALUTs              ; Yes        ; |CPU|Controle:Controle|RegShftCtrl[0]               ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[2]     ;
+; 14:1               ; 14 bits   ; 126 ALUTs     ; 84 ALUTs             ; 42 ALUTs               ; Yes        ; |CPU|RegDesloc:registrador_deslocamento|temp[23]    ;
+; 67:1               ; 2 bits    ; 88 ALUTs      ; 34 ALUTs             ; 54 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegBWrite                    ;
+; 67:1               ; 2 bits    ; 88 ALUTs      ; 28 ALUTs             ; 60 ALUTs               ; Yes        ; |CPU|Controle:Controle|RegDest[1]                   ;
+; 70:1               ; 2 bits    ; 92 ALUTs      ; 22 ALUTs             ; 70 ALUTs               ; Yes        ; |CPU|Controle:Controle|MuxLo                        ;
+; 80:1               ; 2 bits    ; 106 ALUTs     ; 8 ALUTs              ; 98 ALUTs               ; Yes        ; |CPU|Controle:Controle|SSControl[1]                 ;
+; 138:1              ; 2 bits    ; 184 ALUTs     ; 42 ALUTs             ; 142 ALUTs              ; Yes        ; |CPU|Controle:Controle|ALUSrcA[0]                   ;
+; 88:1               ; 2 bits    ; 116 ALUTs     ; 36 ALUTs             ; 80 ALUTs               ; Yes        ; |CPU|Controle:Controle|ALUSrcB[1]                   ;
+; 55:1               ; 2 bits    ; 72 ALUTs      ; 8 ALUTs              ; 64 ALUTs               ; Yes        ; |CPU|Controle:Controle|ExceptionAddress[0]          ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcA:MuxALUSrcA|Mux17                    ;
+; 4:1                ; 30 bits   ; 60 ALUTs      ; 60 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux15                      ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxMemAdd:MuxMemAdd|Mux0                       ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |CPU|storesize:storesize|saida[21]                  ;
 ; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftLeft0  ;
 ; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftRight1 ;
 ; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |CPU|RegDesloc:registrador_deslocamento|ShiftLeft0  ;
 ; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux58                                ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux10                                ;
-; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux0                     ;
-; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux21                    ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |CPU|Ula32:Alu|Mux17                                ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxRegDest:MuxRegDest|Mux4                     ;
+; 5:1                ; 15 bits   ; 45 ALUTs      ; 45 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux17                    ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux15                    ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux1                     ;
-; 11:1               ; 15 bits   ; 105 ALUTs     ; 90 ALUTs             ; 15 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux3                     ;
-; 11:1               ; 16 bits   ; 112 ALUTs     ; 96 ALUTs             ; 16 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux20                    ;
-; 7:1                ; 13 bits   ; 52 ALUTs      ; 52 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux6                     ;
+; 11:1               ; 15 bits   ; 105 ALUTs     ; 90 ALUTs             ; 15 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux15                    ;
+; 11:1               ; 16 bits   ; 112 ALUTs     ; 96 ALUTs             ; 16 ALUTs               ; No         ; |CPU|MuxRegData:MuxRegData|Mux31                    ;
+; 7:1                ; 13 bits   ; 52 ALUTs      ; 52 ALUTs             ; 0 ALUTs                ; No         ; |CPU|MuxALUSrcB:MuxALUSrcB|Mux14                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
@@ -743,15 +744,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "divisor:divisor"                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; DividedByZero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------------+
 ; Port Connectivity Checks: "MuxRegData:MuxRegData"          ;
 +--------------------------+-------+----------+--------------+
@@ -805,7 +797,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Mar 25 21:31:10 2021
+    Info: Processing started: Thu Mar 25 21:40:25 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Info: Found 1 design units, including 1 entities, in source file signextend/signextend132.v
     Info: Found entity 1: SignExtend132
@@ -905,6 +897,7 @@ Info: Elaborated megafunction instantiation "Memoria:Memoria|LPM_RAM_DQ:MEM|altr
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g2a1.tdf
     Info: Found entity 1: altsyncram_g2a1
 Info: Elaborating entity "altsyncram_g2a1" for hierarchy "Memoria:Memoria|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated"
+Critical Warning: Memory depth (256) in the design file differs from memory depth (8) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "RegDesloc" for hierarchy "RegDesloc:registrador_deslocamento"
 Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(128): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "Ula32" for hierarchy "Ula32:Alu"
@@ -1174,147 +1167,149 @@ Info (10041): Inferred latch for "saida[29]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[30]" at storesize.v(15)
 Info (10041): Inferred latch for "saida[31]" at storesize.v(15)
 Info: Elaborating entity "Controle" for hierarchy "Controle:Controle"
-Warning (10230): Verilog HDL assignment warning at Controle.v(136): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(148): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(166): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(173): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(196): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(202): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(224): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(230): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(252): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(264): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(280): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(311): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(338): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(365): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(375): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(401): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(420): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(430): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(447): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(459): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(469): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(496): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(522): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(541): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(550): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(569): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(598): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(627): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(656): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(685): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(714): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(722): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(752): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(773): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(785): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(801): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(810): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(827): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(836): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(853): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(862): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(879): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(888): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(905): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(913): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(932): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(940): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(960): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(984): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(986): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1010): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1012): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1036): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1038): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1062): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1064): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1088): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1090): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1115): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1117): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1143): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1146): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1174): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1185): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1192): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1197): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1232): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1259): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1284): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1287): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1294): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1299): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1325): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1333): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1337): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1345): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1359): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1389): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1419): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1449): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1475): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1502): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1529): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1555): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1576): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1584): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1602): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1610): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1628): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1636): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1654): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1662): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1680): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1691): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1712): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1736): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1739): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1764): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1772): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1796): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1820): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1823): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1848): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1856): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1880): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1904): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1907): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1932): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1940): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1964): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1988): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(1991): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2016): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2020): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2026): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2049): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2073): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2076): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2101): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2105): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2111): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2134): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2159): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2162): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2188): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2192): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2217): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2220): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2246): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2249): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2276): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2292): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2306): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2324): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2338): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2345): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2367): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2375): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2396): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at Controle.v(2399): truncated value with size 32 to match size of target (6)
-Warning (10272): Verilog HDL Case Statement warning at Controle.v(1522): case item expression covers a value already covered by a previous case item
+Warning (10230): Verilog HDL assignment warning at Controle.v(137): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(149): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(167): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(174): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(197): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(203): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(225): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(231): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(253): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(265): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(281): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(312): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(339): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(366): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(376): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(402): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(421): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(431): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(448): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(460): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(470): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(497): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(523): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(542): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(551): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(570): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(599): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(628): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(657): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(686): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(715): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(723): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(753): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(774): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(786): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(802): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(811): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(828): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(837): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(854): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(863): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(880): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(889): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(906): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(914): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(933): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(941): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(961): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(985): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(987): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1011): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1013): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1037): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1039): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1063): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1065): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1089): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1091): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1116): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1118): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1144): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1147): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1175): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1186): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1193): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1198): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1233): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1260): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1285): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1288): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1295): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1300): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1326): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1334): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1338): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1342): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1348): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1355): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1369): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1399): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1429): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1459): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1485): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1512): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1539): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1565): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1586): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1594): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1612): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1620): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1638): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1646): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1664): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1672): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1690): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1701): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1722): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1746): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1749): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1774): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1782): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1806): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1830): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1833): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1858): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1866): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1890): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1914): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1917): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1942): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1950): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1974): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(1998): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2001): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2026): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2030): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2036): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2059): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2083): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2086): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2111): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2115): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2121): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2144): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2169): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2172): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2198): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2202): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2227): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2230): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2256): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2259): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2286): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2302): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2316): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2334): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2348): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2355): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2377): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2385): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2406): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at Controle.v(2409): truncated value with size 32 to match size of target (6)
+Warning (10272): Verilog HDL Case Statement warning at Controle.v(1532): case item expression covers a value already covered by a previous case item
 Warning: Net is missing source, defaulting to GND
     Warning (12110): Net "MemAdd[2]" is missing source, defaulting to GND
 Warning: Net is missing source, defaulting to GND
@@ -1425,8 +1420,6 @@ Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[28]" is permanently e
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[29]" is permanently enabled
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[30]" is permanently enabled
 Warning: LATCH primitive "MuxMemAdd:MuxMemAdd|MuxMemAddOut[31]" is permanently enabled
-Warning: LATCH primitive "MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[0]" is permanently enabled
-Warning: LATCH primitive "MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[1]" is permanently enabled
 Warning: 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Latch MuxALUSrcA:MuxALUSrcA|MuxALUSrcAOut[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ALUSrcA[0]
@@ -1630,6 +1623,10 @@ Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[3] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
 Warning: Latch MuxRegDest:MuxRegDest|MuxRegDestOut[4] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|RegDest[1]
+Warning: Latch MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ExceptionAddress[0]
+Warning: Latch MuxExceptionAddress:MuxExceptionAddress|MuxExceptionAddressOut[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|ExceptionAddress[0]
 Warning: Latch storesize:storesize|saida[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal Controle:Controle|SSControl[0]
 Warning: Latch storesize:storesize|saida[9] has unsafe behavior
@@ -1727,16 +1724,16 @@ Warning: Latch loadsize:loadsize|saida[30] has unsafe behavior
 Warning: Latch loadsize:loadsize|saida[31] has unsafe behavior
     Warning: Ports ENA and CLR on the latch are fed by the same signal Controle:Controle|LSControl[1]
 Info: Generated suppressed messages file D:/Projetos/cin/projeto-hardware/src/CPU.map.smsg
-Info: Implemented 4149 device resources after synthesis - the final resource count might be different
+Info: Implemented 4171 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 345 output pins
-    Info: Implemented 3770 logic cells
+    Info: Implemented 3792 logic cells
     Info: Implemented 32 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 575 warnings
-    Info: Peak virtual memory: 270 megabytes
-    Info: Processing ended: Thu Mar 25 21:31:23 2021
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 580 warnings
+    Info: Peak virtual memory: 266 megabytes
+    Info: Processing ended: Thu Mar 25 21:40:38 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+

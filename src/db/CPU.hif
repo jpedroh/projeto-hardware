@@ -1398,42 +1398,6 @@ MuxMemAdd:MuxMemAdd
 
 # end
 # entity
-divisor
-# storage
-db|CPU.(24).cnf
-db|CPU.(24).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-multiplier|divisor.v
-d13938d1d63076c6d6284ab420cf309c
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-divisor:divisor
-}
-# macro_sequence
-
-# end
-# entity
 MuxALUSrcA
 # storage
 db|CPU.(11).cnf
@@ -1470,6 +1434,42 @@ MuxALUSrcA:MuxALUSrcA
 
 # end
 # entity
+divisor
+# storage
+db|CPU.(24).cnf
+db|CPU.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multiplier|divisor.v
+62c3921d4bf4d4bdd49f8c29d43385
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+divisor:divisor
+}
+# macro_sequence
+
+# end
+# entity
 CPU
 # storage
 db|CPU.(0).cnf
@@ -1481,7 +1481,7 @@ ON
 # case_sensitive
 # source_file
 cpu.v
-bfc04d6aa722c2d7a94ab4fb5074df
+71648af84fd7a6726152c7162e8cf349
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1600,7 +1600,7 @@ address_a0
 }
 # memory_file {
 instrucoes.mif
-2994935cf661e30c25f2dcf439241e
+afb445205735c34297eab6de041b2d8
 }
 # hierarchies {
 Memoria:Memoria|lpm_ram_dq:MEM|altram:sram|altsyncram:ram_block|altsyncram_g2a1:auto_generated
@@ -1623,7 +1623,7 @@ ON
 # case_sensitive
 # source_file
 controle.v
-1219cbb94ae951f41a53575eaa1b4
+274718be68711e8467c5b6652aad2d3
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT

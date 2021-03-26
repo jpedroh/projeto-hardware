@@ -237,7 +237,8 @@ module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcod
     div_fim,
     EQ,
     GT,
-    LT
+    LT,
+    DividedByZero
   );
 
 
