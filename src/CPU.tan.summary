@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.262 ns
+Actual Time    : 8.061 ns
 From           : reset
-To             : Controle:Controle|ALUSrcB[1]
+To             : multiplier:multiplier|product[60]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 16.741 ns
+Actual Time    : 18.269 ns
 From           : MuxALUSrcB:MuxALUSrcB|MuxALUSrcBOut[2]
 To             : AluResult[31]
 From Clock     : clock
@@ -25,9 +25,9 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : -2.887 ns
+Actual Time    : -2.769 ns
 From           : reset
-To             : divisor:divisor|fim
+To             : Controle:Controle|estado[1]
 From Clock     : --
 To Clock       : clock
 Failed Paths   : 0
@@ -35,9 +35,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clock'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 43.66 MHz ( period = 22.904 ns )
+Actual Time    : 43.11 MHz ( period = 23.196 ns )
 From           : MuxALUSrcA:MuxALUSrcA|MuxALUSrcAOut[0]
-To             : Controle:Controle|RegWrite
+To             : Controle:Controle|PCWrite
 From Clock     : clock
 To Clock       : clock
 Failed Paths   : 0
@@ -46,11 +46,11 @@ Type           : Clock Hold: 'clock'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : Registrador:ALUOut|Saida[23]
-To             : MuxMemAdd:MuxMemAdd|MuxMemAddOut[23]
+From           : Registrador:MDR|Saida[20]
+To             : storesize:storesize|saida[20]
 From Clock     : clock
 To Clock       : clock
-Failed Paths   : 969
+Failed Paths   : 971
 
 Type           : Total number of failed paths
 Slack          : 
@@ -60,7 +60,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 969
+Failed Paths   : 971
 
 --------------------------------------------------------------------------------------
 

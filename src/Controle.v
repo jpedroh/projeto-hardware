@@ -753,9 +753,7 @@ module Controle (
             // Default
             IRWrite = 1'b0;
             MemADD = 3'b000;
-            ALUControl = 3'b000;
             ALUSrcB = 3'b000;
-            ALUSrcA = 2'b00;
             RegAWrite = 1'b0;
             RegBWrite = 1'b0;
             RegWrite = 1'b0;
@@ -771,7 +769,6 @@ module Controle (
             Reg_HI_Write = 1'b0;
             Reg_Lo_Write = 1'b0;
             MemWriteRead = 1'b0;
-            RegALUOutWrite = 1'b0;
 
             estado = JAL_2ND_CLOCK;
           end else if (Opcode == ADDI_OPCODE || Opcode == ADDIU_OPCODE) begin
@@ -1273,7 +1270,7 @@ module Controle (
           Reg_Lo_Write = 1'b0;
           MemWriteRead = 1'b0;
           RegALUOutWrite = 1'b0;
-          estado = WAIT;
+          estado = FETCH_1ST_CLOCK;
         end
         ADDI_ADDIU_2ND_CLOCK: begin
           if(ALUOverflow == 0 || (ALUOverflow && Opcode == ADDIU_OPCODE)) begin
