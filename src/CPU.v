@@ -1,4 +1,4 @@
-module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegBOut, MuxRegDataOut, MuxRegDestOut, RegWrite, MuxMemAddOut, MemWriteRead, RegAOut);
+module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcode, MemData, funct, RegPCOut, RegBOut, MuxRegDataOut, MuxRegDestOut, RegWrite, MuxMemAddOut, MemWriteRead, RegEPCOut);
   input clock;
   input reset;
 
@@ -19,7 +19,7 @@ module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcod
 
   wire RegAWrite;
   wire[31:0] RegAInput;
-  output wire[31:0] RegAOut;
+  wire[31:0] RegAOut;
 
   wire RegBWrite;
   wire[31:0] RegBInput;
@@ -31,7 +31,7 @@ module CPU (clock, reset, estado, AluResult, MuxAluSrcAOut, MuxAluSrcBOut, Opcod
 
   wire RegEPCWrite;
   wire[31:0] RegEPCInput;
-  wire[31:0] RegEPCOut;
+  output wire[31:0] RegEPCOut;
 
   wire RegALUOutWrite;
   wire[31:0] RegALUOutInput;
