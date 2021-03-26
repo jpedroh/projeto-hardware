@@ -719,7 +719,7 @@ module Controle (
             endcase
           end else if (Opcode == JUMP_OPCODE) begin
             PCWrite=1'b1;
-            PCSource=3'b101;
+            PCSource=3'b110;
             // Default
             IRWrite = 1'b0;
             MemADD = 3'b000;
@@ -749,7 +749,7 @@ module Controle (
             ALUSrcA = 2'b00;
             RegALUOutWrite = 1'b1;
             PCWrite=1'b1;
-            PCSource=3'b101;
+            PCSource=3'b110;
             // Default
             IRWrite = 1'b0;
             MemADD = 3'b000;
