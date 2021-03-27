@@ -1626,8 +1626,8 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/overflow.vwf")
 VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 126539;
+		ZBEGIN = 770131;
+		ZEND = 830755;
 		NUMERATOR = 1283;
 		DENOMINATOR = 118764;
 		TOP_INDEX = 156;
@@ -4259,6 +4259,14 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 	LINE{
 		SIGNAL = "RegEPCOut[0]";
 		INDEX = 327;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "Overflow";
+		INDEX = 328;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

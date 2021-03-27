@@ -959,7 +959,7 @@ module Controle (
           end else if (Opcode == LB_OPCODE) begin
             MemADD = 3'b010;
             MemWriteRead = 1'b0;
-            ALUControl = 3'b000;
+            ALUControl = 3'b001;
             ALUSrcB = 3'b111;
             ALUSrcA = 2'b01;
             RegALUOutWrite = 1'b1;
@@ -985,7 +985,7 @@ module Controle (
           end else if (Opcode == LH_OPCODE) begin
             MemADD = 3'b010;
             MemWriteRead = 1'b0;
-            ALUControl = 3'b000;
+            ALUControl = 3'b001;
             ALUSrcB = 3'b111;
             ALUSrcA = 2'b01;
             RegALUOutWrite = 1'b1;
