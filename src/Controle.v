@@ -1767,7 +1767,7 @@ module Controle (
           estado = LB_4TH_CLOCK;
         end
         LB_4TH_CLOCK: begin
-          LSControl = 2'b11;
+          LSControl = 2'b10;
           RegWrite = 1'b1;
           RegDest = 3'b000;
           RegData = 4'b0100;
