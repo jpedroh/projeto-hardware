@@ -1626,8 +1626,8 @@ VECTOR("D:/Projetos/cin/projeto-hardware/src/overflow.vwf")
 VECTOR("D:/Projetos/cin/projeto-hardware/src/CPU.vwf")
 {
 	ZOOM{
-		ZBEGIN = 770131;
-		ZEND = 830755;
+		ZBEGIN = 210886;
+		ZEND = 337425;
 		NUMERATOR = 1283;
 		DENOMINATOR = 118764;
 		TOP_INDEX = 156;

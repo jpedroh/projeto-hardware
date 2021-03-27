@@ -1173,7 +1173,7 @@ module Controle (
           end
         end
         ADD_SUB_AND_2ND_CLOCK: begin
-          if(ALUOverflow == 0) begin
+          if(ALUOverflow == 0 || funct == AND || funct == SUB) begin
             RegWrite = 1'b1;
             RegDest = 3'b001;
             RegData = 4'b1001;
